@@ -28,7 +28,7 @@
 <body class="with-top-navbar">
 <!-- Nav -->
 <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand">
         HeyCommunity
     </a>
 
@@ -48,29 +48,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/') }}">首页</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('events') }}">活动</a>
+            <li class="nav-item {{ setItemActive('activity*') }}">
+                <a class="nav-link" href="{{ url('activity') }}">活动</a>
             </li>
-
-            <li class="nav-item d-md-none">
-                <a class="nav-link" href="notifications/index.html">Notifications</a>
-            </li>
-            <li class="nav-item d-md-none">
-                <a class="nav-link" data-action="growl">Growl</a>
-            </li>
-            <li class="nav-item d-md-none">
-                <a class="nav-link" href="login/index.html">Logout</a>
-            </li>
-
         </ul>
 
         <form class="form-inline float-right d-none d-md-flex">
-            <input class="form-control" type="text" data-action="grow" placeholder="Search">
+            <input class="form-control" type="text" data-action="grow" placeholder="搜索">
         </form>
 
         <ul id="#js-popoverContent" class="nav navbar-nav float-right mr-0 d-none d-md-flex">
             <li class="nav-item">
-                <a class="app-notifications nav-link" href="notifications/index.html">
+                <a class="app-notifications nav-link">
                     <span class="icon icon-bell"></span>
                 </a>
             </li>
@@ -87,9 +76,9 @@
 
         <ul class="nav navbar-nav d-none" id="js-popoverContent">
             @if (Auth::check())
-                <li class="nav-item"><a class="nav-link" href="login/index.html">Logout</a></li>
+                <li class="nav-item"><a class="nav-link">Logout</a></li>
             @else
-                <li class="nav-item"><a class="nav-link" href="login/index.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link">Login</a></li>
             @endif
         </ul>
     </div>

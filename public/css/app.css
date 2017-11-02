@@ -7,6 +7,12 @@
   max-height: 300px;
 }
 
+@media (max-width: 767px) {
+  #section-mainbody.page-activity-index .carousel .carousel-item {
+    max-height: 200px !important;
+  }
+}
+
 #section-mainbody.page-activity-index .carousel .carousel-item img {
   min-width: 100%;
 }

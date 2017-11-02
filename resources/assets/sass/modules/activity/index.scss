@@ -3,6 +3,10 @@
     background-color: #555;
 
     .carousel-item {
+      @media (max-width: 767px) {
+        max-height: 200px !important;
+      }
+
       text-align: center;
       max-height: 300px;
 
@@ -10,6 +14,7 @@
         min-width: 100%;
       }
     }
+
   }
 
 

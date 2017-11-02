@@ -1,0 +1,43 @@
+#section-mainbody.page-activity-index {
+  .carousel {
+    background-color: #555;
+
+    .carousel-item {
+      text-align: center;
+      max-height: 300px;
+
+      img {
+        min-width: 100%;
+      }
+    }
+  }
+
+
+  //
+  // activity card
+  #section-carousel {
+    margin-bottom: 21px;
+  }
+
+
+  //
+  // activity card
+  .card-activity {
+    margin-bottom: 20px;
+
+    .card-body {
+
+      .card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 16px;
+      }
+
+      .card-text {
+        height: 44px;
+        overflow: hidden;
+      }
+    }
+  }
+}

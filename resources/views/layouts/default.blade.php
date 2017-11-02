@@ -11,6 +11,7 @@
     <title>HeyCommunity V4</title>
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="/css/app.css" rel="stylesheet">
     <link href="/assets/bootstrap-application-theme/css/toolkit.css" rel="stylesheet">
     <link href="/assets/bootstrap-application-theme/css/application.css" rel="stylesheet">
 

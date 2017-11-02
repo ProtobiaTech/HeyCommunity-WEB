@@ -6,19 +6,26 @@
     }
 ?>
 
-<div id="{{ $elementId }}" class="carousel {{ $carouselClassStr }}" data-ride="carousel" style="background-color:#ddd;">
+<div id="{{ $elementId }}" class="carousel {{ $carouselClassStr }}">
+    <ol class="carousel-indicators">
+        @foreach ($exhibits as $index =>$item)
+            <li data-target="#{{ $elementId }}" data-slide-to="{{ $index }}" class="{{ $index != 0 ?: 'active' }}"></li>
+        @endforeach
+    </ol>
+
     <div class="carousel-inner">
         @foreach ($exhibits as $index =>$item)
             <div class="carousel-item {{ $index != 0 ?: 'active' }}">
-                <img src="{{ $item->avatar }}" style="width:100%">
+                <img src="{{ $item->avatar }}">
 
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption">
                     <h3>{{ $item->title }}</h3>
                     <p>{{ $item->intro }}</p>
                 </div>
             </div>
         @endforeach
     </div>
+
     <a class="carousel-control-prev" href="#{{ $elementId }}" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>

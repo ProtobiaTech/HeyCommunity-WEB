@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/activity');
 });
 
-Route::get('events', function() {
-    return view('events');
+
+//
+// Activity
+Route::group(['prefix' => 'activity'], function() {
+    Route::get('/', 'ActivityController@index');
 });
+

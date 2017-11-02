@@ -90,9 +90,7 @@
 
 
 <!-- Main Body -->
-<div class="container pt-4 pb-5">
-    @yield('mainBoby')
-</div>
+@yield('mainBody')
 
 
 <script src="/assets/bootstrap-application-theme/js/jquery.min.js"></script>

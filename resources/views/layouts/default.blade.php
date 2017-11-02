@@ -76,14 +76,21 @@
             </li>
             <li class="nav-item ml-2">
                 <button class="btn btn-default navbar-btn navbar-btn-avatar" data-toggle="popover">
-                    <img class="rounded-circle" src="/assets/bootstrap-application-theme/img/avatar-dhg.png">
+                    @if (Auth::check())
+                        <img class="rounded-circle" src="{{ Auth::user()->avatar }}">
+                    @else
+                        <img class="rounded-circle" src="{{ User::guestAvatar() }}">
+                    @endif
                 </button>
             </li>
         </ul>
 
         <ul class="nav navbar-nav d-none" id="js-popoverContent">
-            <li class="nav-item"><a class="nav-link" href="#" data-action="growl">Growl</a></li>
-            <li class="nav-item"><a class="nav-link" href="login/index.html">Logout</a></li>
+            @if (Auth::check())
+                <li class="nav-item"><a class="nav-link" href="login/index.html">Logout</a></li>
+            @else
+                <li class="nav-item"><a class="nav-link" href="login/index.html">Login</a></li>
+            @endif
         </ul>
     </div>
 </nav>

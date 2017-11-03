@@ -15,7 +15,7 @@
                         <div class="card-body">
                             <h4 class="card-title">{{ $item->title }}</h4>
                             <p class="card-text">{{ $item->intro }}</p>
-                            <a href="#" class="btn btn-primary">立即报名</a>
+                            <a href="{{ route('activity.show', $item->id) }}" class="btn btn-primary">立即报名</a>
                         </div>
                     </div>
                 </div>

@@ -11,9 +11,10 @@
     <title>HeyCommunity V4</title>
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/assets/bootstrap-application-theme/css/toolkit.css" rel="stylesheet">
-    <link href="/assets/bootstrap-application-theme/css/application.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('bower-assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap-application-theme/css/toolkit.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap-application-theme/css/application.css') }}" rel="stylesheet">
 
     <style>
         /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -29,7 +30,7 @@
 <body class="with-top-navbar">
 <!-- Nav -->
 <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
-    <a class="navbar-brand">
+    <a class="navbar-brand" href="{{ url('/') }}">
         HeyCommunity
     </a>
 
@@ -90,11 +91,11 @@
 @yield('mainBody')
 
 
-<script src="/assets/bootstrap-application-theme/js/jquery.min.js"></script>
-<script src="/assets/bootstrap-application-theme/js/popper.min.js"></script>
-<script src="/assets/bootstrap-application-theme/js/chart.js"></script>
-<script src="/assets/bootstrap-application-theme/js/toolkit.js"></script>
-<script src="/assets/bootstrap-application-theme/js/application.js"></script>
+<script src="{{ asset('assets/bootstrap-application-theme/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap-application-theme/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap-application-theme/js/chart.js') }}"></script>
+<script src="{{ asset('assets/bootstrap-application-theme/js/toolkit.js') }}"></script>
+<script src="{{ asset('assets/bootstrap-application-theme/js/application.js') }}"></script>
 <script>
     // execute/clear BS loaders for docs
     $(function () {

@@ -1,0 +1,22 @@
+{
+  "name": "hey-community",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Rod <supgeek.rod@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower-assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

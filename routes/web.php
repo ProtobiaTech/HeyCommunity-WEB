@@ -20,5 +20,6 @@ Route::get('/', function () {
 // Activity
 Route::group(['prefix' => 'activity'], function() {
     Route::get('/', 'ActivityController@index');
+    Route::get('/{id}', 'ActivityController@show')->name('activity.show');
 });
 

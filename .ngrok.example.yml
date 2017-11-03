@@ -1,0 +1,6 @@
+server_addr: "ngrok.protobia.agency:4443"
+tunnels:
+  web:
+    subdomain: hc4dev
+    proto:
+      http: ":8000"

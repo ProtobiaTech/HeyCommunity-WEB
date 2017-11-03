@@ -13,5 +13,6 @@ yarn-error.log
 
 
 .DS_Store
+.ngrok.*
 public/uploads
 public/bower-assets

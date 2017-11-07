@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends BaseModel
+class Topic extends BaseModel
 {
     /**
      * Related User

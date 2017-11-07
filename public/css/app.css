@@ -1,3 +1,55 @@
+#section-mainbody.page-topic-index {
+  margin-top: 10px;
+}
+
+#section-mainbody.page-topic-index #section-left .left-tools {
+  margin-bottom: 15px;
+}
+
+#section-mainbody.page-topic-index .card-nodes {
+  margin-bottom: 15px;
+}
+
+#section-mainbody.page-topic-index .card-nodes .card-body .nodes-item span {
+  font-weight: 400;
+}
+
+#section-mainbody.page-topic-index .card-tags {
+  margin-bottom: 15px;
+}
+
+#section-mainbody.page-topic-index #section-right .right-tools {
+  margin-bottom: 15px;
+}
+
+#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .avatar {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body {
+  margin-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+}
+
+#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title a {
+  font-weight: 400;
+}
+
+#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title .info {
+  position: absolute;
+  right: 1.25rem;
+}
+
+#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #section-mainbody.page-activity-index .carousel {
   background-color: #555;
 }

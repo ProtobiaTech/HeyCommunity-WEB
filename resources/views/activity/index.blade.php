@@ -13,7 +13,7 @@
                     <div class="card card-activity">
                         <img class="card-img-top" src="{{ $item->avatar }}" alt="{{ $item->title }}">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $item->title }}</h4>
+                            <h4 class="card-title"><a href="{{ route('activity.show', $item->id) }}">{{ $item->title }}</a></h4>
                             <p class="card-text">{{ $item->intro }}</p>
                             <a href="{{ route('activity.show', $item->id) }}" class="btn btn-primary">立即报名</a>
                         </div>

@@ -19,7 +19,7 @@
                 <img src="{{ $item->avatar }}">
 
                 <div class="carousel-caption">
-                    <h3>{{ $item->title }}</h3>
+                    <h3><a href="{{ route('activity.show', $item->id) }}">{{ $item->title }}</a></h3>
                     <p>{{ $item->intro }}</p>
                 </div>
             </div>

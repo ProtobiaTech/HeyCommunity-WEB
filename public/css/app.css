@@ -138,6 +138,10 @@
   min-width: 100%;
 }
 
+#section-mainbody.page-activity-index .carousel .carousel-item .carousel-caption h3 a {
+  color: #fff;
+}
+
 #section-mainbody.page-activity-index #section-carousel {
   margin-bottom: 21px;
 }
@@ -162,5 +166,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#section-mainbody.page-activity-show #section-row2 #section-body #nav-mainTabContent {
+  padding-top: 8px;
 }
 

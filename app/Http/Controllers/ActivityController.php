@@ -13,7 +13,7 @@ class ActivityController extends Controller
     public function index()
     {
         $exhibits = Activity::inRandomOrder()->limit(3)->get();
-        $activities = Activity::paginate();
+        $activities = Activity::paginate(12);
 
         return view('activity.index', compact('activities', 'exhibits'));
     }

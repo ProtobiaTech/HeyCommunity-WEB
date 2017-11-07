@@ -1,3 +1,7 @@
+#section-pagination {
+  margin-top: 20px;
+}
+
 #section-mainbody.page-topic-index {
   margin-top: 10px;
 }
@@ -87,5 +91,11 @@
 #section-mainbody.page-activity-index .card-activity .card-body .card-text {
   height: 44px;
   overflow: hidden;
+}
+
+#section-mainbody.page-activity-index #section-pagination .pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 

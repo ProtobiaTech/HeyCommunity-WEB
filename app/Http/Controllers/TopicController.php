@@ -13,7 +13,7 @@ class TopicController extends Controller
      */
     public function index()
     {
-        $topics = Topic::paginate();
+        $topics = Topic::paginate(10);
         $rootNodes = TopicNode::roots()->with('childNodes')->get();
 
         return view('topic.index', compact('topics', 'rootNodes'));

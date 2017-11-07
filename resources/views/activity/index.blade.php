@@ -20,12 +20,12 @@
                     </div>
                 </div>
             @endforeach
-            <div class="col-sm-12">
-                <nav>
-                    {{ $activities->links() }}
-                </nav>
-            </div>
         </div>
+
+        <!-- Pagination -->
+        <nav id="section-pagination">
+            {{ $activities->links() }}
+        </nav>
     </div>
 </div>
 @stop

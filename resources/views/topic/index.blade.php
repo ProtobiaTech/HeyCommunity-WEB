@@ -70,11 +70,9 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="">
-                    <nav>
-                        {{ $topics->links() }}
-                    </nav>
-                </div>
+                <nav id="section-pagination">
+                    {{ $topics->links() }}
+                </nav>
             </div>
         </div>
     </div>

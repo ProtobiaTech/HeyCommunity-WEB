@@ -15,10 +15,10 @@ class ActivityTableSeeder extends Seeder
         foreach (range(1, 20) as $index) {
             // avatar
             if (env('FAKER_IMAGE_STORAGE', false)) {
-                $avatarUrl = $faker->image(storage_path('app/uploads/activity'), 500, 300, 'fashion');
+                $avatarUrl = $faker->image(storage_path('app/uploads/activity'), 800, 480, 'fashion');
                 $avatarUrl = strstr($avatarUrl, 'uploads/activity');
             } else {
-                $avatarUrl = $faker->imageUrl(500, 300, 'fashion');
+                $avatarUrl = $faker->imageUrl(800, 480, 'fashion');
             }
 
             $data[] = [

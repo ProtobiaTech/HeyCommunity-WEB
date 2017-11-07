@@ -27,4 +27,24 @@
       }
     }
   }
+
+  //
+  //
+  #section-comment-list {
+    .card {
+      .card-body {
+        .avatar {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+
+        .body {
+          padding-left: 50px;
+          width: 100%;
+        }
+      }
+    }
+  }
 }

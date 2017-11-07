@@ -7,13 +7,15 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
                     <li class="breadcrumb-item"><a href="{{ url('topic') }}">话题</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">123</li>
+                    <li class="breadcrumb-item"><a href="{{ route('topic.index', ['node' => $topic->node->parent->name]) }}">{{ $topic->node->parent->name }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('topic.index', ['node' => $topic->node->name]) }}">{{ $topic->node->name }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">话题详情</li>
                 </ol>
             </nav>
 
             <div class="row">
                 <!-- operation -->
-                <div id="section-operation" class="col-md-2 d-none d-sm-block">
+                <div id="section-operation" class="col-md-2 d-none d-md-block">
                     <a class="btn btn-block btn-secondary" href="{{ request()->header('referer') }}"><i class="pull-left fa fa-chevron-left"></i> 返回</a>
                     <br>
 
@@ -57,9 +59,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ $topic->title }}</h4>
-                            <span class="pull-right">{{ $topic->created_at }}</span>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                {{ $topic->node->name }}
+                                <a class="d-none d-md-inline-block" href="{{ route('topic.index', ['node' => $topic->node->name]) }}">{{ $topic->node->name }}</a>
+                                <a class="d-inline-block d-md-none">{{ $topic->author->nickname }}</a>
+                                <span class="pull-right date">{{ $topic->created_at }}</span>
                             </h6>
                             <p class="card-text">
                                 {{ $topic->content }}
@@ -72,9 +75,18 @@
                         @foreach (range(1, 5) as $comment)
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-text">
-                                        hihihi ~
-                                    </p>
+                                    <a class="avatar" href="#"><img class="avatar" src="{{ asset($topic->author->avatar) }}"></a>
+                                    <div class="pull-left body">
+                                        <div class="title">
+                                            <a href="#">{{ $topic->author->nickname }}</a>
+                                            <span class="info pull-right">
+                                                {{ $topic->created_at }}
+                                            </span>
+                                        </div>
+                                        <div class="content">
+                                            {{ mb_substr($topic->content, 0, 150) }}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach

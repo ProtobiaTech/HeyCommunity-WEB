@@ -19,8 +19,9 @@ Route::get('/', function () {
 //
 // Topic
 Route::group(['prefix' => 'topic'], function() {
-    Route::get('/', 'TopicController@index');
+    Route::get('/', 'TopicController@index')->name('topic.index');
     Route::get('/{id}', 'TopicController@show')->name('topic.show');
+    Route::get('create', 'TopicController@create')->name('topic.create');
 });
 
 

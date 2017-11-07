@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Set Item Active
+ * Set Nav Active
  */
-function setItemActive($match)
+function setNavActive($match)
 {
     if (is_array($match)) {
         foreach ($match as $item) {
@@ -13,5 +13,15 @@ function setItemActive($match)
         }
     } else {
         return request()->is($match) ? 'active' : '';
+    }
+}
+
+/**
+ *
+ */
+function setParamActive($paramName, $value)
+{
+    if (request()->get($paramName) == $value) {
+        return 'active';
     }
 }

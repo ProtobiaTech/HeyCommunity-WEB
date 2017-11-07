@@ -50,10 +50,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/') }}">首页</a>
             </li>
-            <li class="nav-item {{ setItemActive('topic*') }}">
+            <li class="nav-item {{ setNavActive('topic*') }}">
                 <a class="nav-link" href="{{ url('topic') }}">话题</a>
             </li>
-            <li class="nav-item {{ setItemActive('activity*') }}">
+            <li class="nav-item {{ setNavActive('activity*') }}">
                 <a class="nav-link" href="{{ url('activity') }}">活动</a>
             </li>
         </ul>

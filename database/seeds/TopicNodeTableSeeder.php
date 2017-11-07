@@ -23,7 +23,7 @@ class TopicNodeTableSeeder extends Seeder
         $Node = \App\TopicNode::create(['name' => 'Node 3']);
         $rootNodes[] = $Node->makeRoot();
 
-        foreach (range(1, 6) as $index) {
+        foreach (range(1, 16) as $index) {
             $Node = \App\TopicNode::create([
                 'name'          =>      $faker->word(),
             ]);

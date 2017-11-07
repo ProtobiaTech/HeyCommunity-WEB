@@ -21,8 +21,13 @@
   margin-bottom: 15px;
 }
 
-#section-mainbody.page-topic-index .card-nodes .card-body .nodes-item span {
-  font-weight: 400;
+#section-mainbody.page-topic-index .card-nodes .card-body .nodes-item .rootNode {
+  color: #333;
+  font-weight: 500;
+}
+
+#section-mainbody.page-topic-index .card-nodes .card-body .nodes-item .active {
+  text-decoration: underline;
 }
 
 #section-mainbody.page-topic-index .card-tags {
@@ -100,6 +105,18 @@
   #section-mainbody.page-topic-show #section-comment-textarea h3 {
     text-align: center;
   }
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .avatar {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body {
+  padding-left: 50px;
+  width: 100%;
 }
 
 #section-mainbody.page-activity-index .carousel {

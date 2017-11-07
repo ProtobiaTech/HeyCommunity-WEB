@@ -1,3 +1,17 @@
+//
+//
 #section-pagination {
   margin-top: 20px;
+  overflow: hidden;
+}
+
+
+//
+//
+#section-breadcrumb {
+  .breadcrumb {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
 }

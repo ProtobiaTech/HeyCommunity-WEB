@@ -1,5 +1,12 @@
 #section-pagination {
   margin-top: 20px;
+  overflow: hidden;
+}
+
+#section-breadcrumb .breadcrumb {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 #section-mainbody.page-topic-index {
@@ -26,6 +33,12 @@
   margin-bottom: 15px;
 }
 
+@media (max-width: 767px) {
+  #section-mainbody.page-topic-index #section-right .right-tools {
+    text-align: center;
+  }
+}
+
 #section-mainbody.page-topic-index #section-right #section-topics .list-group-item .avatar {
   position: absolute;
   width: 40px;
@@ -34,13 +47,21 @@
 }
 
 #section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body {
-  margin-left: 50px;
-  padding-right: 50px;
+  padding-left: 50px;
   width: 100%;
+}
+
+#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title {
+  overflow: hidden;
 }
 
 #section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title a {
   font-weight: 400;
+  white-space: nowrap;
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title .info {
@@ -52,6 +73,33 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#section-mainbody.page-topic-show #section-operation .btn {
+  background-color: #fff;
+  color: #666;
+}
+
+#section-mainbody.page-topic-show #section-comment-list,
+#section-mainbody.page-topic-show #section-comment-textarea {
+  margin-top: 20px;
+}
+
+#section-mainbody.page-topic-show #section-comment-list h3 .badge,
+#section-mainbody.page-topic-show #section-comment-textarea h3 .badge {
+  color: #555;
+  background-color: #eee;
+  padding: 0.6em 0.8em;
+  width: 8em;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  #section-mainbody.page-topic-show #section-comment-list h3,
+  #section-mainbody.page-topic-show #section-comment-textarea h3 {
+    text-align: center;
+  }
 }
 
 #section-mainbody.page-activity-index .carousel {

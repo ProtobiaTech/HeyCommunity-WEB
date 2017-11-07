@@ -32,6 +32,10 @@
   #section-right {
     .right-tools {
       margin-bottom: 15px;
+
+      @media (max-width: 767px) {
+        text-align: center;
+      }
     }
 
     #section-topics {
@@ -44,13 +48,19 @@
         }
 
         .body {
-          margin-left: 50px;
-          padding-right: 50px;
+          padding-left: 50px;
           width: 100%;
 
           .title {
+            overflow: hidden;
+
             a {
               font-weight: 400;
+              white-space: nowrap;
+              width: 100%;
+              display: inline-block;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
 
             .info {

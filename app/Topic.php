@@ -13,4 +13,12 @@ class Topic extends BaseModel
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    /**
+     * Related TopicNode
+     */
+    public function node()
+    {
+        return $this->belongsTo('App\TopicNode', 'node_id');
+    }
 }

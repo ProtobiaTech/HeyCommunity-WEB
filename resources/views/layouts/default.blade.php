@@ -48,7 +48,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">首页</a>
+                <a class="nav-link {{ setNavActive('/') }}" href="{{ url('/') }}">首页</a>
             </li>
             <li class="nav-item {{ setNavActive('topic*') }}">
                 <a class="nav-link" href="{{ url('topic') }}">话题</a>

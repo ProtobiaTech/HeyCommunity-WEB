@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('/activity');
+//
+// Home
+Route::group([], function() {
+    Route::get('/', 'HomeController@index')->name('home.index');
 });
 
 

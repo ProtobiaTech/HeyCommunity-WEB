@@ -32,7 +32,7 @@ $(function () {
     },
     content: function () {
       var $nav = $('#js-popoverContent').clone()
-      return '<ul class="nav nav-pills nav-stacked flex-column" style="width: 120px">' + $nav.html() + '</ul>'
+      return '<ul id="user-popover" class="nav nav-pills nav-stacked flex-column">' + $nav.html() + '</ul>'
     }
   })
 

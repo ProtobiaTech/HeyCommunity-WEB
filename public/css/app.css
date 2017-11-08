@@ -1,3 +1,8 @@
+#user-popover {
+  min-width: 6em;
+  text-align: center;
+}
+
 #section-pagination {
   margin-top: 20px;
   overflow: hidden;
@@ -7,6 +12,12 @@
   background-color: #fff;
   border-bottom: 1px solid #ddd;
   border-radius: 0.25rem 0.25rem 0 0;
+}
+
+#section-mainbody.page-user-ucenter .profile-header {
+  height: auto !important;
+  padding-top: 4rem;
+  padding-bottom: 4.5rem;
 }
 
 #section-mainbody.page-topic-index {
@@ -44,23 +55,23 @@
   }
 }
 
-#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .avatar {
+#component-topic-list .list-group-item .avatar {
   position: absolute;
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
-#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body {
+#component-topic-list .list-group-item .body {
   padding-left: 50px;
   width: 100%;
 }
 
-#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title {
+#component-topic-list .list-group-item .body .title {
   overflow: hidden;
 }
 
-#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title a {
+#component-topic-list .list-group-item .body .title a {
   font-weight: 400;
   white-space: nowrap;
   width: 100%;
@@ -69,12 +80,12 @@
   text-overflow: ellipsis;
 }
 
-#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .title .info {
+#component-topic-list .list-group-item .body .title .info {
   position: absolute;
   right: 1.25rem;
 }
 
-#section-mainbody.page-topic-index #section-right #section-topics .list-group-item .body .content {
+#component-topic-list .list-group-item .body .content {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -146,26 +157,26 @@
   margin-bottom: 21px;
 }
 
-#section-mainbody.page-activity-index .card-activity {
+#section-mainbody.page-activity-index #section-pagination .pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#component-activity-card {
   margin-bottom: 20px;
 }
 
-#section-mainbody.page-activity-index .card-activity .card-body .card-title {
+#component-activity-card .card-body .card-title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 16px;
 }
 
-#section-mainbody.page-activity-index .card-activity .card-body .card-text {
+#component-activity-card .card-body .card-text {
   height: 44px;
   overflow: hidden;
-}
-
-#section-mainbody.page-activity-index #section-pagination .pagination {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 #section-mainbody.page-activity-show #section-row2 #section-body #nav-mainTabContent {

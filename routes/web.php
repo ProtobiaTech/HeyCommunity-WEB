@@ -19,6 +19,14 @@ Route::group([], function() {
 
 
 //
+// User
+Route::group(['prefix' => 'user'], function() {
+    Route::get('logout', 'UserController@logout')->name('user.logout');
+    Route::get('ucenter/{id}', 'UserController@ucenter')->name('user.ucenter');
+});
+
+
+//
 // Topic
 Route::group(['prefix' => 'topic'], function() {
     Route::get('/', 'TopicController@index')->name('topic.index');

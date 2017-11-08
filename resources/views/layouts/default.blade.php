@@ -29,7 +29,7 @@
 
 <body class="with-top-navbar">
 <!-- Nav -->
-<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
+<nav id="section-mainNav" class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
     <a class="navbar-brand" href="{{ url('/') }}">
         HeyCommunity
     </a>
@@ -81,7 +81,12 @@
 
         <ul class="nav navbar-nav d-none" id="js-popoverContent">
             @if (Auth::check())
-                <li class="nav-item"><a class="nav-link">Logout</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('user.ucenter', Auth::id()) }}">
+                    <i class="fa fa-id-card-o"></i> &nbsp; 主页
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('user.logout') }}">
+                    <i class="fa fa-sign-out"></i> &nbsp; 登出
+                </a></li>
             @else
                 <li class="nav-item"><a class="nav-link">Login</a></li>
             @endif

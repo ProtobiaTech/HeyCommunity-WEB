@@ -34,32 +34,32 @@
 
 
   //
-  // activity card
-  .card-activity {
-    margin-bottom: 20px;
-
-    .card-body {
-
-      .card-title {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: 16px;
-      }
-
-      .card-text {
-        height: 44px;
-        overflow: hidden;
-      }
-    }
-  }
-
-
-  //
   // Pagination
   #section-pagination {
     .pagination {
       justify-content: center;
+    }
+  }
+}
+
+
+//
+// activity card
+#component-activity-card {
+  margin-bottom: 20px;
+
+  .card-body {
+
+    .card-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 16px;
+    }
+
+    .card-text {
+      height: 44px;
+      overflow: hidden;
     }
   }
 }

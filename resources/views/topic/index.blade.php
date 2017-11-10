@@ -5,7 +5,7 @@
     <div class="container pt-4 pb-5">
         <div class="row">
             <div id="section-left" class="col-md-3">
-                <div class="left-tools">
+                <div class="left-tools d-none d-md-block">
                     <a class="btn btn-primary btn-block" href="{{ route('topic.create') }}">发布话题</a>
                 </div>
 
@@ -39,6 +39,8 @@
 
             <div id="section-right" class="col-md-9">
                 <div class="right-tools">
+                    <a class="btn btn-primary d-inline-block d-md-none pull-left" href="{{ route('topic.create') }}">发布话题</a>
+
                     <a class="btn btn-secondary {{ setParamActive('filter', 'recent') }}" href="{{ route('topic.index', ['filter' => 'recent']) }}">最近</a>
                     <a class="btn btn-secondary {{ setParamActive('filter', 'hot') }}" href="{{ route('topic.index', ['filter' => 'hot']) }}">最热</a>
                     &nbsp;&nbsp;

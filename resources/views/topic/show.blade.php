@@ -7,7 +7,9 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
                     <li class="breadcrumb-item"><a href="{{ url('topic') }}">话题</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('topic.index', ['node' => $topic->node->parent->name]) }}">{{ $topic->node->parent->name }}</a></li>
+                    @if ($topic->node->parent)
+                        <li class="breadcrumb-item"><a href="{{ route('topic.index', ['node' => $topic->node->parent->name]) }}">{{ $topic->node->parent->name }}</a></li>
+                    @endif
                     <li class="breadcrumb-item"><a href="{{ route('topic.index', ['node' => $topic->node->name]) }}">{{ $topic->node->name }}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">话题详情</li>
                 </ol>
@@ -60,7 +62,13 @@
                         <div class="card-body">
                             <h4 class="card-title">{{ $topic->title }}</h4>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <a class="d-none d-md-inline-block" href="{{ route('topic.index', ['node' => $topic->node->name]) }}">{{ $topic->node->name }}</a>
+                                <span class="d-none d-md-inline-block">
+                                    @if ($topic->node->parent)
+                                        <a href="{{ route('topic.index', ['node' => $topic->node->parent->name]) }}">{{ $topic->node->parent->name }}</a>
+                                        <span>/</span>
+                                    @endif
+                                    <a href="{{ route('topic.index', ['node' => $topic->node->name]) }}">{{ $topic->node->name }}</a>
+                                </span>
                                 <a class="d-inline-block d-md-none">{{ $topic->author->nickname }}</a>
                                 <span class="pull-right date">{{ $topic->created_at }}</span>
                             </h6>

@@ -20,6 +20,21 @@
   padding-bottom: 4.5rem;
 }
 
+#section-mainbody.page-user-uhome #section-body #mainTab {
+  background-color: #ddd;
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom: 1.5px solid #2881b3;
+}
+
+#section-mainbody.page-user-uhome #section-body #mainTab .nav-item {
+  border-radius: 0.25rem 0.25rem 0 0;
+  padding: 0.6rem 1.5rem;
+}
+
+#section-mainbody.page-user-uhome #section-body #nav-mainTabContent {
+  margin-top: 16px;
+}
+
 #section-mainbody.page-topic-index {
   margin-top: 10px;
 }

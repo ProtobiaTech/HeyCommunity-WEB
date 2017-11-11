@@ -23,6 +23,7 @@ Route::group([], function() {
 Route::group(['prefix' => 'user'], function() {
     Route::get('logout', 'UserController@logout')->name('user.logout');
     Route::get('ucenter/{id}', 'UserController@ucenter')->name('user.ucenter');
+    Route::get('uhome/{id}', 'UserController@uhome')->name('user.uhome');
 });
 
 

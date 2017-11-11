@@ -83,7 +83,7 @@ class TopicController extends Controller
         $this->validate($request, [
             'title'         =>      'required|string',
             'node_id'       =>      'required|integer',
-            'content'       =>      'required|string',
+            'content'       =>      'required|string|min:10',
         ]);
 
         $topic = new Topic();

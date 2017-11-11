@@ -3,6 +3,14 @@
 @section('mainBody')
     <div id="section-mainbody" class="page-module-page">
         <div class="container pt-4 pb-5">
+            <nav id="section-breadcrumb" aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('topic') }}">话题</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">发布话题</li>
+                </ol>
+            </nav>
+
             <div class="row">
                 <div class="col-md-3">
                     <div class="card">

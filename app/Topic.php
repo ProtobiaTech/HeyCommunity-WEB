@@ -21,4 +21,12 @@ class Topic extends BaseModel
     {
         return $this->belongsTo('App\TopicNode', 'node_id');
     }
+
+    /**
+     * Related TopicComment
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\TopicComment', 'topic_id');
+    }
 }

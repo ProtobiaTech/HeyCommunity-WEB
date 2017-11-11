@@ -11,6 +11,14 @@ class BaseModel extends Model
     protected $guarded = [];
 
     /**
+     * Relation User
+     */
+    public function author()
+    {
+        return $this->belongsTo('App\User', 'user_id');
+    }
+
+    /**
      * Mine Scope
      */
     public function scopeMine($query)

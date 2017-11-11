@@ -69,7 +69,7 @@
                                     @endif
                                     <a href="{{ route('topic.index', ['node' => $topic->node->name]) }}">{{ $topic->node->name }}</a>
                                 </span>
-                                <a class="d-inline-block d-md-none">{{ $topic->author->nickname }}</a>
+                                <a class="d-inline-block d-md-none" href="{{ route('user.uhome', $topic->author->id) }}">{{ $topic->author->nickname }}</a>
                                 <span class="pull-right date">{{ $topic->created_at }}</span>
                             </h6>
                             <p class="card-text">
@@ -79,32 +79,53 @@
                     </div>
 
                     <div id="section-comment-list">
-                        <h3><span class="badge badge-secondary">评论列表 <small>(11)</small></span></h3>
-                        @foreach (range(1, 5) as $comment)
+                        <h3><span class="badge badge-secondary">评论列表 <small>({{ $topic->comments()->count() }})</small></span></h3>
+                        @foreach ($topic->comments as $comment)
                             <div class="card">
                                 <div class="card-body">
-                                    <a class="avatar" href="#"><img class="avatar" src="{{ asset($topic->author->avatar) }}"></a>
+                                    <a class="avatar" href="{{ route('user.uhome', $comment->author->id) }}"><img class="avatar" src="{{ asset($comment->author->avatar) }}"></a>
                                     <div class="pull-left body">
                                         <div class="title">
-                                            <a href="#">{{ $topic->author->nickname }}</a>
-                                            <span class="info pull-right">
-                                                {{ $topic->created_at }}
+                                            <a href="{{ route('user.uhome', $comment->author->id) }}">{{ $comment->author->nickname }}</a>
+                                            <span class="info pull-right text-muted">
+                                                <span><b>#{{ $comment->floor_number }}</b></span>
+                                                &nbsp;&nbsp;
+                                                {{ $comment->created_at }}
                                             </span>
                                         </div>
                                         <div class="content">
-                                            {{ mb_substr($topic->content, 0, 150) }}
+                                            {{ $comment->content }}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
+
+                        @if (!$topic->comments()->count())
+                            <div class="card">
+                                <div class="card-body">
+                                    暂无评论
+                                </div>
+                            </div>
+                        @endif
                     </div>
 
                     <div id="section-comment-textarea">
                         <h3><span class="badge badge-secondary">我要评论</span></h3>
                         <div class="card">
                             <div class="card-body">
-                                <textarea id="input-comment-textarea" class="form-control" rows="3"></textarea>
+                                <form action="{{ route('topic.comment.store') }}" method="post">
+                                    <input type="hidden" name="topic_id" value="{{ $topic->id }}">
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group">
+                                        <textarea name="content" class="form-control" rows="3">{{ old('content') }}</textarea>
+                                        <div class="text-danger">{{ $errors->first('content') }}</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button class="btn btn-primary pl-4 pr-4" type="submit">发布</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -112,20 +133,7 @@
 
                 <!-- Info -->
                 <div id="section-right" class="col-md-3 d-none d-md-block">
-                    <div class="card card-profile mb-4">
-                        <div class="card-header" style="background-image: url(assets/img/iceland.jpg);"></div>
-                        <div class="card-body text-center">
-                            <a href="profile/index.html">
-                                <img class="card-profile-img" src="{{ asset($topic->author->avatar) }}">
-                            </a>
-
-                            <h6 class="card-title">
-                                <a class="text-inherit" href="profile/index.html">{{ $topic->author->nickname }}</a>
-                            </h6>
-
-                            <p class="mb-4">{{ $topic->author->bio }}</p>
-                        </div>
-                    </div>
+                    @include('user._user_profile_card', ['user' => $topic->author])
                 </div>
             </div>
         </div>

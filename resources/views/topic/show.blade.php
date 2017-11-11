@@ -119,7 +119,7 @@
                                     {{ csrf_field() }}
 
                                     <div class="form-group">
-                                        <textarea name="content" class="form-control" rows="3">{{ old('content') }}</textarea>
+                                        <textarea name="content" id="input-comment-textarea" class="form-control" rows="3">{{ old('content') }}</textarea>
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>
                                     <div class="pull-right">

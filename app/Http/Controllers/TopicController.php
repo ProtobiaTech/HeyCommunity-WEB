@@ -61,6 +61,7 @@ class TopicController extends Controller
     public function show($id)
     {
         $topic = Topic::findOrFail($id);
+        $topic->increment('read_num');
 
         return view('topic.show', compact('topic'));
     }

@@ -29,6 +29,8 @@ class TopicCommentController extends Controller
         $topicComment = $topic->comments()->create($commentInfo);
 
         if ($topicComment) {
+            $topic->increment('comment_num');
+
             return redirect()->route('topic.show', $topic->id);
         } else {
             return back()->withInput();

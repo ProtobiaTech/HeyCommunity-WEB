@@ -35,7 +35,7 @@
 
                     <br>
                     <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between">
+                        <a href="{{ route('notification.index') }}" class="list-group-item list-group-item-action d-flex justify-content-between">
                             <span>通知</span>
                             <span class="icon icon-chevron-thin-right"></span>
                         </a>

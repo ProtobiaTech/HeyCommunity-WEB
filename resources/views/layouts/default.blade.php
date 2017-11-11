@@ -64,7 +64,7 @@
 
         <ul id="#js-popoverContent" class="nav navbar-nav float-right mr-0 d-none d-md-flex">
             <li class="nav-item">
-                <a class="app-notifications nav-link">
+                <a class="app-notifications nav-link" href="{{ route('notification.index') }}">
                     <span class="icon icon-bell"></span>
                 </a>
             </li>

@@ -27,6 +27,13 @@ Route::group(['prefix' => 'user'], function() {
 
 
 //
+// Notice
+Route::group(['prefix' => 'notification'], function() {
+    Route::get('/', 'NotificationController@index')->name('notification.index');
+});
+
+
+//
 // Topic
 Route::group(['prefix' => 'topic'], function() {
     Route::get('/', 'TopicController@index')->name('topic.index');

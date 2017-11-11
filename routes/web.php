@@ -38,8 +38,9 @@ Route::group(['prefix' => 'notification'], function() {
 // Topic
 Route::group(['prefix' => 'topic'], function() {
     Route::get('/', 'TopicController@index')->name('topic.index');
-    Route::get('/{id}', 'TopicController@show')->name('topic.show');
+    Route::get('/{id}', 'TopicController@show')->name('topic.show')->where('id', '[0-9]+');
     Route::get('create', 'TopicController@create')->name('topic.create');
+    Route::post('store', 'TopicController@store')->name('topic.store');
 });
 
 

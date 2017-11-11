@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Topic;
 use App\TopicNode;
 
@@ -55,7 +56,7 @@ class TopicController extends Controller
     }
 
     /**
-     *
+     * Show a topic
      */
     public function show($id)
     {
@@ -63,4 +64,39 @@ class TopicController extends Controller
 
         return view('topic.show', compact('topic'));
     }
+
+    /**
+     * Create topic page
+     */
+    public function create()
+    {
+        $rootNodes = TopicNode::roots()->with('childNodes')->get();
+
+        return view('topic.create', compact('rootNodes'));
+    }
+
+    /**
+     * Store topic
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title'         =>      'required|string',
+            'node_id'       =>      'required|integer',
+            'content'       =>      'required|string',
+        ]);
+
+        $topic = new Topic();
+        $topic->title = $request->title;
+        $topic->content = $request->content;
+        $topic->node_id = $request->node_id;
+        $topic->user_id = Auth::id();
+
+        if ($topic->save()) {
+            return redirect()->route('topic.show', $topic->id);
+        } else {
+            return back()->withInput();
+        }
+    }
+
 }

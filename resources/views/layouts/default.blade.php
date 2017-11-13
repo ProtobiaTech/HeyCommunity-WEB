@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>HeyCommunity V4</title>
 
@@ -112,5 +113,6 @@
         }
     })
 </script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

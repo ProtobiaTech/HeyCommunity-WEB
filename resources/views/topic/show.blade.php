@@ -25,40 +25,32 @@
                         <i class="pull-left fa fa-reply"></i> 回复
                     </a>
 
-                    <a class="btn btn-block btn-secondary" onclick="event.preventDefault();
-                   document.getElementById('topic-thumb-up').submit();"><i class="pull-left fa fa-thumbs-o-up"></i> 点赞</a>
-                    <a class="btn btn-block btn-secondary" onclick="event.preventDefault();
-                   document.getElementById('topic-thumb-down').submit();"><i class="pull-left fa fa-thumbs-o-down"></i> 点踩</a>
-                    <a class="btn btn-block btn-secondary" onclick="event.preventDefault();
-                   document.getElementById('topic-star-form').submit();"><i class="pull-left fa fa-star-o"></i> 收藏</a>
-
-                    <div style="display: none">
-                        <form method="POST" action="http://the.hey-community.com/topic/set-thumb" accept-charset="UTF-8" id="topic-thumb-up"><input name="_token" type="hidden" value="OlxgtSIpuqRrZj8g9LFnziDt6l1Cn9lFmuuiVHyl">
-                            <input type="hidden" name="_token" value="OlxgtSIpuqRrZj8g9LFnziDt6l1Cn9lFmuuiVHyl">
-                            <input name="id" type="hidden" value="17">
-                            <input name="value" type="hidden" value="up">
-                        </form>
-                    </div>
-
-                    <div style="display: none">
-                        <form method="POST" action="http://the.hey-community.com/topic/set-thumb" accept-charset="UTF-8" id="topic-thumb-down"><input name="_token" type="hidden" value="OlxgtSIpuqRrZj8g9LFnziDt6l1Cn9lFmuuiVHyl">
-                            <input type="hidden" name="_token" value="OlxgtSIpuqRrZj8g9LFnziDt6l1Cn9lFmuuiVHyl">
-                            <input name="id" type="hidden" value="17">
-                            <input name="value" type="hidden" value="down">
-                        </form>
-                    </div>
-
-                    <div style="display: none">
-                        <form method="POST" action="http://the.hey-community.com/topic/set-star" accept-charset="UTF-8" id="topic-star-form"><input name="_token" type="hidden" value="OlxgtSIpuqRrZj8g9LFnziDt6l1Cn9lFmuuiVHyl">
-                            <input type="hidden" name="_token" value="OlxgtSIpuqRrZj8g9LFnziDt6l1Cn9lFmuuiVHyl">
-                            <input name="id" type="hidden" value="17">
-                        </form>
-                    </div>
+                    <a class="btn btn-block btn-secondary" href="javascript:postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_up', topic_id: {{  $topic->id }}})">
+                        @if ($topic->isUserThumbUp)
+                            <i class="pull-left fa fa-thumbs-up"></i> 已赞
+                        @else
+                            <i class="pull-left fa fa-thumbs-o-up"></i> 点赞
+                        @endif
+                    </a>
+                    <a class="btn btn-block btn-secondary" href="javascript:postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_down', topic_id: {{  $topic->id }}})">
+                        @if ($topic->isUserThumbDown)
+                            <i class="pull-left fa fa-thumbs-down"></i> 已踩
+                        @else
+                            <i class="pull-left fa fa-thumbs-o-down"></i> 点踩
+                        @endif
+                    </a>
+                    <a class="btn btn-block btn-secondary" href="javascript:postSubmit('{{ route('topic.favorite') }}', {topic_id: {{  $topic->id }}})">
+                        @if ($topic->isUserFavorite)
+                            <i class="pull-left fa fa-star"></i> 已收藏
+                        @else
+                            <i class="pull-left fa fa-star-o"></i> 收藏
+                        @endif
+                    </a>
                 </div>
 
                 <!-- body -->
                 <div class="col-md-7">
-                    <div class="card">
+                    <div id="topic-card" class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ $topic->title }}</h4>
                             <h6 class="card-subtitle mb-2 text-muted">
@@ -75,6 +67,22 @@
                             <p class="card-text">
                                 {{ $topic->content }}
                             </p>
+
+                            <div class="footer">
+                                <div class="pull-right">
+                                    <div class="topic-info text-muted">
+                                        {{ $topic->favorite_num }} 收藏
+                                        &nbsp;/&nbsp;
+                                        {{ $topic->thumb_up_num }} 赞
+                                        &nbsp;/&nbsp;
+                                        {{ $topic->thumb_down_num }} 踩
+                                        &nbsp;/&nbsp;
+                                        {{ $topic->comment_num }} 评论
+                                        &nbsp;/&nbsp;
+                                        {{ $topic->read_num }} 阅读
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

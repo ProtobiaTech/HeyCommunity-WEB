@@ -41,6 +41,8 @@ Route::group(['prefix' => 'topic'], function() {
     Route::get('/{id}', 'TopicController@show')->name('topic.show')->where('id', '[0-9]+');
     Route::get('create', 'TopicController@create')->name('topic.create');
     Route::post('store', 'TopicController@store')->name('topic.store');
+    Route::post('thumb', 'TopicController@thumb')->name('topic.thumb');
+    Route::post('favorite', 'TopicController@favorite')->name('topic.favorite');
 
     // Topic Comment
     Route::group(['prefix' => 'comment'], function() {

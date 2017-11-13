@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Topic extends BaseModel
 {
@@ -28,5 +29,57 @@ class Topic extends BaseModel
     public function comments()
     {
         return $this->hasMany('App\TopicComment', 'topic_id');
+    }
+
+    /**
+     * Relation TopicThumb
+     */
+    public function userThumb($userId = null)
+    {
+        $userId = $userId ?: Auth::id();
+
+        return $this->hasOne('App\TopicThumb', 'topic_id')->where(['user_id' => $userId]);
+    }
+
+    /**
+     * Relation TopicFavorite
+     */
+    public function userFavorite($userId = null)
+    {
+        $userId = $userId ?: Auth::id();
+
+        return $this->hasOne('App\TopicFavorite', 'topic_id')->where(['user_id' => $userId]);
+    }
+
+    /**
+     * Get is user thumb up
+     */
+    public function getIsUserThumbUpAttribute()
+    {
+        if ($this->userThumb()->exists()) {
+            return $this->userThumb->type_id == TopicThumb::$types['thumb_up'];
+        }
+
+        return false;
+    }
+
+    /**
+     * Get is user thumb up
+     */
+    public function getIsUserThumbDownAttribute()
+    {
+        if ($this->userThumb()->exists()) {
+            return $this->userThumb->type_id == TopicThumb::$types['thumb_down'];
+        }
+
+        return false;
+    }
+
+    /**
+     * Get is user thumb up
+     */
+    public function getIsUserFavoriteAttribute()
+    {
+        return $this->userFavorite()->exists();
     }
 }

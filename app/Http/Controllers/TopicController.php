@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 use App\Topic;
 use App\TopicNode;
+use App\TopicThumb;
+use App\TopicFavorite;
 
 class TopicController extends Controller
 {
@@ -100,4 +103,48 @@ class TopicController extends Controller
         }
     }
 
+    /**
+     * Topic Thumb
+     */
+    public function thumb(Request $request)
+    {
+        $this->validate($request, [
+            'topic_id'      =>  'required|integer',
+            'type'          =>  'required|string',
+        ]);
+
+        $topic = Topic::findOrFail($request->topic_id);
+        if ($topic->userThumb) {
+            $typeId = TopicThumb::$types[$request->type];
+
+            if ($typeId != $topic->userThumb->type_id) {
+                $topic->userThumb->toggleThumb();
+            } else {
+                $topic->userThumb->deleteThumb();
+            }
+        } else {
+            TopicThumb::createThumb($topic, $request->type);
+        }
+
+        return back();
+    }
+
+    /**
+     * Topic Favorite
+     */
+    public function favorite(Request $request)
+    {
+        $this->validate($request, [
+            'topic_id'      =>  'required|integer',
+        ]);
+
+        $topic = Topic::findOrFail($request->topic_id);
+        if ($topic->userFavorite) {
+            $topic->userFavorite->deleteFavorite();
+        } else {
+            TopicFavorite::createFavorite($topic);
+        }
+
+        return back();
+    }
 }

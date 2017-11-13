@@ -110,6 +110,10 @@
   color: #666;
 }
 
+#section-mainbody.page-topic-show #topic-card .footer .topic-info {
+  font-size: 12px;
+}
+
 #section-mainbody.page-topic-show #section-comment-list,
 #section-mainbody.page-topic-show #section-comment-textarea {
   margin-top: 20px;

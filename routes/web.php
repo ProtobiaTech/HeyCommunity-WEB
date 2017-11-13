@@ -13,14 +13,18 @@
 
 //
 // Home
-Route::group([], function() {
-    Route::get('/', 'HomeController@index')->name('home.index');
+Route::group([], function () {
+    Route::get('/', function () {
+        return redirect()->route('topic.index');
+    });
+
+    // Route::get('/', 'HomeController@index')->name('home.index');
 });
 
 
 //
 // User
-Route::group(['prefix' => 'user'], function() {
+Route::group(['prefix' => 'user'], function () {
     Route::get('logout', 'UserController@logout')->name('user.logout');
     Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
     Route::get('uhome/{id}', 'UserController@uhome')->name('user.uhome');
@@ -29,14 +33,14 @@ Route::group(['prefix' => 'user'], function() {
 
 //
 // Notice
-Route::group(['prefix' => 'notification'], function() {
+Route::group(['prefix' => 'notification'], function () {
     Route::get('/', 'NotificationController@index')->name('notification.index');
 });
 
 
 //
 // Topic
-Route::group(['prefix' => 'topic'], function() {
+Route::group(['prefix' => 'topic'], function () {
     Route::get('/', 'TopicController@index')->name('topic.index');
     Route::get('/{id}', 'TopicController@show')->name('topic.show')->where('id', '[0-9]+');
     Route::get('create', 'TopicController@create')->name('topic.create');
@@ -45,7 +49,7 @@ Route::group(['prefix' => 'topic'], function() {
     Route::post('favorite', 'TopicController@favorite')->name('topic.favorite');
 
     // Topic Comment
-    Route::group(['prefix' => 'comment'], function() {
+    Route::group(['prefix' => 'comment'], function () {
         Route::post('store', 'TopicCommentController@store')->name('topic.comment.store');
     });
 });
@@ -53,7 +57,7 @@ Route::group(['prefix' => 'topic'], function() {
 
 //
 // Activity
-Route::group(['prefix' => 'activity'], function() {
+Route::group(['prefix' => 'activity'], function () {
     Route::get('/', 'ActivityController@index');
     Route::get('/{id}', 'ActivityController@show')->name('activity.show');
 });

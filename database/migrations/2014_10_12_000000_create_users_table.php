@@ -16,7 +16,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('wx_open_id')->nullable()->comment('Wechat Open ID');
+            $table->string('wx_union_id')->nullable()->comment('Wechat Union ID');
             $table->string('nickname')->comment('Nickname');
+            $table->string('gender')->nullable()->comment('Gender');
+            $table->string('bio')->nullable()->comment('Bio');
             $table->string('avatar')->default('/images/avatar/default.png')->comment('Avatar');
             $table->string('phone')->nullable()->comment('Phone');
             $table->string('email')->nullable()->comment('Email');

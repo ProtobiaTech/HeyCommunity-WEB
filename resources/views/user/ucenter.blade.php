@@ -8,8 +8,7 @@
                     <img class="rounded-circle media-object" src="{{ asset($user->avatar) }}">
                     <h3 class="profile-header-user">{{ $user->nickname }}</h3>
                     <p class="profile-header-bio">
-                        {{ $user->bio }}
-                        暂无个性签名
+                        {{ $user->bio ?: '暂无签名' }}
                     </p>
                 </div>
             </div>

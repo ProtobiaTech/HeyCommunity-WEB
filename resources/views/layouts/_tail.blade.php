@@ -1,6 +1,7 @@
 <div class="card card-link-list">
-    <div class="card-body">
+    <div class="card-body text-nowrap">
         © 2018 HeyCommunity
+        <!--
         <a href="#">About</a>
         <a href="#">Help</a>
         <a href="#">Terms</a>
@@ -14,5 +15,6 @@
         <a href="#">Apps</a>
         <a href="#">Jobs</a>
         <a href="#">Advertise</a>
+        -->
     </div>
 </div>

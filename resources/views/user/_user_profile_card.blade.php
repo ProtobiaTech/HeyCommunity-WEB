@@ -9,6 +9,6 @@
             <a class="text-inherit" href="{{ route('user.uhome', $user->id) }}">{{ $user->nickname }}</a>
         </h6>
 
-        <p class="mb-4">{{ $user->bio }}</p>
+        <p class="mb-4">{{ $user->bio ?: '暂无签名' }}</p>
     </div>
 </div>

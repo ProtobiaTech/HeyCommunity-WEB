@@ -24,6 +24,7 @@ class UserTableSeeder extends Seeder
             $data[] = [
                 'nickname'      =>      $faker->name(),
                 'avatar'        =>      $avatarUrl,
+                'bio'           =>      $faker->sentence(),
 
                 'created_at'    =>      $faker->dateTimeThisMonth(),
                 'updated_at'    =>      $faker->dateTimeThisMonth(),

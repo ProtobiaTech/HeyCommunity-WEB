@@ -11,6 +11,18 @@
                         </li>
 
                         <li class="list-group-item media p-4">
+                            <span class="icon icon-text text-muted mr-2"></span>
+
+                            <div class="media-body">
+                                <small class="text-muted float-right"></small>
+                                <div class="media-heading">
+                                    暂不可用
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--
+                        <li class="list-group-item media p-4">
                             <span class="icon icon-globe text-muted mr-2"></span>
 
                             <div class="media-body">
@@ -171,10 +183,12 @@
                                 </div>
                             </div>
                         </li>
+                        -->
                     </ul>
                 </div>
 
                 <div class="col-md-3">
+                    <!--
                     <div class="card mb-4 d-none d-lg-block">
                         <div class="card-body">
                             <h6 class="mb-3">Active Users <small>· <a href="#">View All</a></small></h6>
@@ -205,6 +219,7 @@
                             Dave really likes these nerds, no one knows why though.
                         </div>
                     </div>
+                    -->
 
                     @include('layouts._tail')
                 </div>

@@ -54,11 +54,9 @@
             <li class="nav-item {{ setNavActive('topic*') }}">
                 <a class="nav-link" href="{{ url('topic') }}">话题</a>
             </li>
-            <!--
             <li class="nav-item {{ setNavActive('activity*') }}">
                 <a class="nav-link" href="{{ url('activity') }}">活动</a>
             </li>
-            -->
         </ul>
 
         <form class="form-inline float-right d-none d-md-flex">
@@ -84,7 +82,7 @@
 
         <ul class="nav navbar-nav d-none" id="js-popoverContent">
             @if (Auth::check())
-                <li class="nav-item"> <a class="nav-link" href="{{ route('user.ucenter', Auth::id()) }}">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('user.ucenter') }}">
                     <i class="fa fa-id-card-o"></i> &nbsp; 用户中心
                 </a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('user.logout') }}">

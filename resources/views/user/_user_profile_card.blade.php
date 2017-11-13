@@ -1,5 +1,5 @@
 <div class="card card-profile mb-4">
-    <div class="card-header" style="background-image: url({{ asset('assets/bootstrap-application-theme/img/iceland.jpg') }});"></div>
+    <div class="card-header" style="background-image: url('{{ asset($user->profile_bg_img) }}');"></div>
     <div class="card-body text-center">
         <a href="{{ route('user.uhome', $user->id)  }}">
             <img class="card-profile-img" src="{{ asset($user->avatar) }}">

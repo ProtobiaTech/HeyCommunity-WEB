@@ -20,7 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('nickname')->comment('Nickname');
             $table->string('gender')->nullable()->comment('Gender');
             $table->string('bio')->nullable()->comment('Bio');
-            $table->string('avatar')->default('/images/avatar/default.png')->comment('Avatar');
+            $table->string('avatar')->default('/images/user/avatar/default.png')->comment('Avatar');
+            $table->string('profile_bg_img')->default('/images/user/profile_bg_img.jpg')->comment('Avatar');
             $table->string('phone')->nullable()->comment('Phone');
             $table->string('email')->nullable()->comment('Email');
             $table->string('password')->nullable()->comment('Password');

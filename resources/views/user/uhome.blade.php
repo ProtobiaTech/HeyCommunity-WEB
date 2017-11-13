@@ -9,14 +9,17 @@
 
                     <div class="card d-md-block d-lg-block mb-4">
                         <div class="card-body">
-                            <h6 class="mb-3">用户资料 <small>· <a href="#">编辑</a></small></h6>
+                            <h6 class="mb-3">
+                                用户资料
+                                <!--
+                                <small> · <a href="#">编辑</a></small>
+                                -->
+                            </h6>
                             <ul class="list-unstyled list-spaced">
-                                <li><span class="text-muted icon icon-calendar mr-3"></span>Went to <a href="#">Oh, Canada</a>
-                                </li><li><span class="text-muted icon icon-users mr-3"></span>Became friends with <a href="#">Obama</a>
-                                </li><li><span class="text-muted icon icon-github mr-3"></span>Worked at <a href="#">Github</a>
-                                </li><li><span class="text-muted icon icon-home mr-3"></span>Lives in <a href="#">San Francisco, CA</a>
-                                </li><li><span class="text-muted icon icon-location-pin mr-3"></span>From <a href="#">Seattle, WA</a>
-                                </li></ul>
+                                <li><span class="text-muted icon icon-user mr-3"></span>U{{ $user->id }}</li>
+                                <li><span class="text-muted icon icon-calendar mr-3"></span>注册于 {{ $user->created_at->format('Ymd') }}, 第 {{ $user->id }} 名会员 </li>
+                                <li><span class="text-muted icon icon-location-pin mr-3"></span>中国大陆</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

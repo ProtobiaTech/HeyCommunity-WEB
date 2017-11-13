@@ -2,7 +2,7 @@
 
 @section('mainBody')
     <div id="section-mainbody" class="page-user-ucenter">
-        <div class="profile-header" style="background-image: url(/assets/bootstrap-application-theme/img/iceland.jpg);">
+        <div class="profile-header" style="background-image: url('{{ asset($user->profile_bg_img) }}');">
             <div class="container">
                 <div class="container-inner">
                     <img class="rounded-circle media-object" src="{{ asset($user->avatar) }}">

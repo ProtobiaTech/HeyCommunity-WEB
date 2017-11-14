@@ -4,11 +4,10 @@
 <div id="section-mainbody" class="page-user-login">
     <div class="container-fluid container-fill-height">
         <div class="container-content-middle">
-            <form action="{{ route('user.login-handler') }}" method="post" class="mx-auto text-center app-login-form">
+            <form action="{{ route('user.login-handler') }}" method="post" class="mx-auto app-login-form">
                 {{ csrf_field() }}
 
-                <h2 class="text-center ">HeyCommunity V4</h2>
-                <br>
+                <h2 class="text-center">欢迎登入</h2>
                 <br>
 
                 @if ($errors)
@@ -27,7 +26,7 @@
                     <input class="form-control" type="password" name="password" value="{{ old('password') }}" placeholder="密码">
                 </div>
 
-                <div class="mb-5">
+                <div class="mb-5 text-center">
                     <button class="btn btn-primary">登入</button>
                     <a class="btn btn-secondary btn-link" href="{{ route('user.signup') }}">注册</a>
                 </div>

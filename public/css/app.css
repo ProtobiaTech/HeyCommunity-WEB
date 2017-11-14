@@ -2,6 +2,10 @@
   min-width: 6em;
 }
 
+button {
+  cursor: pointer;
+}
+
 #section-pagination {
   margin-top: 20px;
   overflow: hidden;

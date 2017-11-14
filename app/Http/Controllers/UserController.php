@@ -18,7 +18,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['only' => ['logout']]);
-        $this->middleware('guest', ['only' => ['login', 'loginHandler']]);
+        $this->middleware('guest', ['only' => ['login', 'loginHandler', 'signup', 'signupHandler']]);
     }
 
     /**
@@ -30,8 +30,8 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    /*
-     * Login Page
+    /**
+     * Login page
      */
     public function login()
     {
@@ -39,7 +39,7 @@ class UserController extends Controller
     }
 
     /**
-     * Login Handler
+     * Login handler
      */
     public function loginHandler(Request $request)
     {
@@ -56,16 +56,41 @@ class UserController extends Controller
     }
 
     /**
-     *
+     * Sign up page
      */
-    public function getSignup()
+    public function signup()
     {
-        return view('auth.signup');
+        return view('user.signup');
     }
 
+    /**
+     * Sign up handler
+     */
+    public function signupHandler(Request $request)
+    {
+        $this->validate($request, [
+            'nickname'  =>  'required|string',
+            'phone'     =>  'required|string|unique:users',
+            'password'  =>  'required',
+        ]);
+
+        $user = new User;
+        $user->nickname     =   $request->nickname;
+        $user->phone        =   $request->phone;
+        $user->password     =   Hash::make($request->password);
+        $user->avatar       =   '/images/user/avatars/default/' . random_int(1, 15) . '.png';
+
+        if ($user->save()) {
+            Auth::login($user);
+
+            return redirect('/');
+        } else {
+            return back();
+        }
+    }
 
     /**
-     * User Center
+     * User center
      */
     public function ucenter()
     {
@@ -77,7 +102,7 @@ class UserController extends Controller
     }
 
     /**
-     * User Home
+     * User home
      */
     public function uhome($id)
     {

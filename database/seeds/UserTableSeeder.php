@@ -12,6 +12,18 @@ class UserTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $defaultUser = [
+            'phone'         =>      '12312341234',
+            'password'      =>      Hash::make('hey community'),
+            'nickname'      =>      'HC',
+            'bio'           =>      $faker->sentence(),
+
+            'created_at'    =>      $faker->dateTimeThisMonth(),
+            'updated_at'    =>      $faker->dateTimeThisMonth(),
+        ];
+        \App\User::insert($defaultUser);
+
+
         foreach (range(1, 10) as $index) {
             // avatar
             if (env('FAKER_IMAGE_STORAGE', false)) {
@@ -26,6 +38,8 @@ class UserTableSeeder extends Seeder
             }
 
             $data[] = [
+                'phone'         =>      $faker->phoneNumber(),
+                'password'      =>      Hash::make('hey community'),
                 'nickname'      =>      $faker->name(),
                 'avatar'        =>      $avatarUrl,
                 'profile_bg_img'    =>  $profileBgImgUrl,

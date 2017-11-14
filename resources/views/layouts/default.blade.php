@@ -89,7 +89,11 @@
                     <i class="fa fa-sign-out"></i> &nbsp; 登出
                 </a></li>
             @else
-                <li class="nav-item"><a class="nav-link">Login</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.login') }}">
+                        <i class="fa fa-sign-in"></i> &nbsp; 登入
+                    </a>
+                </li>
             @endif
         </ul>
     </div>

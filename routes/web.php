@@ -16,6 +16,9 @@ include_once 'web-admin.php';
 //
 // Home
 Route::group([], function () {
+    Route::get('home', function () {
+        return redirect()->route('topic.index');
+    });
     Route::get('/', function () {
         return redirect()->route('topic.index');
     });
@@ -27,7 +30,12 @@ Route::group([], function () {
 //
 // User
 Route::group(['prefix' => 'user'], function () {
+    Route::get('signup', 'UserController@signup')->name('user.signup');
+    Route::post('signup', 'UserController@signupHandler')->name('user.signup-handler');
+    Route::get('login', 'UserController@login')->name('user.login');
+    Route::post('login', 'UserController@loginHandler')->name('user.login-handler');
     Route::get('logout', 'UserController@logout')->name('user.logout');
+
     Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
     Route::get('uhome/{id}', 'UserController@uhome')->name('user.uhome');
 });

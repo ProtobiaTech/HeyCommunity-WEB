@@ -60,7 +60,7 @@
         </ul>
 
         <form class="form-inline float-right d-none d-md-flex">
-            <input class="form-control" type="text" data-action="grow" placeholder="搜索暂不可用">
+            <input class="form-control" type="text" data-action="grow" placeholder="搜索暂不可用" disabled>
         </form>
 
         <ul id="#js-popoverContent" class="nav navbar-nav float-right mr-0 d-none d-md-flex">
@@ -72,9 +72,9 @@
             <li class="nav-item ml-2">
                 <button class="btn btn-default navbar-btn navbar-btn-avatar" data-toggle="popover">
                     @if (Auth::check())
-                        <img class="rounded-circle" src="{{ Auth::user()->avatar }}">
+                        <img class="rounded-circle" src="{{ asset(Auth::user()->avatar) }}">
                     @else
-                        <img class="rounded-circle" src="{{ User::guestAvatar() }}">
+                        <img class="rounded-circle" src="{{ asset(\App\User::guestAvatar()) }}">
                     @endif
                 </button>
             </li>

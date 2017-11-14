@@ -23,6 +23,6 @@ class User extends Authenticatable
 
     public static function guestAvatar()
     {
-        return '/images/avatars/guest.png';
+        return '/images/user/avatars/guest.jpg';
     }
 }

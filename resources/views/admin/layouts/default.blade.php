@@ -44,7 +44,7 @@
                     </div>
                     <form class="navbar-form pull-left" role="search">
                         <div class="form-group">
-                            <input type="text" class="form-control search-bar" placeholder="Search...">
+                            <input type="text" class="form-control search-bar" placeholder="搜索暂不可用" disabled>
                         </div>
                         <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
                     </form>
@@ -102,9 +102,9 @@
                             <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                                 <img src="{{ asset('assets/webadmin/images/users/avatar-1.jpg') }}" alt="user-img" class="img-circle">
                                 <span class="profile-username">
-                                            Kenny Rigdon <br/>
-                                            <small>Developer</small>
-                                        </span>
+                                    Admin <br/>
+                                    <small>Administrator</small>
+                                </span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)"> Profile</a></li>
@@ -124,17 +124,6 @@
     <!-- ========== Left Sidebar Start ========== -->
     <div class="left side-menu">
         <div class="sidebar-inner slimscrollleft">
-            <div class="user-details">
-                <div class="text-center">
-                    <img src="{{ asset('assets/webadmin/images/users/avatar-1.jpg') }}" alt="" class="img-circle">
-                </div>
-                <div class="user-info">
-                    <div class="dropdown">
-                        <a href="#" class="dropdown-toggle">Admin</a>
-                    </div>
-                </div>
-            </div>
-
             <div id="sidebar-menu">
                 <ul>
                     <li>
@@ -151,7 +140,7 @@
                             <span class="pull-right"><i class="mdi mdi-plus"></i></span>
                         </a>
                         <ul class="list-unstyled">
-                            <li class="{{ setNavActive('admin/topic/*') }}"><a href="{{ route('admin.topic.index') }}">话题列表</a></li>
+                            <li><a href="{{ route('admin.topic.index') }}">话题列表</a></li>
                             <li><a href="{{ route('admin.topic.node.index') }}">节点管理</a></li>
                         </ul>
                     </li>
@@ -169,7 +158,7 @@
         </div>
 
         <footer class="footer">
-            © 2016 WebAdmin - All Rights Reserved.
+            &copy;2017 HeyCommunity V4 - All Rights Reserved.
         </footer>
     </div>
 </div>

@@ -112,4 +112,41 @@ class UserController extends Controller
 
         return view('user.uhome', compact('user', 'myTopics', 'myActivities'));
     }
+
+    /**
+     *  User profile
+     */
+    public function profile()
+    {
+        $user = Auth::user();
+
+        return view('user.profile', compact('user'));
+    }
+
+    /**
+     * User profile update
+     */
+    public function profileUpdate(Request $request)
+    {
+        $this->validate($request, [
+            'nickname'      =>  'required|string',
+            'gender'        =>  'required|integer',
+            'phone'         =>  'required|string',
+            'email'         =>  'required|string',
+            'bio'           =>  'required|string',
+        ]);
+
+        $user = Auth::user();
+        $user->nickname = $request->nickname;
+        $user->gender = $request->gender;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->bio = $request->bio;
+
+        if ($user->save()) {
+            return back();
+        } else {
+            return back()->withInput();
+        }
+    }
 }

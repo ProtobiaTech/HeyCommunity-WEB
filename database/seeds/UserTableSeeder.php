@@ -13,10 +13,12 @@ class UserTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         $defaultUser = [
-            'phone'         =>      '12312341234',
-            'password'      =>      Hash::make('hey community'),
             'nickname'      =>      'HC',
             'bio'           =>      $faker->sentence(),
+            'gender'        =>      1,
+            'phone'         =>      '12312341234',
+            'email'         =>      $faker->email(),
+            'password'      =>      Hash::make('hey community'),
 
             'created_at'    =>      $faker->dateTimeThisMonth(),
             'updated_at'    =>      $faker->dateTimeThisMonth(),
@@ -38,12 +40,14 @@ class UserTableSeeder extends Seeder
             }
 
             $data[] = [
-                'phone'         =>      $faker->phoneNumber(),
-                'password'      =>      Hash::make('hey community'),
                 'nickname'      =>      $faker->name(),
                 'avatar'        =>      $avatarUrl,
-                'profile_bg_img'    =>  $profileBgImgUrl,
+                'gender'        =>      1,
                 'bio'           =>      $faker->sentence(),
+                'phone'         =>      $faker->phoneNumber(),
+                'email'         =>      $faker->email(),
+                'profile_bg_img'    =>  $profileBgImgUrl,
+                'password'      =>      Hash::make('hey community'),
 
                 'created_at'    =>      $faker->dateTimeThisMonth(),
                 'updated_at'    =>      $faker->dateTimeThisMonth(),

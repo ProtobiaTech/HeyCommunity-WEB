@@ -17,29 +17,9 @@
         <div class="container pt-4 pb-5">
             <div class="row">
                 <div class="col-sm-2">
-                    <div class="list-group">
-                        <a data-toggle="pill" href="#pills-timeline" class="list-group-item list-group-item-action d-flex justify-content-between">
-                            <span>我的动态</span>
-                            <span class="icon icon-chevron-thin-right"></span>
-                        </a>
-                        <a data-toggle="pill" href="#pills-topic" class="active list-group-item list-group-item-action d-flex justify-content-between">
-                            <span>我的话题</span>
-                            <span class="icon icon-chevron-thin-right"></span>
-                        </a>
-                        <a data-toggle="pill" href="#pills-activity" class="list-group-item list-group-item-action d-flex justify-content-between">
-                            <span>我的活动</span>
-                            <span class="icon icon-chevron-thin-right"></span>
-                        </a>
-                    </div>
-
-                    <br>
-                    <div class="list-group">
-                        <a href="{{ route('notification.index') }}" class="list-group-item list-group-item-action d-flex justify-content-between">
-                            <span>通知</span>
-                            <span class="icon icon-chevron-thin-right"></span>
-                        </a>
-                    </div>
+                    @include('user._nav')
                 </div>
+
                 <div class="col-sm-10">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show" id="pills-timeline">暂不可用</div>

@@ -13,6 +13,14 @@ class User extends Authenticatable
     protected $guarded = [];
 
     /**
+     * Genders
+     */
+    public static $genders = [
+        1   =>      '男',
+        2   =>      '女',
+    ];
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array

@@ -37,6 +37,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('logout', 'UserController@logout')->name('user.logout');
 
     Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
+    Route::get('profile', 'UserController@profile')->name('user.profile');
+    Route::post('profile', 'UserController@profileUpdate')->name('user.profile-update');
     Route::get('uhome/{id}', 'UserController@uhome')->name('user.uhome');
 });
 

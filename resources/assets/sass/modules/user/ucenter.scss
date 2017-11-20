@@ -3,5 +3,13 @@
     height: auto !important;
     padding-top: 4rem;
     padding-bottom: 4.5rem;
+
+    .container {
+      .operations {
+        position: absolute;
+        right: 40px;
+        bottom: 20px;
+      }
+    }
   }
 }

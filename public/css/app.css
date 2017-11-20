@@ -23,6 +23,12 @@ button {
   padding-bottom: 4.5rem;
 }
 
+#section-mainbody.page-user-ucenter .profile-header .container .operations {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+}
+
 #section-mainbody.page-user-uhome #section-body #mainTab {
   background-color: #ddd;
   border-radius: 0.25rem 0.25rem 0 0;

@@ -1,26 +1,22 @@
 @extends('layouts.default')
 
 @section('mainBody')
-    <div id="section-mainbody" class="page-user-ucenter">
-        <div class="profile-header" style="background-image: url('{{ asset($user->profile_bg_img) }}');">
-            <div class="container">
-                <div class="container-inner">
-                    <img class="rounded-circle media-object" src="{{ asset($user->avatar) }}">
-                    <h3 class="profile-header-user">{{ $user->nickname }}</h3>
-                    <p class="profile-header-bio">
-                        {{ $user->bio ?: '暂无签名' }}
-                    </p>
-                </div>
-            </div>
-        </div>
-
+    <div id="section-mainbody" class="page-user-profile">
         <div class="container pt-4 pb-5">
+            <nav id="section-breadcrumb" aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('user.ucenter') }}">用户</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">更新用户资料</li>
+                </ol>
+            </nav>
+
             <div class="row">
-                <div class="col-sm-2">
-                    @include('user._nav')
+                <div class="col-sm-3">
+                    @include('user._user_profile_card', ['user' => $user])
                 </div>
 
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <div class="card">
                         <div class="card-body">
                             <form action="{{ route('user.profile-update') }}" method="post">

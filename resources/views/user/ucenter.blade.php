@@ -11,6 +11,19 @@
                         {{ $user->bio ?: '暂无签名' }}
                     </p>
                 </div>
+
+                <div class="operations">
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <div class="line-1">
+                                <a href="{{ route('user.profile') }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-id-card-o"></i> 更新个人资料</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-user-circle-o"></i> 更换头像</a>
+                                <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-picture-o"></i> 更换封面</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

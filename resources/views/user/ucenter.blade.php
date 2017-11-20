@@ -15,11 +15,13 @@
                 <div class="operations">
                     <div class="row">
                         <div class="col-12 text-right">
-                            <div class="line-1">
-                                <a href="{{ route('user.profile') }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-id-card-o"></i> 更新个人资料</a>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="line-1 mb-2">
                                 <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-user-circle-o"></i> 更换头像</a>
                                 <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-picture-o"></i> 更换封面</a>
+                            </div>
+                            <div class="">
+                                <a href="{{ route('user.uhome', $user->id) }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-info-circle"></i> 我的主页</a>
+                                <a href="{{ route('user.profile') }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-id-card-o"></i> 更新个人资料</a>
                             </div>
                         </div>
                     </div>

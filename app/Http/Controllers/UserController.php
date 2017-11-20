@@ -144,8 +144,10 @@ class UserController extends Controller
         $user->bio = $request->bio;
 
         if ($user->save()) {
+            flash('更新成功')->success();
             return back();
         } else {
+            flash('更新失败')->error()->important();
             return back()->withInput();
         }
     }

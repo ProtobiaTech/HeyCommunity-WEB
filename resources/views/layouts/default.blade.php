@@ -16,6 +16,7 @@
     <link href="{{ asset('bower-assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/bootstrap-application-theme/css/toolkit.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/bootstrap-application-theme/css/application.css') }}" rel="stylesheet">
+    <script src="{{ asset('assets/bootstrap-application-theme/js/jquery.min.js') }}"></script>
 
     <style>
         /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -100,11 +101,13 @@
 </nav>
 
 
+<!-- Flash Message -->
+@include('flash::message')
+
 <!-- Main Body -->
 @yield('mainBody')
 
 
-<script src="{{ asset('assets/bootstrap-application-theme/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/bootstrap-application-theme/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/bootstrap-application-theme/js/chart.js') }}"></script>
 <script src="{{ asset('assets/bootstrap-application-theme/js/toolkit.js') }}"></script>

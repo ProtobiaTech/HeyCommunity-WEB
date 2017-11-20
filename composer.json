@@ -9,6 +9,7 @@
         "baum/baum": "^1.1",
         "fideloper/proxy": "~3.3",
         "intervention/image": "^2.4",
+        "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "overtrue/laravel-lang": "^3.0",

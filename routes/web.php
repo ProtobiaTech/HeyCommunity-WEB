@@ -30,10 +30,20 @@ Route::group([], function () {
 //
 // User
 Route::group(['prefix' => 'user'], function () {
+    /*
     Route::get('signup', 'UserController@signup')->name('user.signup');
     Route::post('signup', 'UserController@signupHandler')->name('user.signup-handler');
     Route::get('login', 'UserController@login')->name('user.login');
     Route::post('login', 'UserController@loginHandler')->name('user.login-handler');
+    Route::get('logout', 'UserController@logout')->name('user.logout');
+    */
+
+    Route::get('login', function() {
+        return redirect()->route('user.login-wechat');
+    })->name('user.login');
+    Route::get('signup', function() {
+        return redirect()->route('user.login-wechat');
+    })->name('user.signup');
     Route::get('logout', 'UserController@logout')->name('user.logout');
 
     Route::get('login-wechat', 'UserController@loginWechat')->name('user.login-wechat');

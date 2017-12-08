@@ -17,6 +17,7 @@
     <link href="{{ asset('assets/bootstrap-application-theme/css/toolkit.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/bootstrap-application-theme/css/application.css') }}" rel="stylesheet">
     <script src="{{ asset('assets/bootstrap-application-theme/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <style>
         /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -127,6 +128,5 @@
         }
     })
 </script>
-<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

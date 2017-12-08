@@ -43,15 +43,45 @@ class UserController extends Controller
      */
     public function loginWechat()
     {
-        return view('user.login-wechat');
+        $token = str_random(10);
+        return view('user.login-wechat', compact('token'));
     }
 
     /**
      * Login page with wechat
      */
-    public function loginWechatTransfer()
+    public function loginByWechat(Request $request)
     {
-        return view('user.login-wechat-transfer');
+        // @todo mark this user can be login
+
+        event(new \App\Events\UserLoggedByWechatTransferBroadcast($request->token));
+
+        return view('user.login-by-wechat');
+    }
+
+    /**
+     * Login transfer handler
+     */
+    public function loginByWechatHandler(Request $request)
+    {
+        $this->validate($request, [
+            'user_id'       =>      'required|integer',
+        ]);
+
+        // @todo validate this user can be login
+
+        Auth::loginUsingId($request->user_id);
+
+        flash('登录成功')->success();
+        return redirect()->route('user.login-by-wechat-success');
+    }
+
+    /**
+     * Login page with wechat
+     */
+    public function loginByWechatSuccess()
+    {
+        return view('user.login-by-wechat-success');
     }
 
     /**

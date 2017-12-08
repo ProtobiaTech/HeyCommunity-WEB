@@ -19,7 +19,7 @@
                         <br>
                         <h4 class="text-center card-title">微信扫码进行登录</h4>
 
-                        <img class="rounded img-fluid" src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(600)->generate(route('user.login-wechat-transfer'))) !!} ">
+                        <img class="rounded img-fluid" src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(600)->generate(route('user.login-by-wechat', ['token' => $token]))) !!} ">
 
                         <br>
                         <p class="card-text text-center">
@@ -42,4 +42,16 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    Echo.channel('logged-by-wechat-transfer-t-{{ $token }}')
+        .listen('.transfer', function(e) {
+            var url = '{{ route('user.login-by-wechat-handler') }}';
+            var params = {
+                user_id: e.user.id,
+            };
+            postSubmit(url, params);
+        });
+</script>
 @endsection

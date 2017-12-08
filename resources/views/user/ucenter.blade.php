@@ -32,24 +32,30 @@
         <div class="container pt-4 pb-5">
             <div class="row">
                 <div class="col-sm-2">
-                    @include('user._ucenter_nav')
+                    @include('user._ucenter-nav')
                 </div>
 
                 <div class="col-sm-10">
                     <div class="tab-content">
-                        @if (request()->is('*my-timelines'))
-                            <div class="tab-pane fade show active">暂不可用</div>
+                        @if (request()->is('*my-timelines') || request()->is('*ucenter'))
+                            <div class="tab-pane fade show active">
+                                <div class="card">
+                                    <div class="card-body">
+                                        暂不可用
+                                    </div>
+                                </div>
+                            </div>
                         @endif
 
                         @if (request()->is('*my-topic*'))
                             <div class="tab-pane fade show active">
-                                @include('topic._topic_list', ['topics' => $myTopics])
+                                @include('topic._topic-list', ['topics' => $myTopics])
                             </div>
                         @endif
 
                         @if (request()->is('*my-activit*'))
                             <div class="tab-pane fade show active">
-                                @include('activity._activity_list', ['activities' => $myActivities])
+                                @include('activity._activity-list', ['activities' => $myActivities])
                             </div>
                         @endif
                     </div>

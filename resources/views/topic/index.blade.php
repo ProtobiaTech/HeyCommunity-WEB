@@ -53,7 +53,7 @@
                 </div>
 
                 <!-- Topic List -->
-                @include('topic._topic_list', ['topics' => $topics])
+                @include('topic._topic-list', ['topics' => $topics])
             </div>
 
             <div class="col-12 card-nodes d-block d-md-none">

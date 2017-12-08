@@ -8,7 +8,7 @@
         @include('activity._carousel', ['elementId' => 'section-carousel'])
 
         <!-- Activity List -->
-        @include('activity._activity_list', ['activities' => $activities])
+        @include('activity._activity-list', ['activities' => $activities])
     </div>
 </div>
 @stop

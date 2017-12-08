@@ -13,7 +13,7 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    @include('user._user_profile_card', ['user' => $user])
+                    @include('user._user-profile-card', ['user' => $user])
                 </div>
 
                 <div class="col-sm-9">

@@ -141,7 +141,7 @@
 
                 <!-- Info -->
                 <div id="section-right" class="col-md-3 d-none d-md-block">
-                    @include('user._user_profile_card', ['user' => $topic->author])
+                    @include('user._user-profile-card', ['user' => $topic->author])
                 </div>
             </div>
         </div>

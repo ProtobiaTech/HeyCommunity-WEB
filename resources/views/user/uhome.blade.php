@@ -5,7 +5,7 @@
         <div class="container pt-4 pb-5">
             <div class="row">
                 <div class="col-md-3">
-                    @include('user._user_profile_card', ['user' => $user])
+                    @include('user._user-profile-card', ['user' => $user])
 
                     <div class="card d-md-block d-lg-block mb-4">
                         <div class="card-body">
@@ -41,11 +41,11 @@
                         </div>
 
                         <div class="tab-pane fade show active" id="nav-topic">
-                            @include('topic._topic_list', ['topics' => $myTopics])
+                            @include('topic._topic-list', ['topics' => $myTopics])
                         </div>
 
                         <div class="tab-pane fade show" id="nav-activity">
-                            @include('activity._activity_list', ['activities' => $myActivities])
+                            @include('activity._activity-list', ['activities' => $myActivities])
                         </div>
                     </div>
                 </div>

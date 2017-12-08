@@ -1,5 +1,5 @@
 <div class="list-group">
-    <a href="{{ route('user.ucenter.my-timelines') }}" class="{{ setNavActive('*my-timelines') }} list-group-item list-group-item-action d-flex justify-content-between">
+    <a href="{{ route('user.ucenter.my-timelines') }}" class="{{ setNavActive(['*my-timelines', '*ucenter']) }} list-group-item list-group-item-action d-flex justify-content-between">
         <span>我的动态</span>
         <span class="icon icon-chevron-thin-right"></span>
     </a>

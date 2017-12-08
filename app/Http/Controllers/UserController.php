@@ -39,6 +39,22 @@ class UserController extends Controller
     }
 
     /**
+     * Login page with wechat
+     */
+    public function loginWechat()
+    {
+        return view('user.login-wechat');
+    }
+
+    /**
+     * Login page with wechat
+     */
+    public function loginWechatTransfer()
+    {
+        return view('user.login-wechat-transfer');
+    }
+
+    /**
      * Login handler
      */
     public function loginHandler(Request $request)

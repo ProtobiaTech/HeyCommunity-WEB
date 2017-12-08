@@ -93,6 +93,11 @@
                 </a></li>
             @else
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.login-wechat') }}">
+                        <i class="fa fa-sign-in"></i> &nbsp; 微信登入
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.login') }}">
                         <i class="fa fa-sign-in"></i> &nbsp; 登入
                     </a>

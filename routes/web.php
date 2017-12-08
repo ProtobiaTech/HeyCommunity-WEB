@@ -36,6 +36,11 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('login', 'UserController@loginHandler')->name('user.login-handler');
     Route::get('logout', 'UserController@logout')->name('user.logout');
 
+    Route::get('login-wechat', 'UserController@loginWechat')->name('user.login-wechat');
+    Route::get('login-wechat-transfer', 'UserController@loginWechatTransfer')
+        ->middleware(['wechat.oauth', 'auth.wechat'])->name('user.login-wechat-transfer');
+
+
     Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
     Route::get('ucenter/my-timelines', 'UserController@ucenter')->name('user.ucenter.my-timelines');
     Route::get('ucenter/my-topics', 'UserController@ucenter')->name('user.ucenter.my-topics');

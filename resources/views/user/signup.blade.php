@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('mainBody')
+<div id="section-mainbody" class="page-user-signup">
     <div class="container-fluid container-fill-height">
         <div class="container-content-middle">
             <form action="{{ route('user.signup-handler') }}" method="post" class="mx-auto app-login-form">
@@ -33,11 +34,15 @@
                            placeholder="密码">
                 </div>
 
-                <div class="mb-5 text-center ">
-                    <button type="submit" class="btn btn-primary">注册</button>
-                    <a class="btn btn-secondary btn-link" href="{{ route('user.login') }}">登录</a>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-block btn-primary">注册</button>
                 </div>
+
+                <footer class="mt-3 text-center">
+                    已有帐号? 现在<a class="" href="{{ route('user.login') }}">登录</a>
+                </footer>
             </form>
         </div>
     </div>
+</div>
 @endsection

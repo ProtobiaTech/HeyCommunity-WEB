@@ -26,13 +26,13 @@
                     <input class="form-control" type="password" name="password" value="{{ old('password') }}" placeholder="密码">
                 </div>
 
-                <div class="mb-5 text-center">
-                    <button class="btn btn-primary">登入</button>
-                    <a class="btn btn-secondary btn-link" href="{{ route('user.signup') }}">注册</a>
+                <div class="text-center">
+                    <button class="btn btn-block btn-primary">登入</button>
                 </div>
 
-
-                <footer class="screen-login text-center">
+                <footer class="mt-3 text-center">
+                    没有帐号? 现在<a class="" href="{{ route('user.signup') }}">注册</a>
+                    <br>
                     <a class="text-muted">忘记密码？</a>
                 </footer>
             </form>

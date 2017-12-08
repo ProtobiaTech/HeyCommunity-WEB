@@ -32,18 +32,26 @@
         <div class="container pt-4 pb-5">
             <div class="row">
                 <div class="col-sm-2">
-                    @include('user._nav')
+                    @include('user._ucenter_nav')
                 </div>
 
                 <div class="col-sm-10">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show" id="pills-timeline">暂不可用</div>
-                        <div class="tab-pane fade show active" id="pills-topic">
-                            @include('topic._topic_list', ['topics' => $myTopics])
-                        </div>
-                        <div class="tab-pane fade show" id="pills-activity">
-                            @include('activity._activity_list', ['activities' => $myActivities])
-                        </div>
+                    <div class="tab-content">
+                        @if (request()->is('*my-timelines'))
+                            <div class="tab-pane fade show active">暂不可用</div>
+                        @endif
+
+                        @if (request()->is('*my-topic*'))
+                            <div class="tab-pane fade show active">
+                                @include('topic._topic_list', ['topics' => $myTopics])
+                            </div>
+                        @endif
+
+                        @if (request()->is('*my-activit*'))
+                            <div class="tab-pane fade show active">
+                                @include('activity._activity_list', ['activities' => $myActivities])
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

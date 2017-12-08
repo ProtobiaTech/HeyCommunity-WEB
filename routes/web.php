@@ -37,6 +37,12 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('logout', 'UserController@logout')->name('user.logout');
 
     Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
+    Route::get('ucenter/my-timelines', 'UserController@ucenter')->name('user.ucenter.my-timelines');
+    Route::get('ucenter/my-topics', 'UserController@ucenter')->name('user.ucenter.my-topics');
+    Route::get('ucenter/my-topic-comments', 'UserController@ucenter')->name('user.ucenter.my-topic-comments');
+    Route::get('ucenter/my-activities', 'UserController@ucenter')->name('user.ucenter.my-activities');
+    Route::get('ucenter/my-activity-signups', 'UserController@ucenter')->name('user.ucenter.my-activity-signups');
+
     Route::get('profile', 'UserController@profile')->name('user.profile');
     Route::post('profile', 'UserController@profileUpdate')->name('user.profile-update');
     Route::get('uhome/{id}', 'UserController@uhome')->name('user.uhome');

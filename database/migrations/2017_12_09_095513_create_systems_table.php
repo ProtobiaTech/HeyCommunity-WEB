@@ -33,7 +33,7 @@ EOT;
             $table->string('site_subheading')->default('A New HeyCommunity Site');
             $table->string('site_description')->nullable()->default('This Is A New HeyCommunity Site');
             $table->string('site_keywords')->nullable()->default('HeyCommunity, Social Site, Open Software');
-            $table->text('site_analytic_code')->nullable()->default($code);
+            $table->text('site_analytic_code')->nullable()->default();
 
             $table->softDeletes();
             $table->timestamps();
@@ -42,7 +42,9 @@ EOT;
 
         Model::unguard();
 
-        \App\System::create([]);
+        \App\System::create([
+            'site_analytic_code'        =>  $code,
+        ]);
 
         Model::reguard();
     }

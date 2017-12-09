@@ -81,10 +81,16 @@ button {
 #section-mainbody.page-topic-index .card-nodes .card-body .nodes-item .rootNode {
   color: #333;
   font-weight: 500;
+  padding-right: 4px;
+}
+
+#section-mainbody.page-topic-index .card-nodes .card-body .nodes-item .childNode {
+  padding: 0 4px;
 }
 
 #section-mainbody.page-topic-index .card-nodes .card-body .nodes-item .active {
   text-decoration: underline;
+  font-weight: 500;
 }
 
 #section-mainbody.page-topic-index .card-tags {

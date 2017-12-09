@@ -23,7 +23,7 @@
                                    href="{{ route('topic.index', ['node' => $rootNode->name]) }}">{{ $rootNode->name }}</a>
 
                                 @foreach ($rootNode->childNodes as $node)
-                                <a class="{{ setParamActive('node', $node->name) }}" href="{{ route('topic.index', ['node' => $node->name]) }}">{{ $node->name }}</a>
+                                    <a class="childNode {{ setParamActive('node', $node->name) }}" href="{{ route('topic.index', ['node' => $node->name]) }}">{{ $node->name }}</a>
                                 @endforeach
                             </div>
                             @endforeach
@@ -61,7 +61,9 @@
             </div>
 
             <div class="col-12 card-nodes d-block d-md-none">
-                <div class="card">
+                <a href="{{ route('topic.create') }}" class="btn btn-block btn-primary mt-3 mb-3">发起一个新话题</a>
+
+                <div class="card card-nodes mb-3">
                     <div class="card-body">
                         <h6 class="card-title text-center">节点列表</h6>
                         <div class="">
@@ -71,7 +73,7 @@
                                        href="{{ route('topic.index', ['node' => $rootNode->name]) }}">{{ $rootNode->name }}</a>
 
                                     @foreach ($rootNode->childNodes as $node)
-                                        <a class="{{ setParamActive('node', $node->name) }}" href="{{ route('topic.index', ['node' => $node->name]) }}">{{ $node->name }}</a>
+                                        <a class="childNode {{ setParamActive('node', $node->name) }}" href="{{ route('topic.index', ['node' => $node->name]) }}">{{ $node->name }}</a>
                                     @endforeach
                                 </div>
                             @endforeach
@@ -79,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card card-tags mb-3">
                     <div class="card-body">
                         <h6 class="card-title text-center">我们正在讨论</h6>
                         <div class="tags">

@@ -18,10 +18,16 @@
         .rootNode {
           color: #333;
           font-weight: 500;
+          padding-right: 4px;
+        }
+
+        .childNode {
+          padding: 0 4px;
         }
 
         .active {
           text-decoration: underline;
+          font-weight: 500;
         }
       }
     }

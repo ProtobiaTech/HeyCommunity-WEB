@@ -21,6 +21,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
             Route::post('to-right', 'TopicNodeController@toRight')->name('admin.topic.node.to-right');
             Route::post('destroy', 'TopicNodeController@destroy')->name('admin.topic.node.destroy');
             Route::post('store', 'TopicNodeController@store')->name('admin.topic.node.store');
+            Route::post('update', 'TopicNodeController@update')->name('admin.topic.node.update');
         });
     });
 });

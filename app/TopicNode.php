@@ -4,9 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Baum\Node;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TopicNode extends Node
 {
+    use SoftDeletes;
+
+    // guarded
+    protected $guarded = [];
+
     /**
      * Related TopicNode
      */

@@ -77,6 +77,28 @@ class TopicNodeController extends Controller
     }
 
     /**
+     * Topic Node update
+     */
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'id'        =>      'required|integer',
+            'name'      =>      'required|string',
+        ]);
+
+        $node = TopicNode::findOrFail($request->id);
+
+        if ($node->isRoot()) {
+            $node->update($request->only(['name', 'description']));
+        } else {
+            $node->update($request->only(['parent_id', 'name', 'description']));
+        }
+
+        flash('操作成功')->success();
+        return back();
+    }
+
+    /**
      * Topic Node destroy
      */
     public function destroy(Request $request)

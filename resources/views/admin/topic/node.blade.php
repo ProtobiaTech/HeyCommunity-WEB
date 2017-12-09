@@ -18,7 +18,7 @@
                                 <div class="list-group-item active">
                                     <span class="text-muted">#{{ $rnIndex + 1 }}</span> {{ $rootNode->name }}
                                     <div class="pull-right section-editbox disnone">
-                                        <button onclick="nodeDestory('rootNode', 1)" disabled="" class="btn btn-danger btn-xs">
+                                        <button onclick="nodeDestroy('{{ $rootNode->name }}', {{ $rootNode->id }})" class="btn btn-danger btn-xs">
                                             <i class="glyphicon glyphicon-trash"></i>
                                         </button>
                                         &nbsp;&nbsp;
@@ -37,7 +37,7 @@
                                     <div class="list-group-item">
                                         {{ $node->name }}
                                         <div class="pull-right section-editbox disnone">
-                                            <button onclick="nodeDestory('node', 2)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
+                                            <button onclick="nodeDestroy('{{ $node->name }}', {{ $node->id }})" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
                                             &nbsp;&nbsp;
 
                                             <button onclick="nodeToLeft({{ $node->id }})" class="btn btn-default btn-xs" {{ $index === 0 ? 'disabled' : '' }}>
@@ -75,6 +75,18 @@
         function nodeToRight(nodeId) {
             var url = '{{ route('admin.topic.node.to-right') }}';
             postSubmit(url, {id: nodeId});
+        }
+
+        /**
+         * node destroy
+         */
+        function nodeDestroy(name, nodeId) {
+            var message = '是否要删除 ' + name + ' 节点';
+
+            if (confirm(message)) {
+                var url = '{{ route('admin.topic.node.destroy') }}';
+                postSubmit(url, {id: nodeId});
+            }
         }
     </script>
 </div>

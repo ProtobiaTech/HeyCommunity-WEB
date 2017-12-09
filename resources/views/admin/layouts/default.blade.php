@@ -27,6 +27,9 @@
 
 <body class="fixed-left">
 
+<!-- Flash Message -->
+@include('flash::message')
+
 <div id="wrapper">
     <div class="topbar">
         <!-- LOGO -->

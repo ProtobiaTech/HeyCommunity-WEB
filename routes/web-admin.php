@@ -18,5 +18,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('node', 'TopicNodeController@index')->name('admin.topic.node.index');
         Route::post('node-to-left', 'TopicNodeController@nodeToLeft')->name('admin.topic.node.to-left');
         Route::post('node-to-right', 'TopicNodeController@nodeToRight')->name('admin.topic.node.to-right');
+        Route::post('node-destroy', 'TopicNodeController@nodeDestroy')->name('admin.topic.node.destroy');
     });
 });

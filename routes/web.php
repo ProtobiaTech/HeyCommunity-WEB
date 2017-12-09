@@ -18,10 +18,10 @@ include_once 'web-admin.php';
 Route::group([], function () {
     Route::get('home', function () {
         return redirect()->route('topic.index');
-    });
+    })->name('home');
     Route::get('/', function () {
         return redirect()->route('topic.index');
-    });
+    })->name('index');
 
     // Route::get('/', 'HomeController@index')->name('home.index');
 });

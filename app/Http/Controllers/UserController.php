@@ -65,7 +65,8 @@ class UserController extends Controller
             session('after-login-redirect-route') &&
             preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))
         ) {
-            return redirect()->route(session('after-login-redirect-route'));
+            $route = session('after-login-redirect-route') ?: 'index';
+            return redirect()->route($route);
         }
 
         //
@@ -90,7 +91,8 @@ class UserController extends Controller
         Auth::loginUsingId($request->user_id);
 
         flash('登录成功')->success();
-        return redirect()->route(session('after-login-redirect-route'));
+        $route = session('after-login-redirect-route') ?: 'index';
+        return redirect()->route($route);
     }
 
     /**

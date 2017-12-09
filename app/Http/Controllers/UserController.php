@@ -60,7 +60,11 @@ class UserController extends Controller
     public function loginByWechat(Request $request)
     {
         // login by wechat app
-        if(preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        if (
+            !$request->has('token') &&
+            session('after-login-redirect-route') &&
+            preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))
+        ) {
             return redirect()->route(session('after-login-redirect-route'));
         }
 

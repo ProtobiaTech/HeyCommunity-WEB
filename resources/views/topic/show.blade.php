@@ -65,7 +65,7 @@
                                 <span class="pull-right date">{{ $topic->created_at }}</span>
                             </h6>
                             <p class="card-text">
-                                {{ $topic->content }}
+                                {!! nl2br(e($topic->content)) !!}
                             </p>
 
                             <div class="footer">
@@ -102,7 +102,7 @@
                                             </span>
                                         </div>
                                         <div class="content">
-                                            {{ $comment->content }}
+                                            {!! nl2br(e($comment->content)) !!}
                                         </div>
                                     </div>
                                 </div>

@@ -74,7 +74,7 @@
                                 <div class="form-group row">
                                     <label for="input-content" class="col-2 col-form-label">内容</label>
                                     <div class="col-10">
-                                        <textarea name="content" class="form-control" id="input-content" rows="3">{{ old('content') }}</textarea>
+                                        <textarea name="content" class="form-control" id="input-content" rows="8">{{ old('content') }}</textarea>
 
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>

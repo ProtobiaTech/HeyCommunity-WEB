@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    {{ $user->nickname }} 的主页 - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
     <div id="section-mainbody" class="page-user-uhome">
         <div class="container pt-4 pb-5">

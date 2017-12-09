@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    登录 - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
 <div id="section-mainbody" class="page-user-login">
     <div class="container-fluid container-fill-height">

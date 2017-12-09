@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    用户中心 - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
     <div id="section-mainbody" class="page-user-ucenter">
         <div class="profile-header" style="background-image: url('{{ asset($user->profile_bg_img) }}');">

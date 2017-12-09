@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    微信登录 - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
 <div id="section-mainbody" class="page-user-login-wechat">
     <div class="container container-fill-height">

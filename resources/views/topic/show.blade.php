@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    {{ $topic->title }} - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
     <div id="section-mainbody" class="page-topic-show">
         <div class="container pt-4 pb-5">

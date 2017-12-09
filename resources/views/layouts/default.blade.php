@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{ $system->site_description }}">
+    <meta name="keywords" content="{{ $system->site_keywords }}">
+    <meta name="author" content="HeyCommunity Team">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>HeyCommunity V4</title>
+    <title>@yield('title', $system->site_title . ' - ' . $system->site_subheading)</title>
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -31,11 +31,10 @@
 </head>
 
 <body class="with-top-navbar">
+
 <!-- Nav -->
 <nav id="section-mainNav" class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
-    <a class="navbar-brand" href="{{ url('/') }}">
-        HeyCommunity
-    </a>
+    <a class="navbar-brand" href="{{ url('/') }}">{{ $system->site_title }}</a>
 
     <button
             class="navbar-toggler navbar-toggler-right d-md-none"
@@ -140,5 +139,8 @@
         }
     })
 </script>
+
+<!-- Analytic code -->
+{!! $system->site_analyti_code !!}
 </body>
 </html>

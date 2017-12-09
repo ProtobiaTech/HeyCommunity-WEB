@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    所有话题 - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
 <div id="section-mainbody" class="page-topic-index">
     <div class="container pt-4 pb-5">

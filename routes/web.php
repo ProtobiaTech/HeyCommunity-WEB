@@ -2,6 +2,9 @@
 
 include_once 'web-admin.php';
 
+$system = \App\System::first();
+view()->share('system', $system);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

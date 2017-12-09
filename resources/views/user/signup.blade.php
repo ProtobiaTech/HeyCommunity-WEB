@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    注册 - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
 <div id="section-mainbody" class="page-user-signup">
     <div class="container-fluid container-fill-height">

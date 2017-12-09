@@ -1,7 +1,12 @@
 <?php
 
+//
+// web admin routes
 include_once 'web-admin.php';
 
+
+//
+// system info
 try {
     $system = \App\System::first();
 } catch (Exception $e) {
@@ -14,16 +19,6 @@ try {
 }
 view()->share('system', $system);
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 //
 // Home
@@ -42,13 +37,10 @@ Route::group([], function () {
 //
 // User
 Route::group(['prefix' => 'user'], function () {
-    /*
-    Route::get('signup', 'UserController@signup')->name('user.signup');
-    Route::post('signup', 'UserController@signupHandler')->name('user.signup-handler');
-    Route::get('login', 'UserController@login')->name('user.login');
-    Route::post('login', 'UserController@loginHandler')->name('user.login-handler');
-    Route::get('logout', 'UserController@logout')->name('user.logout');
-    */
+    Route::get('default-signup', 'UserController@signup')->name('user.signup');
+    Route::post('default-signup', 'UserController@signupHandler')->name('user.signup-handler');
+    Route::get('default-login', 'UserController@login')->name('user.login');
+    Route::post('default-login', 'UserController@loginHandler')->name('user.login-handler');
 
     Route::get('login', function () {
         return redirect()->route('user.login-wechat');

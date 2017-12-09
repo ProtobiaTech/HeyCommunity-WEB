@@ -33,7 +33,7 @@ EOT;
             $table->string('site_subheading')->default('A New HeyCommunity Site');
             $table->string('site_description')->nullable()->default('This Is A New HeyCommunity Site');
             $table->string('site_keywords')->nullable()->default('HeyCommunity, Social Site, Open Software');
-            $table->text('site_analytic_code')->nullable()->default();
+            $table->text('site_analytic_code')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

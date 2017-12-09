@@ -141,6 +141,6 @@
 </script>
 
 <!-- Analytic code -->
-{!! $system->site_analyti_code !!}
+{!! $system->site_analytic_code !!}
 </body>
 </html>

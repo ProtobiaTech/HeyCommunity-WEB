@@ -27,7 +27,9 @@ class UserController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+
+        flash('登出成功');
+        return back();
     }
 
     /**
@@ -43,6 +45,11 @@ class UserController extends Controller
      */
     public function loginWechat()
     {
+        // login by wechat app
+        if(preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+            return redirect()->route('user.login-by-wechat');
+        }
+
         $token = str_random(10);
         return view('user.login-wechat', compact('token'));
     }
@@ -52,6 +59,12 @@ class UserController extends Controller
      */
     public function loginByWechat(Request $request)
     {
+        // login by wechat app
+        if(preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+            return redirect()->route(session('after-login-redirect-route'));
+        }
+
+        //
         // @todo mark this user can be login
 
         event(new \App\Events\UserLoggedByWechatTransferBroadcast($request->token));
@@ -73,7 +86,7 @@ class UserController extends Controller
         Auth::loginUsingId($request->user_id);
 
         flash('登录成功')->success();
-        return redirect()->route('user.login-by-wechat-success');
+        return redirect()->route(session('after-login-redirect-route'));
     }
 
     /**

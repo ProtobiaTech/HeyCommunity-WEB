@@ -54,13 +54,26 @@
                 <a class="nav-link {{ setNavActive('/') }}" href="{{ url('/') }}">首页</a>
             </li>
             <li class="nav-item {{ setNavActive('topic*') }}">
-                <a class="nav-link" href="{{ url('topic') }}">话题</a>
+                <a class="nav-link" href="{{ route('topic.index') }}">话题</a>
             </li>
             <!--
             <li class="nav-item {{ setNavActive('activity*') }}">
                 <a class="nav-link" href="{{ url('activity') }}">活动</a>
             </li>
             -->
+
+            @if (Auth::check())
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.ucenter') }}">用户中心</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.logout') }}">登出</a>
+                </li>
+            @else
+                <li class="nav-item {{ setNavActive('*login*') }}">
+                    <a class="nav-link" href="{{ route('user.login') }}">登录</a>
+                </li>
+            @endif
         </ul>
 
         <form class="form-inline float-right d-none d-md-flex">
@@ -86,12 +99,16 @@
 
         <ul class="nav navbar-nav d-none" id="js-popoverContent">
             @if (Auth::check())
-                <li class="nav-item"> <a class="nav-link" href="{{ route('user.ucenter') }}">
-                    <i class="fa fa-id-card-o"></i> &nbsp; 用户中心
-                </a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('user.logout') }}">
-                    <i class="fa fa-sign-out"></i> &nbsp; 登出
-                </a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.ucenter') }}">
+                        <i class="fa fa-id-card-o"></i> &nbsp; 用户中心
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.logout') }}">
+                        <i class="fa fa-sign-out"></i> &nbsp; 登出
+                    </a>
+                </li>
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.login') }}">

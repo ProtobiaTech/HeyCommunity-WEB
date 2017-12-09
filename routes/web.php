@@ -38,10 +38,13 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('logout', 'UserController@logout')->name('user.logout');
     */
 
-    Route::get('login', function() {
+    Route::get('login', function () {
         return redirect()->route('user.login-wechat');
     })->name('user.login');
-    Route::get('signup', function() {
+    Route::get('log-in', function () {
+        return redirect()->route('user.login-wechat');
+    })->name('login');
+    Route::get('signup', function () {
         return redirect()->route('user.login-wechat');
     })->name('user.signup');
     Route::get('logout', 'UserController@logout')->name('user.logout');
@@ -51,15 +54,18 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('login-by-wechat-handler', 'UserController@loginByWechatHandler')->name('user.login-by-wechat-handler');
     Route::get('login-by-wechat-success', 'UserController@loginByWechatSuccess')->name('user.login-by-wechat-success');
 
-    Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
-    Route::get('ucenter/my-timelines', 'UserController@ucenter')->name('user.ucenter.my-timelines');
-    Route::get('ucenter/my-topics', 'UserController@ucenter')->name('user.ucenter.my-topics');
-    Route::get('ucenter/my-topic-comments', 'UserController@ucenter')->name('user.ucenter.my-topic-comments');
-    Route::get('ucenter/my-activities', 'UserController@ucenter')->name('user.ucenter.my-activities');
-    Route::get('ucenter/my-activity-signups', 'UserController@ucenter')->name('user.ucenter.my-activity-signups');
+    Route::middleware(['auth'])->group(function () {
+        Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
+        Route::get('ucenter/my-timelines', 'UserController@ucenter')->name('user.ucenter.my-timelines');
+        Route::get('ucenter/my-topics', 'UserController@ucenter')->name('user.ucenter.my-topics');
+        Route::get('ucenter/my-topic-comments', 'UserController@ucenter')->name('user.ucenter.my-topic-comments');
+        Route::get('ucenter/my-activities', 'UserController@ucenter')->name('user.ucenter.my-activities');
+        Route::get('ucenter/my-activity-signups', 'UserController@ucenter')->name('user.ucenter.my-activity-signups');
 
-    Route::get('profile', 'UserController@profile')->name('user.profile');
-    Route::post('profile', 'UserController@profileUpdate')->name('user.profile-update');
+        Route::get('profile', 'UserController@profile')->name('user.profile');
+        Route::post('profile', 'UserController@profileUpdate')->name('user.profile-update');
+    });
+
     Route::get('uhome/{id}', 'UserController@uhome')->name('user.uhome');
 });
 
@@ -76,14 +82,14 @@ Route::group(['prefix' => 'notification'], function () {
 Route::group(['prefix' => 'topic'], function () {
     Route::get('/', 'TopicController@index')->name('topic.index');
     Route::get('/{id}', 'TopicController@show')->name('topic.show')->where('id', '[0-9]+');
-    Route::get('create', 'TopicController@create')->name('topic.create');
-    Route::post('store', 'TopicController@store')->name('topic.store');
-    Route::post('thumb', 'TopicController@thumb')->name('topic.thumb');
-    Route::post('favorite', 'TopicController@favorite')->name('topic.favorite');
+    Route::get('create', 'TopicController@create')->name('topic.create')->middleware(['auth']);
+    Route::post('store', 'TopicController@store')->name('topic.store')->middleware(['auth']);
+    Route::post('thumb', 'TopicController@thumb')->name('topic.thumb')->middleware(['auth']);
+    Route::post('favorite', 'TopicController@favorite')->name('topic.favorite')->middleware(['auth']);
 
     // Topic Comment
     Route::group(['prefix' => 'comment'], function () {
-        Route::post('store', 'TopicCommentController@store')->name('topic.comment.store');
+        Route::post('store', 'TopicCommentController@store')->name('topic.comment.store')->middleware(['auth']);
     });
 });
 

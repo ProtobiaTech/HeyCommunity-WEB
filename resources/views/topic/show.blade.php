@@ -7,7 +7,7 @@
 @section('mainBody')
     <div id="section-mainbody" class="page-topic-show">
         <div class="container pt-4 pb-5">
-            <nav id="section-breadcrumb" aria-label="breadcrumb" role="navigation">
+            <nav id="section-breadcrumb" class="d-none d-md-block" aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
                     <li class="breadcrumb-item"><a href="{{ url('topic') }}">话题</a></li>
@@ -134,8 +134,13 @@
                                         <textarea name="content" id="input-comment-textarea" class="form-control" rows="3">{{ old('content') }}</textarea>
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>
-                                    <div class="pull-right">
+
+                                    <div class="pull-right d-none d-md-block">
                                         <button class="btn btn-primary pl-4 pr-4" type="submit">发布</button>
+                                    </div>
+
+                                    <div class="d-block d-md-none">
+                                        <button class="btn btn-primary btn-block pl-4 pr-4" type="submit">发布</button>
                                     </div>
                                 </form>
                             </div>

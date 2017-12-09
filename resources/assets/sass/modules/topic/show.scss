@@ -31,10 +31,8 @@
         width: 8em;
         font-size: 14px;
         font-weight: 400;
-      }
-
-      @media (max-width: 767px) {
-        text-align: center;
+        border-radius: 0 4px 4px 0;
+        border-left: 4px solid #3097D1;
       }
     }
   }

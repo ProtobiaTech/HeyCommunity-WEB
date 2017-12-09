@@ -16,5 +16,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/', 'TopicController@index')->name('admin.topic.index');
 
         Route::get('node', 'TopicNodeController@index')->name('admin.topic.node.index');
+        Route::post('node-to-left', 'TopicNodeController@nodeToLeft')->name('admin.topic.node.to-left');
+        Route::post('node-to-right', 'TopicNodeController@nodeToRight')->name('admin.topic.node.to-right');
     });
 });

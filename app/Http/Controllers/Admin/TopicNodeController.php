@@ -17,4 +17,36 @@ class TopicNodeController extends Controller
 
         return view('admin.topic.node', compact('rootNodes'));
     }
+
+    /**
+     * Topic Node to left
+     */
+    public function nodeToLeft(Request $request)
+    {
+        $this->validate($request, [
+            'id'        =>      'required|integer',
+        ]);
+
+        $node = TopicNode::findOrFail($request->id);
+        $node->moveLeft();
+
+        flash('操作成功')->success();
+        return back();
+    }
+
+    /**
+     * Topic Node to right
+     */
+    public function nodeToRight(Request $request)
+    {
+        $this->validate($request, [
+            'id'        =>      'required|integer',
+        ]);
+
+        $node = TopicNode::findOrFail($request->id);
+        $node->moveRight();
+
+        flash('操作成功')->success();
+        return back();
+    }
 }

@@ -12,7 +12,7 @@ class TopicNode extends Node
      */
     public function childNodes()
     {
-        return $this->hasMany('App\TopicNode', 'parent_id', 'id');
+        return $this->hasMany('App\TopicNode', 'parent_id', 'id')->orderBy('lft');
     }
 
     /**

@@ -23,29 +23,29 @@
                                         </button>
                                         &nbsp;&nbsp;
 
-                                        <a href="#" disabled="" class="btn btn-default btn-xs">
+                                        <button onclick="nodeToLeft({{ $rootNode->id }})" class="btn btn-default btn-xs">
                                             <i class="glyphicon glyphicon-arrow-left"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-default btn-xs">
+                                        </button>
+                                        <button onclick="nodeToRight({{ $rootNode->id }})" class="btn btn-default btn-xs">
                                             <i class="glyphicon glyphicon-arrow-right"></i>
-                                        </a>
+                                        </button>
                                         <button onclick="nodeRenamePretreatment(1, '默认')" data-toggle="modal" data-target="#nodeRenameModal" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></button>
                                     </div>
                                 </div>
 
-                                @foreach ($rootNode->childNodes as $node)
+                                @foreach ($rootNode->children as $node)
                                     <div class="list-group-item">
                                         {{ $node->name }}
                                         <div class="pull-right section-editbox disnone">
                                             <button onclick="nodeDestory('node', 2)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
                                             &nbsp;&nbsp;
 
-                                            <a href="#" disabled="" class="btn btn-default btn-xs">
+                                            <button onclick="nodeToLeft({{ $node->id }})" class="btn btn-default btn-xs">
                                                 <i class="glyphicon glyphicon-arrow-up"></i>
-                                            </a>
-                                            <a href="#" disabled="" class="btn btn-default btn-xs">
+                                            </button>
+                                            <button onclick="nodeToRight({{ $node->id }})" class="btn btn-default btn-xs">
                                                 <i class="glyphicon glyphicon-arrow-down"></i>
-                                            </a>
+                                            </button>
                                             <button onclick="nodeRenamePretreatment(2, '默认1')" data-toggle="modal" data-target="#nodeRenameModal" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i></button>
                                         </div>
                                     </div>
@@ -58,5 +58,22 @@
         </div>
     </div>
 
+    <script>
+        /**
+         * node to left
+         */
+        function nodeToLeft(nodeId) {
+            var url = '{{ route('admin.topic.node.to-left') }}';
+            postSubmit(url, {id: nodeId});
+        }
+
+        /**
+         * node to right
+         */
+        function nodeToRight(nodeId) {
+            var url = '{{ route('admin.topic.node.to-right') }}';
+            postSubmit(url, {id: nodeId});
+        }
+    </script>
 </div>
 @stop

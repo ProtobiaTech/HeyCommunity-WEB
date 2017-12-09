@@ -7,6 +7,7 @@
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="shortcut icon" href="{{ asset('assets/webadmin/images/favicon.ico') }}">
 
@@ -17,6 +18,10 @@
     <link href="{{ asset('assets/webadmin/css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/webadmin/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css">
+
+    <script src="{{ asset('assets/webadmin/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/webadmin/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 
 
@@ -165,8 +170,6 @@
 
 
 <!-- jQuery  -->
-<script src="{{ asset('assets/webadmin/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/webadmin/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/webadmin/js/modernizr.min.js') }}"></script>
 <script src="{{ asset('assets/webadmin/js/detect.js') }}"></script>
 <script src="{{ asset('assets/webadmin/js/fastclick.js') }}"></script>
@@ -180,9 +183,7 @@
 <!--Morris Chart-->
 <script src="{{ asset('assets/webadmin/plugins/morris/morris.min.js') }}"></script>
 <script src="{{ asset('assets/webadmin/plugins/raphael/raphael-min.js') }}"></script>
-
 <script src="{{ asset('assets/webadmin/pages/dashborad.js') }}"></script>
-
 <script src="{{ asset('assets/webadmin/js/app.js') }}"></script>
 
 </body>

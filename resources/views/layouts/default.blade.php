@@ -63,14 +63,14 @@
             -->
 
             @if (Auth::check())
-                <li class="nav-item">
+                <li class="nav-item d-block d-md-none {{ setNavActive('*ucenter*') }}">
                     <a class="nav-link" href="{{ route('user.ucenter') }}">用户中心</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-block d-md-none">
                     <a class="nav-link" href="{{ route('user.logout') }}">登出</a>
                 </li>
             @else
-                <li class="nav-item {{ setNavActive('*login*') }}">
+                <li class="nav-item d-block d-md-none {{ setNavActive('*login*') }}">
                     <a class="nav-link" href="{{ route('user.login') }}">登录</a>
                 </li>
             @endif

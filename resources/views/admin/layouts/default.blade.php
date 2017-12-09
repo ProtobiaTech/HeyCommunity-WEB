@@ -29,6 +29,11 @@
 
 <!-- Flash Message -->
 @include('flash::message')
+<style>
+    #section-flash .alert {
+        background-color: #fff;
+    }
+</style>
 
 <div id="wrapper">
     <div class="topbar">

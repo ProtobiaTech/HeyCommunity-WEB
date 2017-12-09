@@ -4,6 +4,12 @@
 <div id="section-mainbody" class="page-topic-node">
     <div class="">
         <div class="page-header-title">
+            <div class="pull-right">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modal-create-node">
+                    <i class="fa fa-plus">&nbsp;</i>
+                    创建节点
+                </button>
+            </div>
             <h4 class="page-title">话题节点管理</h4>
         </div>
     </div>
@@ -18,7 +24,7 @@
                                 <div class="list-group-item active">
                                     <span class="text-muted">#{{ $rnIndex + 1 }}</span> {{ $rootNode->name }}
                                     <div class="pull-right section-editbox disnone">
-                                        <button onclick="nodeDestroy('{{ $rootNode->name }}', {{ $rootNode->id }})" class="btn btn-danger btn-xs">
+                                        <button {{ $rootNode->children->count() ? 'disabled' : '' }} onclick="nodeDestroy('{{ $rootNode->name }}', {{ $rootNode->id }})" class="btn btn-danger btn-xs">
                                             <i class="glyphicon glyphicon-trash"></i>
                                         </button>
                                         &nbsp;&nbsp;
@@ -56,6 +62,54 @@
                         </div>
                     @endforeach
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- create node modal -->
+    <div id="modal-create-node" class="modal fade in" tabindex="-1" role="dialog" style="margin-top:120px;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form-horizontal" action="{{ route('admin.topic.node.store') }}" method="post">
+                    {{ csrf_field() }}
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">创建节点</h4>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+                        <div class="form-group ">
+                            <label for="input-parend_id" class="col-sm-3 control-label">父节点</label>
+                            <div class="col-sm-7">
+                                <select name="parent_id" class="form-control">
+                                    <option value="0">根节点</option>
+                                    @foreach ($rootNodes as $rootNode)
+                                        <option value="{{ $rootNode->id }}">{{ $rootNode->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-name" class="col-sm-3 control-label">名称</label>
+                            <div class="col-sm-7">
+                                <input name="name" type="text" class="form-control" id="input-name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-name" class="col-sm-3 control-label">描述</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control" name="description" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary waves-effect waves-light">提交</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

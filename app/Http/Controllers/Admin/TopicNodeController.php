@@ -21,7 +21,7 @@ class TopicNodeController extends Controller
     /**
      * Topic Node to left
      */
-    public function nodeToLeft(Request $request)
+    public function toLeft(Request $request)
     {
         $this->validate($request, [
             'id'        =>      'required|integer',
@@ -37,7 +37,7 @@ class TopicNodeController extends Controller
     /**
      * Topic Node to right
      */
-    public function nodeToRight(Request $request)
+    public function toRight(Request $request)
     {
         $this->validate($request, [
             'id'        =>      'required|integer',
@@ -51,9 +51,35 @@ class TopicNodeController extends Controller
     }
 
     /**
+     * Topic Node store
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'parent_id'     =>      'required|integer',
+            'name'          =>      'required|string',
+        ]);
+
+        $parentNode = TopicNode::find($request->parent_id);
+        $topicNode = TopicNode::create([
+            'name'  =>  $request->name,
+            'description'  =>  $request->description
+        ]);
+
+        if ($parentNode) {
+            $topicNode->makeChildOf($parentNode);
+        } else {
+            $topicNode->makeRoot();
+        }
+
+        flash('操作成功')->success();
+        return back();
+    }
+
+    /**
      * Topic Node destroy
      */
-    public function nodeDestroy(Request $request)
+    public function destroy(Request $request)
     {
         $this->validate($request, [
             'id'        =>      'required|integer',
@@ -71,7 +97,7 @@ class TopicNodeController extends Controller
             }
         }
 
-        $Node->delete();
+        $node->delete();
 
         flash('操作成功');
         return back();

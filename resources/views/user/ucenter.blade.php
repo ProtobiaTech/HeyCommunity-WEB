@@ -16,17 +16,25 @@
                     </p>
                 </div>
 
-                <div class="operations">
-                    <div class="row">
-                        <div class="col-12 text-right">
-                            <div class="line-1 mb-2">
-                                <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-user-circle-o"></i> 更换头像</a>
-                                <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-picture-o"></i> 更换封面</a>
-                            </div>
-                            <div class="">
-                                <a href="{{ route('user.uhome', $user->id) }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-info-circle"></i> 我的主页</a>
-                                <a href="{{ route('user.profile') }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-id-card-o"></i> 更新个人资料</a>
-                            </div>
+                <div class="row operations">
+                    <div class="col-sm-6 text-right d-none d-sm-block">
+                        <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-user-circle-o"></i> 更换头像</a>
+                        &nbsp;
+                        <a href="" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-picture-o"></i> 更换封面</a>
+                    </div>
+
+                    <div class="col-sm-6 text-left d-none d-sm-block">
+                        <a href="{{ route('user.uhome', $user->id) }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-info-circle"></i> 我的主页</a>
+                        &nbsp;
+                        <a href="{{ route('user.profile') }}" class="btn btn-sm btn-secondary"><i class="fa fa-w fa-id-card-o"></i> 更新资料</a>
+                    </div>
+
+                    <div class="col-12 d-block d-sm-none">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="" class="btn btn-sm btn-secondary">更换头像</a>
+                            <a href="" class="btn btn-sm btn-secondary">更换封面</a>
+                            <a href="{{ route('user.uhome', $user->id) }}" class="btn btn-sm btn-secondary">我的主页</a>
+                            <a href="{{ route('user.profile') }}" class="btn btn-sm btn-secondary">更新资料</a>
                         </div>
                     </div>
                 </div>
@@ -35,11 +43,11 @@
 
         <div class="container pt-4 pb-5">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-lg-2 col-md-3">
                     @include('user._ucenter-nav')
                 </div>
 
-                <div class="col-sm-10">
+                <div class="col-lg-10 col-md-9">
                     <div class="tab-content">
                         @if (request()->is('*my-timelines') || request()->is('*ucenter'))
                             <div class="tab-pane fade show active">

@@ -42,13 +42,11 @@ button {
 #section-mainbody.page-user-ucenter .profile-header {
   height: auto !important;
   padding-top: 4rem;
-  padding-bottom: 4.5rem;
+  padding-bottom: 2rem;
 }
 
 #section-mainbody.page-user-ucenter .profile-header .container .operations {
-  position: absolute;
-  right: 40px;
-  bottom: 20px;
+  margin-top: 40px;
 }
 
 #section-mainbody.page-user-uhome #section-body #mainTab {

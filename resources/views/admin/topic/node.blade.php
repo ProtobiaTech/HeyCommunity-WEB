@@ -201,8 +201,7 @@
             var modal = $('#modal-update-node');
 
             if (!parentId) {
-                modal.find('.form-group-parent_id').hide();
-                modal.find('select[name="parent_id"]').val(null)
+                modal.find('option[value="0"]').attr('selected', 'selected')
             } else {
                 modal.find('option[value="' + parentId+ '"]').attr('selected', 'selected')
             }

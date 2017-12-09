@@ -2,7 +2,11 @@
 
 include_once 'web-admin.php';
 
-$system = \App\System::first();
+try {
+    $system = \App\System::first();
+} catch (Exception $e) {
+    $system = new stdClass();
+}
 view()->share('system', $system);
 
 /*

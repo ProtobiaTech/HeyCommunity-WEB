@@ -157,6 +157,13 @@
                             <li><a href="{{ route('admin.topic.node.index') }}">节点管理</a></li>
                         </ul>
                     </li>
+
+                    <li>
+                        <a href="{{ route('admin.system.edit') }}" class="waves-effect">
+                            <i class="mdi mdi-wrench"></i>
+                            <span>系统配置</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="clearfix"></div>

@@ -31,9 +31,9 @@ EOT;
             $table->increments('id');
             $table->string('site_title')->default('HeyCommunity');
             $table->string('site_subheading')->default('A New HeyCommunity Site');
-            $table->string('site_description')->default('This Is A New HeyCommunity Site');
-            $table->string('site_keywords')->default('HeyCommunity, Social Site, Open Software');
-            $table->text('site_analytic_code')->default($code);
+            $table->string('site_description')->nullable()->default('This Is A New HeyCommunity Site');
+            $table->string('site_keywords')->nullable()->default('HeyCommunity, Social Site, Open Software');
+            $table->text('site_analytic_code')->nullable()->default($code);
 
             $table->softDeletes();
             $table->timestamps();

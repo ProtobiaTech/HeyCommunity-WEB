@@ -11,7 +11,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
 
     //
-    // Home
+    // Topic
     Route::group(['prefix' => 'topic'], function () {
         Route::get('/', 'TopicController@index')->name('admin.topic.index');
 
@@ -23,5 +23,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
             Route::post('store', 'TopicNodeController@store')->name('admin.topic.node.store');
             Route::post('update', 'TopicNodeController@update')->name('admin.topic.node.update');
         });
+    });
+
+
+    //
+    // System
+    Route::group(['prefix' => 'system'], function () {
+        Route::get('edit', 'SystemController@edit')->name('admin.system.edit');
+        Route::post('update', 'SystemController@update')->name('admin.system.update');
     });
 });

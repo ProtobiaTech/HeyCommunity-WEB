@@ -3,6 +3,28 @@
 #section-pagination {
   margin-top: 20px;
   overflow: hidden;
+
+  @media (max-width: 767px) {
+    .pagination {
+      display: block;
+      font-size: 0;
+      text-align: center;
+
+      .page-item {
+        display: inline-block;
+        font-size: 14px;
+      }
+
+      @media (max-width: 450px) {
+        .page-item:nth-of-type(7),
+        .page-item:nth-of-type(8),
+        .page-item:nth-of-type(9),
+        .page-item:nth-last-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 

@@ -11,6 +11,28 @@ button {
   overflow: hidden;
 }
 
+@media (max-width: 767px) {
+  #section-pagination .pagination {
+    display: block;
+    font-size: 0;
+    text-align: center;
+  }
+
+  #section-pagination .pagination .page-item {
+    display: inline-block;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 450px) {
+  #section-pagination .pagination .page-item:nth-of-type(7),
+  #section-pagination .pagination .page-item:nth-of-type(8),
+  #section-pagination .pagination .page-item:nth-of-type(9),
+  #section-pagination .pagination .page-item:nth-last-of-type(2) {
+    display: none;
+  }
+}
+
 #section-breadcrumb .breadcrumb {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
@@ -75,7 +97,17 @@ button {
 
 @media (max-width: 767px) {
   #section-mainbody.page-topic-index #section-right .right-tools {
+    text-align: right;
+  }
+}
+
+@media (max-width: 360px) {
+  #section-mainbody.page-topic-index #section-right .right-tools {
     text-align: center;
+  }
+
+  #section-mainbody.page-topic-index #section-right .right-tools .btn-create {
+    display: none !important;
   }
 }
 

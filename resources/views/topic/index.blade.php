@@ -43,7 +43,7 @@
 
             <div id="section-right" class="col-md-9">
                 <div class="right-tools">
-                    <a class="btn btn-primary d-inline-block d-md-none pull-left" href="{{ route('topic.create') }}">发布话题</a>
+                    <a class="btn btn-primary btn-create d-inline-block d-md-none pull-left" href="{{ route('topic.create') }}">发布话题</a>
 
                     <a class="btn btn-secondary {{ setParamActive('filter', 'recent') }}" href="{{ route('topic.index', ['filter' => 'recent']) }}">最近</a>
                     <a class="btn btn-secondary {{ setParamActive('filter', 'hot') }}" href="{{ route('topic.index', ['filter' => 'hot']) }}">最热</a>

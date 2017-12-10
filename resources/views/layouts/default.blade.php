@@ -211,6 +211,8 @@
     });
 </script>
 
+<!-- script -->
+@yield('script')
 
 <!-- Analytic code -->
 {!! $system->site_analytic_code !!}

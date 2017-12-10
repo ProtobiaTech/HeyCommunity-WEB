@@ -156,3 +156,12 @@
         </div>
     </div>
 @stop
+
+
+@section('script')
+<script>
+    shareTitle = "{{ $topic->title }}";
+    shareDesc = "{{ str_limit(strip_tags($topic->content), 60) }}";
+    shareImgUrl = "{{ asset($topic->author->avatar) }}";
+</script>
+@endsection

@@ -14,9 +14,9 @@
         <br>
 
         <div class="row">
-            <div class="col-sm-1">
+            <div class="col-md-1 col-lg-1 col-xl-1">
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-5 col-lg-5 col-xl-4">
                 <div class="card">
                     <div class="card-body">
                         <br>
@@ -35,12 +35,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-7 text-center">
-                <h2>欢迎登录 HeyCommunity</h2>
+            <div class="col-md-6 col-lg-6 col-xl-6 text-center d-none d-md-block">
+                <h2>欢迎登录 {{ $system->site_title }}</h2>
 
                 <br>
                 <p>
-                    HeyCommunity 是一个开放、平等、高质量的交流社区，欢迎使用 ~
+                    {{ $system->site_title }} 是一个开放、平等、高质量的交流社区，欢迎你的登录 ~
                 </p>
             </div>
         </div>

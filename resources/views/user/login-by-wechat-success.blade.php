@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 text-center">
-                <h2>{{ Auth::user()->nickname }}, 欢迎您登录 HeyCommunity</h2>
+                <h2>{{ Auth::user()->nickname }}, 欢迎您登录 {{ $system->site_title }}</h2>
 
                 <br>
                 <p>
-                    HeyCommunity 是一个开放、平等、高质量的交流社区，欢迎使用 ~
+                    {{ $system->site_title }} 是一个开放、平等、高质量的交流社区 ~
                     <br>
                 </p>
             </div>

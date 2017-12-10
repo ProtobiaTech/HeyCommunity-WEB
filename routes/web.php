@@ -49,6 +49,13 @@ Route::group([], function () {
 
 
 //
+// Other
+Route::group([], function () {
+    Route::post('simditor-upload-images', 'UploadController@simditorUploadImages')->name('upload.simditor-upload-images');
+});
+
+
+//
 // User
 Route::group(['prefix' => 'user'], function () {
     Route::get('default-signup', 'UserController@signup')->name('user.signup');

@@ -177,6 +177,15 @@
         var editor = new Simditor({
             textarea: $('.simditor-editor'),
             toolbar: ['title', 'bold', 'italic', 'underline', 'ol', 'ul', 'hr', 'indent', 'blockquote', 'link', 'image', 'fullscreen'],
+            upload: {
+                url: '{{ route('upload.simditor-upload-images') }}',
+                params: {
+                    _token: '{{ csrf_token() }}',
+                },
+                fileKey: 'files',
+                connectionCount: 3,
+                leaveConfirm: '图片正在上传，你确定要离开？'
+            },
         });
     </script>
 @endsection

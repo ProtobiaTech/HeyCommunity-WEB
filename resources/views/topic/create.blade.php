@@ -78,7 +78,7 @@
                                 <div class="form-group row">
                                     <label for="input-content" class="col-sm-2 col-form-label">内容</label>
                                     <div class="col-sm-10">
-                                        <textarea name="content" class="form-control" id="input-content" rows="8">{{ old('content') }}</textarea>
+                                        <textarea name="content" class="form-control simditor-editor" id="input-content" rows="8">{{ old('content') }}</textarea>
 
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>
@@ -119,3 +119,29 @@
         </div>
     </div>
 @stop
+
+
+@section('script')
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/simditor/simditor.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/simditor/simditor-fullscreen.css') }}" />
+    <script type="text/javascript" src="{{ asset('assets/simditor/module.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/simditor/hotkeys.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/simditor/uploader.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/simditor/simditor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/simditor/simditor-fullscreen.js') }}"></script>
+    <script>
+        var editor = new Simditor({
+            textarea: $('.simditor-editor'),
+            toolbar: ['title', 'bold', 'italic', 'underline', 'ol', 'ul', 'hr', 'indent', 'blockquote', 'link', 'image', 'fullscreen'],
+            upload: {
+                url: '{{ route('upload.simditor-upload-images') }}',
+                params: {
+                    _token: '{{ csrf_token() }}',
+                },
+                fileKey: 'files',
+                connectionCount: 3,
+                leaveConfirm: '图片正在上传，你确定要离开？'
+            },
+        });
+    </script>
+@endsection

@@ -69,7 +69,7 @@
                                 <span class="pull-right date">{{ $topic->created_at }}</span>
                             </h6>
                             <p class="card-text">
-                                {!! nl2br(e($topic->content)) !!}
+                                {!! ($topic->content) !!} &nbsp;
                             </p>
 
                             <div class="footer">
@@ -106,7 +106,7 @@
                                             </span>
                                         </div>
                                         <div class="content">
-                                            {!! nl2br(e($comment->content)) !!}
+                                            {!! ($comment->content) !!} &nbsp;
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                                     {{ csrf_field() }}
 
                                     <div class="form-group">
-                                        <textarea name="content" id="input-comment-textarea" class="form-control" rows="3">{{ old('content') }}</textarea>
+                                        <textarea name="content" id="input-comment-textarea" class="form-control simditor-editor" rows="3">{{ old('content') }}</textarea>
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>
 
@@ -164,4 +164,19 @@
     shareDesc = "{{ str_limit(strip_tags($topic->content), 60) }}";
     shareImgUrl = "{{ asset($topic->author->avatar) }}";
 </script>
+
+
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/simditor/simditor.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/simditor/simditor-fullscreen.css') }}" />
+<script type="text/javascript" src="{{ asset('assets/simditor/module.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/simditor/hotkeys.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/simditor/uploader.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/simditor/simditor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/simditor/simditor-fullscreen.js') }}"></script>
+    <script>
+        var editor = new Simditor({
+            textarea: $('.simditor-editor'),
+            toolbar: ['title', 'bold', 'italic', 'underline', 'ol', 'ul', 'hr', 'indent', 'blockquote', 'link', 'image', 'fullscreen'],
+        });
+    </script>
 @endsection

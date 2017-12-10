@@ -92,7 +92,7 @@ class TopicController extends Controller
 
         $topic = new Topic();
         $topic->title = $request->title;
-        $topic->content = $request->content;
+        $topic->content = clean($request->content);
         $topic->node_id = $request->node_id;
         $topic->user_id = Auth::id();
 

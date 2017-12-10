@@ -23,7 +23,7 @@ class TopicCommentController extends Controller
         $commentInfo = [
             'topic_id'      =>      $topic->id,
             'user_id'       =>      Auth::id(),
-            'content'       =>      $request->content,
+            'content'       =>      clean($request->content),
             'floor_number'  =>      $topic->comments()->count() + 1,
         ];
         $topicComment = $topic->comments()->create($commentInfo);

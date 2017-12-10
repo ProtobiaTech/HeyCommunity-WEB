@@ -179,9 +179,11 @@
     /**
      * wechat
      */
-    wx.config();
+    wx.config('{!! $wechatJsConfig !!}');
 
-    wx.ready(function(){
+    wx.ready(function() {
+        console.log('hi')
+        alert('hi');
         /**
          * wechat share timeline
          */

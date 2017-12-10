@@ -29,6 +29,7 @@ try {
 } catch (Exception $e) {
     Log::alert($e->getMessage());
 }
+view()->share('wechatJsConfig', $wechatJsConfig);
 
 
 

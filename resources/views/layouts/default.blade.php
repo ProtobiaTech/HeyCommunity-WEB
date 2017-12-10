@@ -182,8 +182,6 @@
     wx.config('{!! $wechatJsConfig !!}');
 
     wx.ready(function() {
-        console.log('hi')
-        alert('hi');
         /**
          * wechat share timeline
          */

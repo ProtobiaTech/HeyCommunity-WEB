@@ -177,6 +177,8 @@
         var editor = new Simditor({
             textarea: $('.simditor-editor'),
             toolbar: ['title', 'bold', 'italic', 'underline', 'ol', 'ul', 'hr', 'indent', 'blockquote', 'link', 'image', 'fullscreen'],
+            pasteImage: true,
+            cleanPaste: true,
             upload: {
                 url: '{{ route('upload.simditor-upload-images') }}',
                 params: {

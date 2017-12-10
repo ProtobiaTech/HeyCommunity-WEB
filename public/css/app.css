@@ -40,7 +40,7 @@ button {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 #section-mainbody.page-user-ucenter .profile-header {

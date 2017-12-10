@@ -179,7 +179,7 @@
     /**
      * wechat
      */
-    wx.config('{!! $wechatJsConfig !!}');
+    wx.config({!! $wechatJsConfig !!});
 
     wx.ready(function() {
         /**

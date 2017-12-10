@@ -26,10 +26,11 @@ try {
     $wechat = new \EasyWeChat\Foundation\Application(config('wechat'));
     $wechatJs = $wechat->js;
     $wechatJsConfig = $wechatJs->config(array('onMenuShareTimeline', 'onMenuShareAppMessage'));
+    view()->share('wechatJsConfig', $wechatJsConfig);
 } catch (Exception $e) {
     Log::alert($e->getMessage());
+    view()->share('wechatJsConfig', '{}');
 }
-view()->share('wechatJsConfig', $wechatJsConfig);
 
 
 

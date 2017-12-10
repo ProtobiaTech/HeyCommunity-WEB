@@ -171,10 +171,10 @@
 <!-- Wechat -->
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-    var shareTitle = "{{ trim($__env->yieldContent('title')) }}";
-    var shareDesc = "{{ trim($__env->yieldContent('description')) }}";
+    var shareTitle = "{{ trim($__env->yieldContent('title', $system->site_title . ' - ' . $system->site_subheading)) }}";
+    var shareDesc = "{{ trim($__env->yieldContent('description', $system->site_description)) }}";
     var shareLink = '{{ request()->url() }}';
-    var shareImgUrl = "{{ url('images/icon.png') }}";
+    var shareImgUrl = "{{ url('/images/icon.png') }}";
 
     /**
      * wechat

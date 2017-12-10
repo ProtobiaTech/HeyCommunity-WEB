@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="{{ $system->site_description }}">
-    <meta name="keywords" content="{{ $system->site_keywords }}">
+    <meta name="keywords" content="@yield('description', $system->site_keywords)">
     <meta name="author" content="HeyCommunity Team">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -144,6 +144,7 @@
     })
 </script>
 
+<!-- iOS Web App -->
 <script type="text/javascript" charset="utf-8">
     // Mobile Safari in standalone mode
     if(("standalone" in window.navigator) && window.navigator.standalone){
@@ -166,6 +167,50 @@
         }, false);
     }
 </script>
+
+<!-- Wechat -->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    var shareTitle = "@yield('title', $system->site_title . ' - ' . $system->site_subheading)";
+    var shareDesc = "@yield('description')";
+    var shareLink = '{{ request()->url() }}';
+    var shareImgUrl = "{{ url('images/icon.png') }}";
+
+    /**
+     * wechat
+     */
+    wx.config();
+
+    wx.ready(function(){
+        /**
+         * wechat share timeline
+         */
+        wx.onMenuShareTimeline({
+            title: shareTitle,
+            link: shareLink,
+            imgUrl: shareImgUrl,
+            success: function () {
+            },
+            cancel: function () {
+            }
+        });
+
+        /**
+         * wechat share app message
+         */
+        wx.onMenuShareAppMessage({
+            title: shareTitle,
+            link: shareLink,
+            imgUrl: shareImgUrl,
+            desc: shareDesc,
+            success: function () {
+            },
+            cancel: function () {
+            }
+        });
+    });
+</script>
+
 
 <!-- Analytic code -->
 {!! $system->site_analytic_code !!}

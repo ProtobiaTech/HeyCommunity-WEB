@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    {{ $topic->title }} - {{ $system->site_title }}
+{{ $topic->title }} - {{ $system->site_title }}
 @endsection
 
 @section('mainBody')

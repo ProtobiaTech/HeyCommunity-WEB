@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    所有话题 - {{ $system->site_title }}
+所有话题 - {{ $system->site_title }}
 @endsection
 
 @section('mainBody')

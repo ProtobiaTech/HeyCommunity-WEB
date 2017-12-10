@@ -21,6 +21,18 @@ view()->share('system', $system);
 
 
 //
+// wechat js
+try {
+    $wechat = new \EasyWeChat\Foundation\Application(config('wechat'));
+    $wechatJs = $wechat->js;
+    $wechatJsConfig = $wechatJs->config(array('onMenuShareTimeline', 'onMenuShareAppMessage'));
+} catch (Exception $e) {
+    Log::alert($e->getMessage());
+}
+
+
+
+//
 // Home
 Route::group([], function () {
     Route::get('home', function () {

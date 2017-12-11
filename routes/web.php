@@ -33,12 +33,6 @@ try {
 }
 
 
-//
-// notice
-$noticeSum = \App\Notice::mine()->unread()->count();
-view()->share('noticeSum', $noticeSum);
-
-
 
 //
 // Home

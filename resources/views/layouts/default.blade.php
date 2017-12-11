@@ -86,6 +86,9 @@
         <ul id="#js-popoverContent" class="nav navbar-nav float-right mr-0 d-none d-md-flex">
             <li class="nav-item">
                 <a class="app-notifications nav-link" href="{{ route('notice.index') }}">
+                    @php
+                        $noticeSum = \App\Notice::mine()->unread()->count();
+                    @endphp
                     <span class="icon icon-bell {{ $noticeSum ? 'text-danger' : '' }}"></span>
                 </a>
             </li>

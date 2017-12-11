@@ -12,7 +12,7 @@
 
                         @foreach($notices as $notice)
                             @switch($notice->entity_name)
-                                @case('TopicComment')
+                                @case('TopicCommentReplay')
                                     <li class="list-group-item media p-4">
                                         <span class="icon icon-flag text-muted mr-2"></span>
 
@@ -30,6 +30,7 @@
                                             </div>
                                         </div>
                                     </li>
+                                @break
 
                                 @case('TopicComment')
                                     <li class="list-group-item media p-4">

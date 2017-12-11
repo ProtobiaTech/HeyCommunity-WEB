@@ -5,6 +5,6 @@
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 require('./utilities/request');

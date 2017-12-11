@@ -85,8 +85,8 @@
 
         <ul id="#js-popoverContent" class="nav navbar-nav float-right mr-0 d-none d-md-flex">
             <li class="nav-item">
-                <a class="app-notifications nav-link" href="{{ route('notification.index') }}">
-                    <span class="icon icon-bell"></span>
+                <a class="app-notifications nav-link" href="{{ route('notice.index') }}">
+                    <span class="icon icon-bell {{ $noticeSum ? 'text-danger' : '' }}"></span>
                 </a>
             </li>
             <li class="nav-item ml-2">

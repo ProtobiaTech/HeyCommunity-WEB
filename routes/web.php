@@ -33,6 +33,12 @@ try {
 }
 
 
+//
+// notice
+$noticeSum = \App\Notice::mine()->unread()->count();
+view()->share('noticeSum', $noticeSum);
+
+
 
 //
 // Home
@@ -97,8 +103,8 @@ Route::group(['prefix' => 'user'], function () {
 
 //
 // Notice
-Route::group(['prefix' => 'notification'], function () {
-    Route::get('/', 'NotificationController@index')->name('notification.index');
+Route::group(['prefix' => 'notice'], function () {
+    Route::get('/', 'NoticeController@index')->name('notice.index');
 });
 
 

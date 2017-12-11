@@ -10,7 +10,7 @@ class TopicNotice
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $type;
+    public $entityName;
 
     public $entity;
 
@@ -23,9 +23,9 @@ class TopicNotice
      *
      * @return void
      */
-    public function __construct($type, $entity, $user = null, $sender = null)
+    public function __construct($entityName, $entity, $user = null, $sender = null)
     {
-        $this->type = $type;
+        $this->entityName = $entityName;
         $this->entity = $entity;
 
         $this->userId = is_int($user) ? $user : $user->id;

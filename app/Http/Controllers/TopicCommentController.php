@@ -32,7 +32,7 @@ class TopicCommentController extends Controller
             $topic->increment('comment_num');
 
             // trigger notice
-            event(new \App\Events\TopicNotice('comment', $topicComment, $topic->user_id, $topicComment->user_id));
+            event(new \App\Events\TopicNotice('TopicComment', $topicComment, $topic->user_id, $topicComment->user_id));
 
             return redirect()->route('topic.show', $topic->id);
         } else {

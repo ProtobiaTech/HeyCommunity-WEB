@@ -10,20 +10,48 @@
                             <h4 class="m-0">通知</h4>
                         </li>
 
-                        <li class="list-group-item media p-4">
-                            <span class="icon icon-text text-muted mr-2"></span>
+                        @foreach($notices as $notice)
+                            @switch($notice->entity_name)
+                                @case('TopicComment')
+                                    <li class="list-group-item media p-4">
+                                        <span class="icon icon-flag text-muted mr-2"></span>
 
-                            <div class="media-body">
-                                <small class="text-muted float-right"></small>
-                                <div class="media-heading">
-                                    暂不可用
-                                </div>
-                            </div>
-                        </li>
+                                        <div class="media-body">
+                                            <small class="text-muted float-right">{{ $notice->created_at }}</small>
+                                            <div class="media-heading">
+                                                <a href="{{ route('user.uhome', $notice->sender_id) }}"><strong>{{ $notice->sender->nickname }}</strong></a>
+                                                对你的<a href="">话题评论</a>做出了回复
+                                                <br>
+
+                                                <div style="padding-left:2em; border-left:2px solid #ddd; margin:6px 0 4px; color:#777; font-size:12px;">
+                                                    {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }} &nbsp;
+                                                </div>
+                                                {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }} &nbsp;
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                @case('TopicComment')
+                                    <li class="list-group-item media p-4">
+                                        <span class="icon icon-flag text-muted mr-2"></span>
+
+                                        <div class="media-body">
+                                            <small class="text-muted float-right">{{ $notice->created_at }}</small>
+                                            <div class="media-heading">
+                                                <a href="{{ route('user.uhome', $notice->sender_id) }}"><strong>{{ $notice->sender->nickname }}</strong></a>
+                                                对你的话题 <a href="{{ route('topic.show', $notice->entity->topic->id) }}">{{ $notice->entity->topic->title }}</a>
+                                                <br>
+                                                发表了评论: {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }} &nbsp;
+                                            </div>
+                                        </div>
+                                    </li>
+                                @break
+                            @endswitch
+                        @endforeach
 
                         <!--
                         <li class="list-group-item media p-4">
-                            <span class="icon icon-globe text-muted mr-2"></span>
+                            <span class="icon icon-comment text-muted mr-2"></span>
 
                             <div class="media-body">
                                 <small class="text-muted float-right">1 min</small>

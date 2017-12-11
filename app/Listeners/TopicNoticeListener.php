@@ -31,9 +31,9 @@ class TopicNoticeListener
             $notice = Notice::create([
                 'user_id'       =>  $event->userId,
                 'sender_id'     =>  $event->senderId,
+                'entity_name'   =>  $event->entityName,
+                'entity_class'  =>  get_class($event->entity),
                 'entity_id'     =>  $event->entity->id,
-                'entity_type'   =>  get_class($event->entity),
-
             ]);
         }
     }

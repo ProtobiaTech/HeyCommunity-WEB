@@ -20,8 +20,9 @@ class CreateNoticesTable extends Migration
             $table->integer('sender_id')->index()->unsigned()->comment('Sender ID');
             $table->foreign('sender_id')->references('id')->on('users');
 
-            $table->string('entity_type');
             $table->integer('entity_id');
+            $table->string('entity_class');
+            $table->string('entity_name');
             $table->integer('is_read')->default(0);
             $table->dateTime('read_at')->nullable();
 

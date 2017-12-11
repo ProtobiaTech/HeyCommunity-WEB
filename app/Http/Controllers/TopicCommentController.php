@@ -31,6 +31,9 @@ class TopicCommentController extends Controller
         if ($topicComment) {
             $topic->increment('comment_num');
 
+            // trigger notice
+            event(new \App\Events\TopicNotice('comment', $topicComment, $topic->user_id, $topicComment->user_id));
+
             return redirect()->route('topic.show', $topic->id);
         } else {
             return back()->withInput();

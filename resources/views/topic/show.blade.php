@@ -132,11 +132,11 @@
 
                                     <div class="form-group simditor-box">
                                         @if (Auth::guest())
-                                            <div id="section-textarea-login-tip">
+                                            <div id="section-textarea-login-tip" style="padding-top:25px;">
                                                 请<a href="{{ route('user.login') }}">登入</a>后再发表评论
                                             </div>
                                         @endif
-                                        <textarea name="content" id="input-comment-textarea" class="form-control simditor-editor" rows="3">{{ old('content') }}</textarea>
+                                        <textarea name="content" id="input-comment-textarea" class="form-control simditor-editor" rows="3" placeholder="在这里, 我们真诚地交流">{{ old('content') }}</textarea>
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>
 
@@ -164,35 +164,4 @@
 
 
 @section('script')
-<script>
-    shareTitle = "{{ $topic->title }}";
-    shareDesc = "{{ str_limit(strip_tags($topic->content), 60) }}";
-    shareImgUrl = "{{ asset($topic->author->avatar) }}";
-</script>
-
-
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/simditor/simditor.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/simditor/simditor-fullscreen.css') }}" />
-<script type="text/javascript" src="{{ asset('assets/simditor/module.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/simditor/hotkeys.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/simditor/uploader.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/simditor/simditor.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/simditor/simditor-fullscreen.js') }}"></script>
-    <script>
-        var editor = new Simditor({
-            textarea: $('.simditor-editor'),
-            toolbar: ['title', 'bold', 'italic', 'underline', 'ol', 'ul', 'hr', 'indent', 'blockquote', 'link', 'image', 'fullscreen'],
-            pasteImage: true,
-            cleanPaste: true,
-            upload: {
-                url: '{{ route('upload.simditor-upload-images') }}',
-                params: {
-                    _token: '{{ csrf_token() }}',
-                },
-                fileKey: 'files',
-                connectionCount: 3,
-                leaveConfirm: '图片正在上传，你确定要离开？'
-            },
-        });
-    </script>
 @endsection

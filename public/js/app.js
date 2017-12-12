@@ -68,8 +68,8 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-__webpack_require__(3);
-module.exports = __webpack_require__(4);
+__webpack_require__(4);
+module.exports = __webpack_require__(5);
 
 
 /***/ }),
@@ -86,6 +86,7 @@ module.exports = __webpack_require__(4);
 // require('./bootstrap');
 
 __webpack_require__(2);
+__webpack_require__(3);
 
 /***/ }),
 /* 2 */
@@ -122,10 +123,39 @@ window.postSubmit = function (url, params) {
 /* 3 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+/**
+ *  get cookie
+ */
+window.getCookie = function (cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+
+    return '';
+};
+
+/**
+ * set cookie
+ */
+window.setCookie = function (cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+};
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

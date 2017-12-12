@@ -8,3 +8,4 @@
 // require('./bootstrap');
 
 require('./utilities/request');
+require('./utilities/other');

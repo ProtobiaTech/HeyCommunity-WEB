@@ -22,7 +22,7 @@
             <div class="row">
                 <!-- operation -->
                 <div id="section-operation" class="col-md-2 d-none d-md-block">
-                    <a class="btn btn-block btn-secondary" href="{{ request()->header('referer') }}"><i class="pull-left fa fa-chevron-left"></i> 返回</a>
+                    <button class="btn btn-block btn-secondary" onclick="location.assign(getCookie('TopicDetailPageBackUrl'))"><i class="pull-left fa fa-chevron-left"></i> 返回</button>
                     <br>
 
                     <a class="btn btn-block btn-secondary" href="javascript:$('#input-comment-textarea').focus();">
@@ -160,8 +160,16 @@
             </div>
         </div>
     </div>
-@stop
+@endsection
 
 
 @section('script')
+<script>
+    // set topic detail page back url
+    if ('{{ URL::previous() }}'.search(/topic\/[0-9]*/) < 0) {
+        alert('{{ URL::previous() }}');
+        alert('{{ URL::previous() }}'.search(/topic\/[0-9]*/));
+        setCookie('TopicDetailPageBackUrl', '{{ URL::previous() }}');
+    }
+</script>
 @endsection

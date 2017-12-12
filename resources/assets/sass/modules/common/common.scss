@@ -37,3 +37,20 @@
     border-radius: 0.25rem 0.25rem 0 0;
   }
 }
+
+
+//
+//
+.simditor-box {
+  position: relative;
+}
+
+#section-textarea-login-tip {
+  z-index: 9;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding-top: 180px;
+}

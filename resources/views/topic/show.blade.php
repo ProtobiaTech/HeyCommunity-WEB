@@ -130,17 +130,22 @@
                                     <input type="hidden" name="topic_id" value="{{ $topic->id }}">
                                     {{ csrf_field() }}
 
-                                    <div class="form-group">
+                                    <div class="form-group simditor-box">
+                                        @if (Auth::guest())
+                                            <div id="section-textarea-login-tip">
+                                                请<a href="{{ route('user.login') }}">登入</a>后再发表评论
+                                            </div>
+                                        @endif
                                         <textarea name="content" id="input-comment-textarea" class="form-control simditor-editor" rows="3">{{ old('content') }}</textarea>
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>
 
                                     <div class="pull-right d-none d-md-block">
-                                        <button class="btn btn-primary pl-4 pr-4" type="submit">发布</button>
+                                        <button class="btn btn-primary pl-4 pr-4" {{ setDisabled(Auth::guest()) }} type="submit">提交</button>
                                     </div>
 
                                     <div class="d-block d-md-none">
-                                        <button class="btn btn-primary btn-block pl-4 pr-4" type="submit">发布</button>
+                                        <button class="btn btn-primary btn-block pl-4 pr-4" {{ setDisabled(Auth::guest()) }} type="submit">提交</button>
                                     </div>
                                 </form>
                             </div>

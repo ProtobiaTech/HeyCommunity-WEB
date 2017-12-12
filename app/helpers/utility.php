@@ -25,3 +25,13 @@ function setParamActive($paramName, $value)
         return 'active';
     }
 }
+
+/**
+ * Set Disabled
+ */
+function setDisabled($condition)
+{
+    if ($condition) {
+        return 'disabled';
+    }
+}

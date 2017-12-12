@@ -167,8 +167,6 @@
 <script>
     // set topic detail page back url
     if ('{{ URL::previous() }}'.search(/topic\/[0-9]*/) < 0) {
-        alert('{{ URL::previous() }}');
-        alert('{{ URL::previous() }}'.search(/topic\/[0-9]*/));
         setCookie('TopicDetailPageBackUrl', '{{ URL::previous() }}');
     }
 </script>

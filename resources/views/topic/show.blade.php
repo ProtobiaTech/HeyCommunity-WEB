@@ -56,7 +56,7 @@
                         <a class="btn btn-block btn-secondary" href="{{ route('topic.edit', $topic->id) }}">
                             <i class="pull-left fa fa-edit"></i> 编辑
                         </a>
-                        <button class="btn btn-block btn-secondary" onclick="destroy({{ $topic->id }})"><i class="pull-left fa fa-trash"></i> 删除</button>
+                        <button class="btn btn-block btn-secondary" onclick="destroyTopic({{ $topic->id }})"><i class="pull-left fa fa-trash"></i> 删除</button>
                     @endif
                 </div>
 
@@ -108,6 +108,12 @@
                                         <div class="title">
                                             <a href="{{ route('user.uhome', $comment->author->id) }}">{{ $comment->author->nickname }}</a>
                                             <span class="info pull-right text-muted">
+                                                @if (Gate::allows('basic-handle', $comment))
+                                                    <span><a href="javascript:destroyComment({{ $comment->id }})">删除</a></span>
+                                                    &nbsp;&nbsp;
+                                                    &nbsp;&nbsp;
+                                                @endif
+
                                                 <span><b>#{{ $comment->floor_number }}</b></span>
                                                 &nbsp;&nbsp;
                                                 {{ $comment->created_at }}
@@ -181,8 +187,15 @@
     /**
      * destroy topic
      */
-    function destroy(id) {
+    function destroyTopic(id) {
         confirmPostSubmit('是否要删除该话题', '{{ route("topic.destroy") }}', {id: id})
+    }
+
+    /**
+     * destroy topic comment
+     */
+    function destroyComment(id) {
+        confirmPostSubmit('是否要删除该评论', '{{ route("topic.comment.destroy") }}', {id: id})
     }
 </script>
 @endsection

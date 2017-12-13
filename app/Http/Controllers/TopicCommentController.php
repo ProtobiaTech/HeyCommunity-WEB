@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Gate;
 use App\Topic;
+use App\TopicComment;
 
 class TopicCommentController extends Controller
 {
@@ -37,6 +39,29 @@ class TopicCommentController extends Controller
             return redirect()->route('topic.show', $topic->id);
         } else {
             return back()->withInput();
+        }
+    }
+
+    /**
+     *
+     */
+    public function destroy(Request $request)
+    {
+        $this->validate($request, [
+            'id'        =>      'required|integer',
+        ]);
+
+        $topicComment = TopicComment::findOrFail($request->id);
+
+        if (Gate::allows('destroy', $topicComment)) {
+            $topicComment->delete();
+            $topicComment->topic->decrement('comment_num');
+
+            flash('操作成功')->success();
+            return back();
+        } else {
+            flash('操作失败, 你无权执行此操作')->error();
+            return back();
         }
     }
 }

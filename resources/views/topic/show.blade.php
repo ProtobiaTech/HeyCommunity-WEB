@@ -53,7 +53,7 @@
 
                     @if (Gate::allows('basic-handle', $topic))
                         <br>
-                        <a class="btn btn-block btn-secondary" href="javascript:$('#input-comment-textarea').focus();">
+                        <a class="btn btn-block btn-secondary" href="{{ route('topic.edit', $topic->id) }}">
                             <i class="pull-left fa fa-edit"></i> 编辑
                         </a>
                         <button class="btn btn-block btn-secondary" onclick="destroy({{ $topic->id }})"><i class="pull-left fa fa-trash"></i> 删除</button>

@@ -150,6 +150,43 @@ class TopicController extends Controller
     }
 
     /**
+     * Topic Edit Page
+     */
+    public function edit($id)
+    {
+        $rootNodes = TopicNode::roots()->with('childNodes')->get();
+        $topic = Topic::findOrFail($id);
+
+        if (Gate::allows('update-within-time', $topic)) {
+            return view('topic.edit', compact('rootNodes', 'topic'));
+        } else {
+            return back();
+        }
+    }
+
+    /**
+     * Topic Update Handle
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title'         =>      'required|string',
+            'node_id'       =>      'required|integer',
+            'content'       =>      'required|string|min:10',
+        ]);
+
+        $topic = Topic::findOrFail($id);
+
+        if (Gate::allows('update-within-time', $topic)) {
+            $topic->update($request->only(['title', 'node_id', 'content']));
+
+            return redirect()->route('topic.show', $topic->id);
+        } else {
+            return back();
+        }
+    }
+
+    /**
      * Topic Destroy
      */
     public function destroy(Request $request)

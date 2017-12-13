@@ -107,15 +107,20 @@ Route::group(['prefix' => 'notice'], function () {
 Route::group(['prefix' => 'topic'], function () {
     Route::get('/', 'TopicController@index')->name('topic.index');
     Route::get('/{id}', 'TopicController@show')->name('topic.show')->where('id', '[0-9]+');
-    Route::get('create', 'TopicController@create')->name('topic.create')->middleware(['auth']);
-    Route::post('store', 'TopicController@store')->name('topic.store')->middleware(['auth']);
-    Route::post('thumb', 'TopicController@thumb')->name('topic.thumb')->middleware(['auth']);
-    Route::post('favorite', 'TopicController@favorite')->name('topic.favorite')->middleware(['auth']);
-    Route::post('destroy', 'TopicController@destroy')->name('topic.destroy');
 
-    // Topic Comment
-    Route::group(['prefix' => 'comment'], function () {
-        Route::post('store', 'TopicCommentController@store')->name('topic.comment.store')->middleware(['auth']);
+    Route::middleware(['auth'])->group(function() {
+        Route::get('create', 'TopicController@create')->name('topic.create');
+        Route::get('edit/{id}', 'TopicController@edit')->name('topic.edit')->where('id', '[0-9]+');
+        Route::post('update/{id}', 'TopicController@update')->name('topic.update')->where('id', '[0-9]+');
+        Route::post('store', 'TopicController@store')->name('topic.store');
+        Route::post('thumb', 'TopicController@thumb')->name('topic.thumb');
+        Route::post('favorite', 'TopicController@favorite')->name('topic.favorite');
+        Route::post('destroy', 'TopicController@destroy')->name('topic.destroy');
+
+        // Topic Comment
+        Route::group(['prefix' => 'comment'], function () {
+            Route::post('store', 'TopicCommentController@store')->name('topic.comment.store');
+        });
     });
 });
 

@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -42,14 +41,17 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('update-within-time', function ($user, $entity, $time = 5) {
             if (isSuperAdmin()) return true;
 
-            if (
-                $entity->user_id === $user->id
-                && $entity->created_at->addMinutes($time)->gte(Carbon::now())
-            ) {
-                return true;
+            if ($entity->user_id === $user->id) {
+                if ($entity->created_at->addMinutes($time)->gte(Carbon::now())) {
+                    return true;
+                } else {
+                    flash("操作失败, 请在内容发布 {$time} 分钟之内进行此操作")->error();
+                }
             } else {
-                return false;
+                flash('你无权做此操作')->error();
             }
+
+            return false;
         });
 
         //
@@ -57,7 +59,12 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('destroy', function ($user, $entity) {
             if (isSuperAdmin()) return true;
 
-            return ($entity->user_id === $user->id) ? true : false;
+            if ($entity->user_id === $user->id) {
+                return true;
+            } else {
+                flash('你无权做此操作')->error();
+                return false;
+            }
         });
     }
 }

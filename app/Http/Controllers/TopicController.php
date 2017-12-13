@@ -160,7 +160,7 @@ class TopicController extends Controller
         $topic = Topic::findOrFail($request->id);
 
         // @todo if have delete permissions
-        if (Auth::user()->is_admin) {
+        if (Auth::user()->isSuperAdmin()) {
             $topic->delete();
 
             flash('操作成功')->success();

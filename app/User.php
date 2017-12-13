@@ -33,4 +33,12 @@ class User extends Authenticatable
     {
         return '/images/user/avatars/guest.jpg';
     }
+
+    /**
+     * Is Admin
+     */
+    public function isSuperAdmin()
+    {
+        return $this->is_super_admin ? true : false;
+    }
 }

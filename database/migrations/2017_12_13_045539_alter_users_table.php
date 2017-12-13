@@ -14,7 +14,7 @@ class AlterUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('is_admin')->default(0)->after('id')->index()->comment('Is Admin');
+            $table->integer('is_super_admin')->default(0)->after('id')->index()->comment('Is Admin');
         });
     }
 
@@ -26,7 +26,7 @@ class AlterUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_admin');
+            $table->dropColumn('is_super_admin');
         });
     }
 }

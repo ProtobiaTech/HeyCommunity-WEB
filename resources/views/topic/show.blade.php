@@ -51,7 +51,7 @@
                         @endif
                     </a>
 
-                    @if (false | Auth::user()->is_admin)
+                    @if (false | Auth::user()->isSuperAdmin())
                         <br>
                         <a class="btn btn-block btn-secondary" href="javascript:$('#input-comment-textarea').focus();">
                             <i class="pull-left fa fa-edit"></i> 编辑

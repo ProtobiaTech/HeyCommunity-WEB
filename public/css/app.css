@@ -168,11 +168,20 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-height: 1.6rem;
 }
 
 #section-mainbody.page-topic-show #section-operation .btn {
   background-color: #fff;
   color: #666;
+}
+
+#section-mainbody.page-topic-show #topic-card .card-text {
+  min-height: 1.6rem;
+}
+
+#section-mainbody.page-topic-show #topic-card .card-text p:last-of-type {
+  margin-bottom: 0;
 }
 
 #section-mainbody.page-topic-show #topic-card .footer .topic-info {
@@ -206,6 +215,14 @@ img {
 #section-mainbody.page-topic-show #section-comment-list .card .card-body .body {
   padding-left: 50px;
   width: 100%;
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .content {
+  min-height: 1.6rem;
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .content p:last-of-type {
+  margin-bottom: 0;
 }
 
 #section-mainbody.page-activity-index .carousel {

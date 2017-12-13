@@ -76,9 +76,9 @@
                                 <a class="d-inline-block d-md-none" href="{{ route('user.uhome', $topic->author->id) }}">{{ $topic->author->nickname }}</a>
                                 <span class="pull-right date">{{ $topic->created_at }}</span>
                             </h6>
-                            <p class="card-text">
-                                {!! ($topic->content) !!} &nbsp;
-                            </p>
+                            <div class="card-text">
+                                {!! ($topic->content) !!}
+                            </div>
 
                             <div class="footer">
                                 <div class="pull-right">
@@ -114,7 +114,7 @@
                                             </span>
                                         </div>
                                         <div class="content">
-                                            {!! ($comment->content) !!} &nbsp;
+                                            {!! ($comment->content) !!}
                                         </div>
                                     </div>
                                 </div>

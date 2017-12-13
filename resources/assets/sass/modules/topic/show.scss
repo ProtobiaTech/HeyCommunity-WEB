@@ -9,6 +9,14 @@
   //
   //
   #topic-card {
+    .card-text {
+      min-height: 1.6rem;
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
     .footer {
       .topic-info {
         font-size: 12px;
@@ -52,6 +60,14 @@
         .body {
           padding-left: 50px;
           width: 100%;
+
+          .content {
+            min-height: 1.6rem;
+
+            p:last-of-type {
+              margin-bottom: 0;
+            }
+          }
         }
       }
     }

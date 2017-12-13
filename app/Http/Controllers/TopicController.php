@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Gate;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
@@ -159,8 +160,7 @@ class TopicController extends Controller
 
         $topic = Topic::findOrFail($request->id);
 
-        // @todo if have delete permissions
-        if (Auth::user()->isSuperAdmin()) {
+        if (Gate::allows('destroy', $topic)) {
             $topic->delete();
 
             flash('操作成功')->success();

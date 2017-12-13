@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -32,13 +33,5 @@ class User extends Authenticatable
     public static function guestAvatar()
     {
         return '/images/user/avatars/guest.jpg';
-    }
-
-    /**
-     * Is Admin
-     */
-    public function isSuperAdmin()
-    {
-        return $this->is_super_admin ? true : false;
     }
 }

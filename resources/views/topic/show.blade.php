@@ -51,7 +51,7 @@
                         @endif
                     </a>
 
-                    @if (false | Auth::user()->isSuperAdmin())
+                    @if (Gate::allows('basic-handle', $topic))
                         <br>
                         <a class="btn btn-block btn-secondary" href="javascript:$('#input-comment-textarea').focus();">
                             <i class="pull-left fa fa-edit"></i> 编辑

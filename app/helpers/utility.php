@@ -35,3 +35,11 @@ function setDisabled($condition)
         return 'disabled';
     }
 }
+
+/**
+ * Is Super Admin
+ */
+function isSuperAdmin()
+{
+    return (Auth::check() && Auth::user()->is_super_admin) ? true : false;
+}

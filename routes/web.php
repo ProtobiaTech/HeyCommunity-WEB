@@ -111,6 +111,7 @@ Route::group(['prefix' => 'topic'], function () {
     Route::post('store', 'TopicController@store')->name('topic.store')->middleware(['auth']);
     Route::post('thumb', 'TopicController@thumb')->name('topic.thumb')->middleware(['auth']);
     Route::post('favorite', 'TopicController@favorite')->name('topic.favorite')->middleware(['auth']);
+    Route::post('destroy', 'TopicController@destroy')->name('topic.destroy');
 
     // Topic Comment
     Route::group(['prefix' => 'comment'], function () {

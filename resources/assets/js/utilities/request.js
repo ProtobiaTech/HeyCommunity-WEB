@@ -25,3 +25,13 @@ window.postSubmit = function(url, params) {
     document.body.appendChild(form);
     form.submit();
 }
+
+
+/**
+ * Confirm Post Submit
+ */
+window.confirmPostSubmit = function(message, url, params) {
+    if (confirm(message)) {
+        postSubmit(url, params);
+    }
+}

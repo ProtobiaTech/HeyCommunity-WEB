@@ -147,4 +147,22 @@ class TopicController extends Controller
 
         return back();
     }
+
+    /**
+     * Topic Destroy
+     */
+    public function destroy(Request $request)
+    {
+        $this->validate($request, [
+            'id'        =>      'required|integer',
+        ]);
+
+        $topic = Topic::findOrFail($request->id);
+
+        // @todo if have delete permissions
+        $topic->delete();
+
+        flash('操作成功')->success();
+        return redirect()->route('topic.index');
+    }
 }

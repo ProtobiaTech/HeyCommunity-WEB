@@ -50,6 +50,12 @@
                             <i class="pull-left fa fa-star-o"></i> 收藏
                         @endif
                     </a>
+
+                    <br>
+                    <a class="btn btn-block btn-secondary" href="javascript:$('#input-comment-textarea').focus();">
+                        <i class="pull-left fa fa-edit"></i> 编辑
+                    </a>
+                    <button class="btn btn-block btn-secondary" onclick="destroy({{ $topic->id }})"><i class="pull-left fa fa-trash"></i> 删除</button>
                 </div>
 
                 <!-- body -->
@@ -168,6 +174,13 @@
     // set topic detail page back url
     if ('{{ URL::previous() }}'.search(/topic\/[0-9]*/) < 0) {
         setCookie('TopicDetailPageBackUrl', '{{ URL::previous() }}');
+    }
+
+    /**
+     * destroy topic
+     */
+    function destroy(id) {
+        confirmPostSubmit('是否要删除该话题', '{{ route("topic.destroy") }}', {id: id})
     }
 </script>
 @endsection

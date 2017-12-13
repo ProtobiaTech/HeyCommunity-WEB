@@ -119,6 +119,15 @@ window.postSubmit = function (url, params) {
     form.submit();
 };
 
+/**
+ * Confirm Post Submit
+ */
+window.confirmPostSubmit = function (message, url, params) {
+    if (confirm(message)) {
+        postSubmit(url, params);
+    }
+};
+
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {

@@ -51,11 +51,13 @@
                         @endif
                     </a>
 
-                    <br>
-                    <a class="btn btn-block btn-secondary" href="javascript:$('#input-comment-textarea').focus();">
-                        <i class="pull-left fa fa-edit"></i> 编辑
-                    </a>
-                    <button class="btn btn-block btn-secondary" onclick="destroy({{ $topic->id }})"><i class="pull-left fa fa-trash"></i> 删除</button>
+                    @if (false | Auth::user()->is_admin)
+                        <br>
+                        <a class="btn btn-block btn-secondary" href="javascript:$('#input-comment-textarea').focus();">
+                            <i class="pull-left fa fa-edit"></i> 编辑
+                        </a>
+                        <button class="btn btn-block btn-secondary" onclick="destroy({{ $topic->id }})"><i class="pull-left fa fa-trash"></i> 删除</button>
+                    @endif
                 </div>
 
                 <!-- body -->

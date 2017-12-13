@@ -160,9 +160,14 @@ class TopicController extends Controller
         $topic = Topic::findOrFail($request->id);
 
         // @todo if have delete permissions
-        $topic->delete();
+        if (Auth::user()->is_admin) {
+            $topic->delete();
 
-        flash('操作成功')->success();
-        return redirect()->route('topic.index');
+            flash('操作成功')->success();
+            return redirect()->route('topic.index');
+        } else {
+            flash('操作失败, 你无权执行此操作')->error();
+            return back();
+        }
     }
 }

@@ -147,12 +147,10 @@
 
                                             <span class="info m-desktop pull-right text-muted d-none d-md-inline-block">
                                                 <span class="">
-                                                    <a href="javascript:commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
+                                                    <a href="javascript:alert('此功能暂不可用');commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
                                                     &nbsp;&nbsp;
-                                                    <!-- @todo
-                                                    <a href="javascript:commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
+                                                    <a href="javascript:alert('此功能暂不可用');commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
                                                     &nbsp;&nbsp;
-                                                    -->
                                                 </span>
 
                                                 &nbsp;
@@ -172,11 +170,9 @@
                                                 &nbsp;&nbsp;
 
                                                 <span class="">
-                                                    <a href="javascript:commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
+                                                    <a href="javascript:alert('此功能暂不可用');commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
                                                     &nbsp;
-                                                    <!-- @todo
-                                                    <a href="javascript:commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
-                                                    -->
+                                                    <a href="javascript:alert('此功能暂不可用');commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
                                                     @if (Gate::allows('basic-handle', $comment))
                                                         &nbsp;
                                                         <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i></a></span>

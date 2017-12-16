@@ -49,6 +49,12 @@
   //
   #section-comment-list {
     .card {
+      &:hover {
+        .card-body .body .title .info.m-desktop a {
+          display: inline-block;
+        }
+      }
+
       .card-body {
         .avatar {
           position: absolute;
@@ -62,12 +68,18 @@
           width: 100%;
 
           .title {
-            .pull-right {
+            .info {
               a {
                 color: #888;
 
                 :hover {
                   color: #555;
+                }
+              }
+
+              &.m-desktop {
+                a {
+                  display: none;
                 }
               }
             }

@@ -145,12 +145,14 @@
                                         <div class="title">
                                             <a href="{{ route('user.uhome', $comment->author->id) }}">{{ $comment->author->nickname }}</a>
 
-                                            <span class="info pull-right text-muted d-none d-md-inline-block">
+                                            <span class="info m-desktop pull-right text-muted d-none d-md-inline-block">
                                                 <span class="">
                                                     <a href="javascript:commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
                                                     &nbsp;&nbsp;
+                                                    <!-- @todo
                                                     <a href="javascript:commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
                                                     &nbsp;&nbsp;
+                                                    -->
                                                 </span>
 
                                                 &nbsp;
@@ -165,14 +167,16 @@
                                                 @endif
                                             </span>
 
-                                            <span class="info pull-right text-muted d-inline-block d-md-none">
+                                            <span class="info m-mobile pull-right text-muted d-inline-block d-md-none">
                                                 <span><b>#{{ $comment->floor_number }}</b></span>
                                                 &nbsp;&nbsp;
 
                                                 <span class="">
                                                     <a href="javascript:commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
                                                     &nbsp;
+                                                    <!-- @todo
                                                     <a href="javascript:commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
+                                                    -->
                                                     @if (Gate::allows('basic-handle', $comment))
                                                         &nbsp;
                                                         <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i></a></span>

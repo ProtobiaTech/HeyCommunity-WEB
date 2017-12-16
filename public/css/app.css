@@ -205,6 +205,10 @@ img {
   border-left: 4px solid #3097D1;
 }
 
+#section-mainbody.page-topic-show #section-comment-list .card:hover .card-body .body .title .info.m-desktop a {
+  display: inline-block;
+}
+
 #section-mainbody.page-topic-show #section-comment-list .card .card-body .avatar {
   position: absolute;
   width: 40px;
@@ -217,12 +221,16 @@ img {
   width: 100%;
 }
 
-#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .pull-right a {
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .info a {
   color: #888;
 }
 
-#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .pull-right a :hover {
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .info a :hover {
   color: #555;
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .info.m-desktop a {
+  display: none;
 }
 
 #section-mainbody.page-topic-show #section-comment-list .card .card-body .body .content {

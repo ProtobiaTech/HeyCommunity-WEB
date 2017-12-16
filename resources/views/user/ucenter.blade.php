@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="col-12 d-block d-sm-none">
-                        <div class="btn-group" role="group" aria-label="Basic example">
+                        <div class="btn-group btn-group-sm">
                             <a href="" class="btn btn-sm btn-secondary">更换头像</a>
                             <a href="" class="btn btn-sm btn-secondary">更换封面</a>
                             <a href="{{ route('user.uhome', $user->id) }}" class="btn btn-sm btn-secondary">我的主页</a>

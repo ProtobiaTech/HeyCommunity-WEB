@@ -157,8 +157,12 @@ class UserController extends Controller
     /**
      * User center
      */
-    public function ucenter()
+    public function ucenter(Request $request)
     {
+        if ($request->is('*ucenter')) {
+            return redirect()->route('user.ucenter.my-topics');
+        }
+
         $user = Auth::user();
         $myTopics = Topic::mine()->paginate();
         $myActivities = Activity::paginate();

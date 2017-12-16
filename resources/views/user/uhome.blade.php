@@ -21,8 +21,8 @@
                             </h6>
                             <ul class="list-unstyled list-spaced">
                                 <li><span class="text-muted icon icon-user mr-3"></span>U{{ $user->id }}</li>
-                                <li><span class="text-muted icon icon-calendar mr-3"></span>注册于 {{ $user->created_at->format('Ymd') }}, 第 {{ $user->id }} 名会员 </li>
                                 <li><span class="text-muted icon icon-location-pin mr-3"></span>中国大陆</li>
+                                <li><span class="text-muted icon icon-calendar mr-3"></span>注册于 {{ $user->created_at->format('Y年m月d日') }}, 第 {{ $user->id }} 名会员 </li>
                             </ul>
                         </div>
                     </div>
@@ -30,9 +30,13 @@
 
                 <div class="col-sm-9" id="section-body">
                     <nav class="nav nav-pills" id="mainTab">
+                        <!--
                         <a class="nav-item nav-link" data-toggle="tab" href="#nav-timeline">公园</a>
+                        -->
                         <a class="nav-item nav-link active" data-toggle="tab" href="#nav-topic">话题</a>
+                        <!--
                         <a class="nav-item nav-link" data-toggle="tab" href="#nav-activity">活动</a>
+                        -->
                     </nav>
 
                     <div class="tab-content" id="nav-mainTabContent">

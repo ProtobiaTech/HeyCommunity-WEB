@@ -197,7 +197,7 @@ class TopicController extends Controller
 
         $topic = Topic::findOrFail($request->id);
 
-        if (Gate::allows('destroy', $topic)) {
+        if (Gate::allows('update', $topic)) {
             $topic->delete();
 
             flash('操作成功')->success();

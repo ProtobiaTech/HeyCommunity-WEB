@@ -53,14 +53,13 @@ class TopicCommentController extends Controller
 
         $topicComment = TopicComment::findOrFail($request->id);
 
-        if (Gate::allows('destroy', $topicComment)) {
+        if (Gate::allows('update-within-time', $topicComment)) {
             $topicComment->delete();
             $topicComment->topic->decrement('comment_num');
 
             flash('操作成功')->success();
             return back();
         } else {
-            flash('操作失败, 你无权执行此操作')->error();
             return back();
         }
     }

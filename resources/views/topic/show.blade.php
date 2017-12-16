@@ -108,15 +108,15 @@
                                         <div class="title">
                                             <a href="{{ route('user.uhome', $comment->author->id) }}">{{ $comment->author->nickname }}</a>
                                             <span class="info pull-right text-muted">
-                                                @if (Gate::allows('basic-handle', $comment))
-                                                    <span><a href="javascript:destroyComment({{ $comment->id }})">删除</a></span>
-                                                    &nbsp;&nbsp;
-                                                    &nbsp;&nbsp;
-                                                @endif
-
                                                 <span><b>#{{ $comment->floor_number }}</b></span>
                                                 &nbsp;&nbsp;
                                                 {{ $comment->created_at }}
+
+                                                @if (Gate::allows('basic-handle', $comment))
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i> </a></span>
+                                                @endif
+
                                             </span>
                                         </div>
                                         <div class="content">
@@ -150,7 +150,7 @@
                                                 请<a href="{{ route('user.login') }}">登入</a>后再发表评论
                                             </div>
                                         @endif
-                                        <textarea name="content" id="input-comment-textarea" class="form-control simditor-editor" rows="3" placeholder="在这里, 我们真诚地交流">{{ old('content') }}</textarea>
+                                        <textarea name="content" id="input-comment-textarea" class="form-control simditor-editor" rows="3" placeholder="{{ Auth::check() ? '在这里, 我们真诚地交流' : '' }}">{{ old('content') }}</textarea>
                                         <div class="text-danger">{{ $errors->first('content') }}</div>
                                     </div>
 

@@ -143,6 +143,7 @@ class TopicController extends Controller
         if ($topic->userFavorite) {
             $topic->userFavorite->deleteFavorite();
         } else {
+            flash('收藏成功')->success();
             TopicFavorite::createFavorite($topic);
         }
 

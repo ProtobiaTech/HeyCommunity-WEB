@@ -61,6 +61,18 @@
           padding-left: 50px;
           width: 100%;
 
+          .title {
+            .pull-right {
+              a {
+                color: #888;
+
+                :hover {
+                  color: #555;
+                }
+              }
+            }
+          }
+
           .content {
             min-height: 1.6rem;
 

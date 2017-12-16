@@ -217,6 +217,14 @@ img {
   width: 100%;
 }
 
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .pull-right a {
+  color: #888;
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .pull-right a :hover {
+  color: #555;
+}
+
 #section-mainbody.page-topic-show #section-comment-list .card .card-body .body .content {
   min-height: 1.6rem;
 }

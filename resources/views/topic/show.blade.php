@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="footer">
-                                <div class="pull-right">
+                                <div class="pull-right d-none d-md-block">
                                     <div class="topic-info text-muted">
                                         {{ $topic->favorite_num }} 收藏
                                         &nbsp;/&nbsp;
@@ -92,6 +92,43 @@
                                         {{ $topic->comment_num }} 评论
                                         &nbsp;/&nbsp;
                                         {{ $topic->read_num }} 阅读
+                                    </div>
+                                </div>
+
+                                <div class="text-center d-block d-md-none">
+                                    <div class="topic-info text-muted">
+                                        <div class="mt-5">
+                                            {{ $topic->comment_num }} 评论
+                                            &nbsp;/&nbsp;
+                                            {{ $topic->read_num }} 阅读
+                                        </div>
+
+                                        <div class="btn-group btn-group-sm mt-2">
+                                            <button type="button" class="btn btn-secondary" onclick="postSubmit('{{ route('topic.favorite') }}', {topic_id: {{  $topic->id }}})">
+                                                @if ($topic->isUserFavorite)
+                                                    已收藏
+                                                @else
+                                                    收藏
+                                                @endif
+                                                <small>x{{ $topic->favorite_num }}</small>
+                                            </button>
+                                            <button type="button" class="btn btn-secondary" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_up', topic_id: {{  $topic->id }}})">
+                                                @if ($topic->isUserThumbUp)
+                                                    已赞
+                                                @else
+                                                    赞
+                                                @endif
+                                                <small>x{{ $topic->thumb_up_num }}</small>
+                                            </button>
+                                            <button type="button" class="btn btn-secondary" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_down', topic_id: {{  $topic->id }}})">
+                                                @if ($topic->isUserThumbDown)
+                                                    已踩
+                                                @else
+                                                    踩
+                                                @endif
+                                                <small>x{{ $topic->thumb_down_num }}</small>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -107,16 +144,40 @@
                                     <div class="pull-left body">
                                         <div class="title">
                                             <a href="{{ route('user.uhome', $comment->author->id) }}">{{ $comment->author->nickname }}</a>
-                                            <span class="info pull-right text-muted">
+
+                                            <span class="info pull-right text-muted d-none d-md-inline-block">
+                                                <span class="">
+                                                    <a href="javascript:commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
+                                                    &nbsp;&nbsp;
+                                                    <a href="javascript:commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
+                                                    &nbsp;&nbsp;
+                                                </span>
+
+                                                &nbsp;
                                                 <span><b>#{{ $comment->floor_number }}</b></span>
+
                                                 &nbsp;&nbsp;
                                                 {{ $comment->created_at }}
 
                                                 @if (Gate::allows('basic-handle', $comment))
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i> </a></span>
+                                                    &nbsp;&nbsp;
+                                                    <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i></a></span>
                                                 @endif
+                                            </span>
 
+                                            <span class="info pull-right text-muted d-inline-block d-md-none">
+                                                <span><b>#{{ $comment->floor_number }}</b></span>
+                                                &nbsp;&nbsp;
+
+                                                <span class="">
+                                                    <a href="javascript:commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
+                                                    &nbsp;
+                                                    <a href="javascript:commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
+                                                    @if (Gate::allows('basic-handle', $comment))
+                                                        &nbsp;
+                                                        <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i></a></span>
+                                                    @endif
+                                                </span>
                                             </span>
                                         </div>
                                         <div class="content">

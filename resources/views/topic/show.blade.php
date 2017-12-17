@@ -104,31 +104,44 @@
                                             {{ $topic->read_num }} 阅读
                                         </div>
 
-                                        <div class="btn-group btn-group-sm mt-2">
-                                            <button type="button" class="btn btn-secondary {{ $topic->isUserFavorite ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.favorite') }}', {topic_id: {{  $topic->id }}})">
-                                                @if ($topic->isUserFavorite)
-                                                    <i class="fa fa-star"></i> 已收藏
-                                                @else
-                                                    <i class="fa fa-star-o"></i> 收藏
-                                                @endif
-                                                <small>x{{ $topic->favorite_num }}</small>
-                                            </button>
-                                            <button type="button" class="btn btn-secondary {{ $topic->isUserThumbUp ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_up', topic_id: {{  $topic->id }}})">
-                                                @if ($topic->isUserThumbUp)
-                                                    <i class="fa fa-thumbs-up"></i> 已赞
-                                                @else
-                                                    <i class="fa fa-thumbs-o-up"></i> 赞
-                                                @endif
-                                                <small>x{{ $topic->thumb_up_num }}</small>
-                                            </button>
-                                            <button type="button" class="btn btn-secondary {{ $topic->isUserThumbDown ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_down', topic_id: {{  $topic->id }}})">
-                                                @if ($topic->isUserThumbDown)
-                                                    <i class="fa fa-thumbs-down"></i> 已踩
-                                                @else
-                                                    <i class="fa fa-thumbs-o-down"></i> 踩
-                                                @endif
-                                                <small>x{{ $topic->thumb_down_num }}</small>
-                                            </button>
+                                        <div>
+                                            <div class="btn-group btn-group-sm mt-2">
+                                                <button type="button" class="btn btn-secondary {{ $topic->isUserFavorite ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.favorite') }}', {topic_id: {{  $topic->id }}})">
+                                                    @if ($topic->isUserFavorite)
+                                                        <i class="fa fa-star"></i> 已收藏
+                                                    @else
+                                                        <i class="fa fa-star-o"></i> 收藏
+                                                    @endif
+                                                    <small>x{{ $topic->favorite_num }}</small>
+                                                </button>
+                                                <button type="button" class="btn btn-secondary {{ $topic->isUserThumbUp ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_up', topic_id: {{  $topic->id }}})">
+                                                    @if ($topic->isUserThumbUp)
+                                                        <i class="fa fa-thumbs-up"></i> 已赞
+                                                    @else
+                                                        <i class="fa fa-thumbs-o-up"></i> 赞
+                                                    @endif
+                                                    <small>x{{ $topic->thumb_up_num }}</small>
+                                                </button>
+                                                <button type="button" class="btn btn-secondary {{ $topic->isUserThumbDown ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_down', topic_id: {{  $topic->id }}})">
+                                                    @if ($topic->isUserThumbDown)
+                                                        <i class="fa fa-thumbs-down"></i> 已踩
+                                                    @else
+                                                        <i class="fa fa-thumbs-o-down"></i> 踩
+                                                    @endif
+                                                    <small>x{{ $topic->thumb_down_num }}</small>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="btn-group btn-group-sm mt-4">
+                                                <a class="btn btn-secondary" href="{{ route('topic.edit', $topic->id) }}">
+                                                    <i class="fa fa-edit"></i> 编辑
+                                                </a>
+                                                <button type="button" class="btn btn-secondary" onclick="destroyTopic({{ $topic->id }})">
+                                                    <i class="fa fa-trash"></i> 删除
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

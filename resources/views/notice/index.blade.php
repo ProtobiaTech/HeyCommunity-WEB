@@ -10,6 +10,17 @@
                             <h4 class="m-0">通知</h4>
                         </li>
 
+                        @if ($notices->count() <= 0)
+                            <li class="list-group-item media p-4">
+                                <div class="media-body">
+                                    <div class="media-heading">
+                                        无通知
+                                    </div>
+                                </div>
+                            </li>
+
+                        @endif
+
                         @foreach($notices as $notice)
                             @switch($notice->entity_name)
                                 @case('TopicCommentReplay')

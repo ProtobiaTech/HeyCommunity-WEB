@@ -1,6 +1,6 @@
 <div class="card card-link-list">
     <div class="card-body text-nowrap">
-        © 2018 HeyCommunity
+        &copy; 2018 {{ $system->site_title }}
         <!--
         <a href="#">About</a>
         <a href="#">Help</a>

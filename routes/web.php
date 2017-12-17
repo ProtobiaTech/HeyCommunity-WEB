@@ -120,6 +120,7 @@ Route::group(['prefix' => 'topic'], function () {
         // Topic Comment
         Route::group(['prefix' => 'comment'], function () {
             Route::post('store', 'TopicCommentController@store')->name('topic.comment.store');
+            Route::post('reply', 'TopicCommentController@reply')->name('topic.comment.reply');
             Route::post('destroy', 'TopicCommentController@destroy')->name('topic.comment.destroy');
         });
     });

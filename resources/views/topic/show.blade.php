@@ -165,7 +165,7 @@
 
                                             <span class="info m-desktop pull-right text-muted d-none d-md-inline-block">
                                                 <span class="">
-                                                    <a href="javascript:alert('此功能暂不可用');commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
+                                                    <a href="javascript:showTopicCommentReplyBox({{ $comment->id }})"><i class="fa fa-reply"></i></a>
                                                     &nbsp;&nbsp;
                                                     <a href="javascript:alert('此功能暂不可用');commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
                                                     &nbsp;&nbsp;
@@ -188,7 +188,7 @@
                                                 &nbsp;&nbsp;
 
                                                 <span class="">
-                                                    <a href="javascript:alert('此功能暂不可用');commentReply({{ $comment->id }})"><i class="fa fa-reply"></i></a>
+                                                    <a href="javascript:showTopicCommentReplyBox({{ $comment->id }}, 'mobile')"><i class="fa fa-reply"></i></a>
                                                     &nbsp;
                                                     <a href="javascript:alert('此功能暂不可用');commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
                                                     @if (Gate::allows('basic-handle', $comment))
@@ -201,7 +201,33 @@
                                         <div class="content">
                                             {!! ($comment->content) !!}
                                         </div>
+
+                                        <form onsubmit="replyTopicComment(event)" method="post" class="d-none d-md-block form-topic-reply-box" id="form-topic-reply-{{ $comment->id }}">
+                                            <hr class="mt-4">
+                                            <input type="hidden" name="parent_id">
+                                            <div class="form-group">
+                                                <textarea name="content" class="form-control" placeholder="输入你的回复内容"></textarea>
+                                            </div>
+                                            <div class="form-group pull-right">
+                                                <button type="button" onclick="hiddenTopicCommentReplyBox({{ $comment->id }})" class="btn btn-secondary">取消</button>
+                                                <button type="submit" class="btn btn-primary">提交</button>
+                                            </div>
+                                        </form>
                                     </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <form onsubmit="replyTopicComment(event)" method="post" class="d-block d-md-none form-topic-reply-box" id="m-form-topic-reply-{{ $comment->id }}">
+                                        <hr class="mt-4">
+                                        <input type="hidden" name="parent_id">
+                                        <div class="form-group">
+                                            <textarea name="content" class="form-control" placeholder="输入你的回复内容"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-block btn-secondary">提交</button>
+                                            <button type="button" onclick="hiddenTopicCommentReplyBox({{ $comment->id }}, 'mobile')" class="btn btn-block btn-light">取消</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
@@ -279,6 +305,52 @@ shareImgUrl = "{{ asset($topic->author->avatar) }}";
      */
     function destroyComment(id) {
         confirmPostSubmit('是否要删除该评论', '{{ route("topic.comment.destroy") }}', {id: id})
+    }
+
+    /**
+     * Show Topic Comment Reply Box
+     */
+    function showTopicCommentReplyBox(id, device)
+    {
+        if (device == 'mobile') {
+            var selector = '#m-form-topic-reply-' + id;
+        } else {
+            var selector = '#form-topic-reply-' + id;
+        }
+
+        $(selector).attr('style', 'display: block !important;').show();
+        $(selector).find('[name="parent_id"]').val(id);
+    }
+
+    /**
+     * Hidden Topic Comment Reply Box
+     */
+    function hiddenTopicCommentReplyBox(id, device)
+    {
+        if (device == 'mobile') {
+            var selector = '#m-form-topic-reply-' + id;
+        } else {
+            var selector = '#form-topic-reply-' + id;
+        }
+
+        $(selector).hide();
+    }
+
+    /**
+     * Reply Topic Comment
+     */
+    function replyTopicComment(event) {
+        event.preventDefault();
+
+        var url = '{{ route('topic.comment.reply') }}';
+        var params = {};
+
+        var data = $(event.target).serializeArray();
+        data.forEach(function(item) {
+            params[item.name] = item.value;
+        })
+
+        postSubmit(url, params);
     }
 </script>
 @endsection

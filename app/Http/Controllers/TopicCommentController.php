@@ -63,4 +63,32 @@ class TopicCommentController extends Controller
             return back();
         }
     }
+
+    /**
+     * Reply Topic Comment
+     */
+    public function reply(Request $request)
+    {
+        $this->validate($request, [
+            'parent_id'         =>  'required|integer',
+            'content'           =>  'required|string',
+        ]);
+
+        $parentTopicComment = TopicComment::find($request->parent_id);
+        if ($parentTopicComment) {
+            $data = $request->only(['parent_id', 'content']);
+            $data['root_id']        =   $parentTopicComment->root_id ?: $parentTopicComment->id;
+            $data['topic_id']       =   $parentTopicComment->topic_id;
+            $data['floor_number']   =   $parentTopicComment->topic->comments()->count() + 1;
+            $data['user_id']        =   Auth::id();
+            $topicComment = TopicComment::create($data);
+            $topicComment->topic->increment('comment_num');
+
+            flash('回复成功')->success();
+            return back();
+        } else {
+            flash('回复失败')->error();
+            return back();
+        }
+    }
 }

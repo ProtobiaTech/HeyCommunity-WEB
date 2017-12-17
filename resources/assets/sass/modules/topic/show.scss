@@ -67,6 +67,10 @@
       }
 
       .card-body {
+        form.form-topic-reply-box {
+          display: none !important;
+        }
+
         .avatar {
           position: absolute;
           width: 40px;

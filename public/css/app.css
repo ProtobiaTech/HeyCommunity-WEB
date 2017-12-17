@@ -262,6 +262,10 @@ img {
   display: inline-block;
 }
 
+#section-mainbody.page-topic-show #section-comment-list .card .card-body form.form-topic-reply-box {
+  display: none !important;
+}
+
 #section-mainbody.page-topic-show #section-comment-list .card .card-body .avatar {
   position: absolute;
   width: 40px;

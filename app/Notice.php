@@ -19,7 +19,7 @@ class Notice extends BaseModel
      */
     public function entity()
     {
-        return $this->belongsTo($this->entity_class, 'entity_id');
+        return $this->belongsTo($this->entity_class, 'entity_id')->withTrashed();
     }
 
     /**

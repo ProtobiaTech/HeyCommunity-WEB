@@ -59,7 +59,14 @@
                                                     <a href="{{ route('topic.show', $notice->entity->topic->id) }}">{{ $notice->entity->topic->title }}</a>
                                                 @endif
                                                 <br>
-                                                发表了评论: {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }} &nbsp;
+
+                                                发表了评论:
+                                                @if ($notice->entity->trashed())
+                                                    <del>{{ mb_substr(strip_tags($notice->entity->content), 0, 150) }}</del>
+                                                    <sup><small>(已删除)</small></sup>
+                                                @else
+                                                    {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }}
+                                                @endif
                                             </div>
                                         </div>
                                     </li>

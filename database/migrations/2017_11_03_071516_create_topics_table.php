@@ -18,7 +18,7 @@ class CreateTopicsTable extends Migration
 
             $table->integer('user_id')->index()->unsigned()->comment('User ID');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('node_id')->index()->unsigned()->comment('Topic Node Id');
+            $table->integer('node_id')->index()->unsigned()->comment('Topic Node ID');
             $table->foreign('node_id')->references('id')->on('topic_nodes');
 
             $table->string('title')->comment('Topic Title');

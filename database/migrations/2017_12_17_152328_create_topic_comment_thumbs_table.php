@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTopicCommentsTable extends Migration
+class CreateTopicCommentThumbsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateTopicCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('topic_comments', function (Blueprint $table) {
+        Schema::create('topic_comment_thumbs', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('type_id')->index()->comment('Thumb Type');
 
             $table->integer('user_id')->index()->unsigned()->comment('User ID');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('topic_id')->index()->unsigned()->comment('Topic ID');
             $table->foreign('topic_id')->references('id')->on('topics');
-
-            $table->integer('floor_number')->comment('Topic Content Floor Number');
-            $table->text('content')->comment('Topic Content');
+            $table->integer('topic_comment_id')->index()->unsigned()->comment('Topic Comment ID');
+            $table->foreign('topic_comment_id')->references('id')->on('topic_comments');
 
             $table->softDeletes();
             $table->timestamps();
@@ -36,6 +36,6 @@ class CreateTopicCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topic_comments');
+        Schema::dropIfExists('topic_comment_thumbs');
     }
 }

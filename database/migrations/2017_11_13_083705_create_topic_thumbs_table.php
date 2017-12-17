@@ -19,7 +19,7 @@ class CreateTopicThumbsTable extends Migration
 
             $table->integer('user_id')->index()->unsigned()->comment('User ID');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('topic_id')->index()->unsigned()->comment('Topic Id');
+            $table->integer('topic_id')->index()->unsigned()->comment('Topic ID');
             $table->foreign('topic_id')->references('id')->on('topics');
 
             $table->softDeletes();

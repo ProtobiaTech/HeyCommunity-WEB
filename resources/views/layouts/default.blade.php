@@ -40,14 +40,17 @@
 <nav id="section-mainNav" class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
     <a class="navbar-brand" href="{{ url('/') }}">{{ $system->site_title }}</a>
 
-    <button
-            class="navbar-toggler navbar-toggler-right d-md-none"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
+    <div class="d-md-none" id="nav-btns">
+        @php
+            $noticeSum = \App\Notice::mine()->unread()->count();
+        @endphp
+        <a class="btn btn-default" href="{{ route('notice.index') }}">
+            <i class="fa fa-bell {{ $noticeSum ? 'text-danger' : '' }}"></i>
+        </a>
+    </div>
+
+    <button class="navbar-toggler navbar-toggler-right d-md-none"
+            type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -88,9 +91,6 @@
         <ul id="#js-popoverContent" class="nav navbar-nav float-right mr-0 d-none d-md-flex">
             <li class="nav-item">
                 <a class="app-notifications nav-link" href="{{ route('notice.index') }}">
-                    @php
-                        $noticeSum = \App\Notice::mine()->unread()->count();
-                    @endphp
                     <span class="icon icon-bell {{ $noticeSum ? 'text-danger' : '' }}"></span>
                 </a>
             </li>

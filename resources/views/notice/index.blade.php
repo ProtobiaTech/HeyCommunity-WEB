@@ -4,7 +4,7 @@
     <div id="section-mainbody" class="page-module-page">
         <div class="container pt-4 pb-5">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-9 m-np">
                     <ul class="list-group media-list media-list-stream mb-2">
                         <li class="list-group-item p-4">
                             <h4 class="m-0">通知</h4>
@@ -216,7 +216,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 m-np">
                     <!--
                     <div class="card mb-4 d-none d-lg-block">
                         <div class="card-body">

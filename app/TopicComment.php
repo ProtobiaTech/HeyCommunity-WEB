@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class TopicComment extends BaseModel
 {
@@ -28,5 +29,15 @@ class TopicComment extends BaseModel
     public function childComments()
     {
         return $this->hasMany('App\TopicComment', 'root_id')->latest();
+    }
+
+    /**
+     * Relation TopicThumb
+     */
+    public function userThumb($userId = null)
+    {
+        $userId = $userId ?: Auth::id();
+
+        return $this->hasOne('App\TopicCommentThumb', 'topic_comment_id')->where(['user_id' => $userId]);
     }
 }

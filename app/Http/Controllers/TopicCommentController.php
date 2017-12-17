@@ -7,6 +7,7 @@ use Auth;
 use Gate;
 use App\Topic;
 use App\TopicComment;
+use App\TopicCommentThumb;
 
 class TopicCommentController extends Controller
 {
@@ -90,5 +91,31 @@ class TopicCommentController extends Controller
             flash('回复失败')->error();
             return back();
         }
+    }
+
+    /**
+     * Topic Comment Thumb
+     */
+    public function thumb(Request $request)
+    {
+        $this->validate($request, [
+            'topic_comment_id'  =>  'required|integer',
+            'type'              =>  'required|string',
+        ]);
+
+        $topicComment = TopicComment::findOrFail($request->topic_comment_id);
+        if ($topicComment->userThumb) {
+            $typeId = TopicCommentThumb::$types[$request->type];
+
+            if ($typeId != $topicComment->userThumb->type_id) {
+                $topicComment->userThumb->toggleThumb();
+            } else {
+                $topicComment->userThumb->deleteThumb();
+            }
+        } else {
+            TopicCommentThumb::createThumb($topicComment, $request->type);
+        }
+
+        return back();
     }
 }

@@ -14,7 +14,19 @@
                     <span class="">
                         <a href="javascript:showTopicCommentReplyBox({{ $comment->id }})"><i class="fa fa-reply"></i></a>
                         &nbsp;&nbsp;
-                        <a href="javascript:alert('此功能暂不可用');commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
+                        <a href="javascript:postSubmit('{{ route('topic.comment.thumb') }}', {type: 'thumb_up', topic_comment_id: {{  $comment->id }}})">
+                            <i class="fa fa-thumbs-up"></i>
+                            @if ($comment->thumb_up_num)
+                                <small><sup>{{ $comment->thumb_up_num }}</sup></small>
+                            @endif
+                        </a>
+                        &nbsp;
+                        <a href="javascript:postSubmit('{{ route('topic.comment.thumb') }}', {type: 'thumb_down', topic_comment_id: {{  $comment->id }}})">
+                            <i class="fa fa-thumbs-down"></i>
+                            @if ($comment->thumb_down_num)
+                                <small><sup>{{ $comment->thumb_down_num }}</sup></small>
+                            @endif
+                        </a>
                         &nbsp;&nbsp;
                     </span>
 

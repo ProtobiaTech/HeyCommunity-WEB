@@ -10,7 +10,7 @@
                             <h4 class="m-0">通知</h4>
                         </li>
 
-                        @if ($notices->count() <= 0)
+                        @unless ($notices->count())
                             <li class="list-group-item media p-4">
                                 <div class="media-body">
                                     <div class="media-heading">
@@ -18,8 +18,7 @@
                                     </div>
                                 </div>
                             </li>
-
-                        @endif
+                        @endunless
 
                         @foreach($notices as $notice)
                             @switch($notice->entity_name)

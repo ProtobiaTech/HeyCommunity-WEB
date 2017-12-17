@@ -8,7 +8,7 @@
 <div id="section-mainbody" class="page-user-login">
     <div class="container-fluid container-fill-height">
         <div class="container-content-middle">
-            <form action="{{ route('user.login-handler') }}" method="post" class="mx-auto app-login-form">
+            <form action="{{ route('user.default-login-handler') }}" method="post" class="mx-auto app-login-form">
                 {{ csrf_field() }}
 
                 <h2 class="text-center">欢迎登入</h2>
@@ -35,7 +35,7 @@
                 </div>
 
                 <footer class="mt-3 text-center">
-                    没有帐号? 现在<a class="" href="{{ route('user.signup') }}">注册</a>
+                    没有帐号? 现在<a class="" href="{{ route('user.default-signup') }}">注册</a>
                     <br>
                     <a class="text-muted">忘记密码？</a>
                 </footer>

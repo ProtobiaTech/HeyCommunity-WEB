@@ -11,6 +11,6 @@ class TopicComment extends BaseModel
      */
     public function topic()
     {
-        return $this->belongsTo('\App\Topic', 'topic_id');
+        return $this->belongsTo('\App\Topic', 'topic_id')->withTrashed();
     }
 }

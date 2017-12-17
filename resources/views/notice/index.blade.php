@@ -47,10 +47,17 @@
                                         <span class="icon icon-flag text-muted mr-2"></span>
 
                                         <div class="media-body">
-                                            <small class="text-muted float-right">{{ $notice->created_at }}</small>
+                                            <small class="text-muted float-right d-none d-md-block">{{ $notice->created_at }}</small>
+                                            <small class="text-muted float-right d-block d-md-none">{{ $notice->created_at->format('m-d H:i') }}</small>
                                             <div class="media-heading">
                                                 <a href="{{ route('user.uhome', $notice->sender_id) }}"><strong>{{ $notice->sender->nickname }}</strong></a>
-                                                对你的话题 <a href="{{ route('topic.show', $notice->entity->topic->id) }}">{{ $notice->entity->topic->title }}</a>
+                                                对你的话题
+                                                @if ($notice->entity->topic->trashed())
+                                                    <del>{{ $notice->entity->topic->title }}</del>
+                                                    <sup><small>(已删除)</small></sup>
+                                                @else
+                                                    <a href="{{ route('topic.show', $notice->entity->topic->id) }}">{{ $notice->entity->topic->title }}</a>
+                                                @endif
                                                 <br>
                                                 发表了评论: {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }} &nbsp;
                                             </div>

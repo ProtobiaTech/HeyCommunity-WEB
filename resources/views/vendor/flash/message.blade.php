@@ -32,7 +32,7 @@
 <style rel="stylesheet" type="text/css">
     #section-flash {
         z-index: 100;
-        position: absolute;
+        position: fixed;
         top: 80px;
         right: 20px;
         min-width: 120px;

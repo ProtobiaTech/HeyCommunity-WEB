@@ -43,15 +43,15 @@
 
         <div class="container pt-4 pb-5">
             <div class="row">
-                <div class="col-lg-2 col-md-3">
+                <div class="col-lg-2 col-md-3 m-np">
                     @include('user._ucenter-nav')
                 </div>
 
-                <div class="col-lg-10 col-md-9">
+                <div class="col-lg-10 col-md-9 m-np">
                     <div class="tab-content">
                         @if (request()->is('*my-timelines') || request()->is('*ucenter'))
                             <div class="tab-pane fade show active">
-                                <div class="card">
+                                <div class="card m-nb-r m-nb-y">
                                     <div class="card-body">
                                         暂不可用
                                     </div>

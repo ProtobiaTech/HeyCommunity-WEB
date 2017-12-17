@@ -2,3 +2,15 @@ img {
   max-width: 100%;
   height: auto !important;
 }
+
+@include media-breakpoint-down(sm) {
+  .card {
+    .card-header {
+      border-radius: 0 !important;
+    }
+
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+}

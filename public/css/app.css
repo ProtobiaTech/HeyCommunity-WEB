@@ -78,6 +78,18 @@ img {
   height: auto !important;
 }
 
+@media (max-width: 767.99px) {
+  .card {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .card .card-header {
+    border-radius: 0 !important;
+  }
+}
+
 #section-mainbody.page-user-ucenter .profile-header {
   height: auto !important;
   padding-top: 4rem;

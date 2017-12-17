@@ -37,9 +37,11 @@
 
 <div class="d-block d-md-none mb-3">
     <ul class="nav nav-tabs">
+        <!--
         <li class="nav-item">
             <a class="nav-link {{ setNavActive(['*my-timelines', '*ucenter']) }}" href="{{ route('user.ucenter.my-timelines') }}">我的动态</a>
         </li>
+        -->
         <li class="nav-item">
             <a class="nav-link {{ setNavActive('*my-topics') }}" href="{{ route('user.ucenter.my-topics') }}">我的话题</a>
         </li>

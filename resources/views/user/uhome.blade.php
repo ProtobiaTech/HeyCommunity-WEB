@@ -8,10 +8,10 @@
     <div id="section-mainbody" class="page-user-uhome">
         <div class="container pt-4 pb-5">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 m-np">
                     @include('user._user-profile-card', ['user' => $user])
 
-                    <div class="card d-md-block d-lg-block mb-4">
+                    <div class="card d-md-block d-lg-block mb-4 m-nb-r m-nb-y">
                         <div class="card-body">
                             <h6 class="mb-3">
                                 用户资料
@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-9" id="section-body">
+                <div class="col-md-9 m-np" id="section-body">
                     <nav class="nav nav-pills" id="mainTab">
                         <!--
                         <a class="nav-item nav-link" data-toggle="tab" href="#nav-timeline">公园</a>

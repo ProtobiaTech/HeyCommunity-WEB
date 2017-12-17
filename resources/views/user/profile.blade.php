@@ -7,7 +7,7 @@
 @section('mainBody')
     <div id="section-mainbody" class="page-user-profile">
         <div class="container pt-4 pb-5">
-            <nav id="section-breadcrumb" aria-label="breadcrumb" role="navigation">
+            <nav id="section-breadcrumb" class="d-none d-md-block" aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('user.ucenter') }}">用户</a></li>
@@ -16,11 +16,11 @@
             </nav>
 
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-3 m-np">
                     @include('user._user-profile-card', ['user' => $user])
                 </div>
 
-                <div class="col-sm-9">
+                <div class="col-sm-9 m-np">
                     <div class="card">
                         <div class="card-body">
                             <form action="{{ route('user.profile-update') }}" method="post">

@@ -17,7 +17,7 @@ function setNavActive($match)
 }
 
 /**
- *
+ * Set Params Active
  */
 function setParamActive($paramName, $value)
 {
@@ -42,4 +42,13 @@ function setDisabled($condition)
 function isSuperAdmin()
 {
     return (Auth::check() && Auth::user()->is_super_admin) ? true : false;
+}
+
+/**
+ *  String To One Line
+ */
+function strToOneLine($string)
+{
+    $string = preg_replace('/\s+/', ' ',$string);
+    return $string;
 }

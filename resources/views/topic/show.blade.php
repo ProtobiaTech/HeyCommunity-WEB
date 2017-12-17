@@ -245,8 +245,12 @@ shareImgUrl = "{{ asset($topic->author->avatar) }}";
             var selector = '#form-topic-reply-' + id;
         }
 
-        $(selector).attr('style', 'display: block !important;').show();
-        $(selector).find('[name="parent_id"]').val(id);
+        if ($(selector).is(':visible')) {
+            $(selector).fadeOut();
+        } else {
+            $(selector).attr('style', 'display: block !important;').show();
+            $(selector).find('[name="parent_id"]').val(id);
+        }
     }
 
     /**
@@ -260,7 +264,7 @@ shareImgUrl = "{{ asset($topic->author->avatar) }}";
             var selector = '#form-topic-reply-' + id;
         }
 
-        $(selector).hide();
+        $(selector).fadeOut();
     }
 
     /**

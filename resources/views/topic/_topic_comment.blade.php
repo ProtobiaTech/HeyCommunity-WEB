@@ -5,6 +5,11 @@
             <div class="title">
                 <a href="{{ route('user.uhome', $comment->author->id) }}">{{ $comment->author->nickname }}</a>
 
+                @if ($comment->root_id && $comment->root_id !== $comment->parent_id)
+                    <sup><small class="text-muted">Re #{{ $comment->parent->floor_number }}</small></sup>
+                    &nbsp;
+                @endif
+
                 <span class="info m-desktop pull-right text-muted d-none d-md-inline-block">
                     <span class="">
                         <a href="javascript:showTopicCommentReplyBox({{ $comment->id }})"><i class="fa fa-reply"></i></a>

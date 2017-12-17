@@ -17,6 +17,14 @@ class TopicComment extends BaseModel
     /**
      * Related TopicComment
      */
+    public function parent()
+    {
+        return $this->belongsTo('App\TopicComment', 'parent_id');
+    }
+
+    /**
+     * Related TopicComment
+     */
     public function childComments()
     {
         return $this->hasMany('App\TopicComment', 'root_id')->latest();

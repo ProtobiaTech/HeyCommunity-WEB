@@ -176,6 +176,15 @@ img {
   color: #666;
 }
 
+#section-mainbody.page-topic-show #topic-card .card-title a {
+  color: #212529;
+}
+
+#section-mainbody.page-topic-show #topic-card .card-title a:hover {
+  color: #555;
+  text-decoration: none;
+}
+
 #section-mainbody.page-topic-show #topic-card .card-text {
   min-height: 1.6rem;
 }

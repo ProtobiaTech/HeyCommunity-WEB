@@ -64,7 +64,8 @@
                 <div class="col-md-7">
                     <div id="topic-card" class="card">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $topic->title }}</h4>
+                            <h4 class="card-title"><a href="{{ route('topic.show', $topic->id) }}">{{ $topic->title }}</a></h4>
+
                             <h6 class="card-subtitle mb-2 text-muted">
                                 <span class="d-none d-md-inline-block">
                                     @if ($topic->node->parent)
@@ -104,27 +105,27 @@
                                         </div>
 
                                         <div class="btn-group btn-group-sm mt-2">
-                                            <button type="button" class="btn btn-secondary" onclick="postSubmit('{{ route('topic.favorite') }}', {topic_id: {{  $topic->id }}})">
+                                            <button type="button" class="btn btn-secondary {{ $topic->isUserFavorite ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.favorite') }}', {topic_id: {{  $topic->id }}})">
                                                 @if ($topic->isUserFavorite)
-                                                    已收藏
+                                                    <i class="fa fa-star"></i> 已收藏
                                                 @else
-                                                    收藏
+                                                    <i class="fa fa-star-o"></i> 收藏
                                                 @endif
                                                 <small>x{{ $topic->favorite_num }}</small>
                                             </button>
-                                            <button type="button" class="btn btn-secondary" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_up', topic_id: {{  $topic->id }}})">
+                                            <button type="button" class="btn btn-secondary {{ $topic->isUserThumbUp ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_up', topic_id: {{  $topic->id }}})">
                                                 @if ($topic->isUserThumbUp)
-                                                    已赞
+                                                    <i class="fa fa-thumbs-up"></i> 已赞
                                                 @else
-                                                    赞
+                                                    <i class="fa fa-thumbs-o-up"></i> 赞
                                                 @endif
                                                 <small>x{{ $topic->thumb_up_num }}</small>
                                             </button>
-                                            <button type="button" class="btn btn-secondary" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_down', topic_id: {{  $topic->id }}})">
+                                            <button type="button" class="btn btn-secondary {{ $topic->isUserThumbDown ? 'active' : '' }}" onclick="postSubmit('{{ route('topic.thumb') }}', {type: 'thumb_down', topic_id: {{  $topic->id }}})">
                                                 @if ($topic->isUserThumbDown)
-                                                    已踩
+                                                    <i class="fa fa-thumbs-down"></i> 已踩
                                                 @else
-                                                    踩
+                                                    <i class="fa fa-thumbs-o-down"></i> 踩
                                                 @endif
                                                 <small>x{{ $topic->thumb_down_num }}</small>
                                             </button>

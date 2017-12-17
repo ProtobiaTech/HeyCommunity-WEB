@@ -6,6 +6,26 @@ button {
   cursor: pointer;
 }
 
+@media (max-width: 767.99px) {
+  .m-mobile-np {
+    padding: 0 !important;
+  }
+
+  .m-mobile-nb-r {
+    border-radius: 0 !important;
+  }
+
+  .m-mobile-nb-y {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .m-mobile-p15-x {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
 #section-pagination {
   margin-top: 20px;
   overflow: hidden;
@@ -118,13 +138,13 @@ img {
   margin-bottom: 15px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.99px) {
   #section-mainbody.page-topic-index #section-right .right-tools {
     text-align: right;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 319px) {
   #section-mainbody.page-topic-index #section-right .right-tools {
     text-align: center;
   }

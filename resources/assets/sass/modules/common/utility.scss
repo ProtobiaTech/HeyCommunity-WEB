@@ -1,0 +1,27 @@
+@include media-breakpoint-down(sm) {
+  //
+  // mobile not padding
+  .m-mobile-np {
+    padding: 0 !important;
+  }
+
+  //
+  // mobile not border radius
+  .m-mobile-nb-r {
+    border-radius: 0 !important;
+  }
+
+  //
+  // mobile not border y
+  .m-mobile-nb-y {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  //
+  // mobile padding 15px x
+  .m-mobile-p15-x {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}

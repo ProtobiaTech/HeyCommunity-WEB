@@ -7,20 +7,20 @@ button {
 }
 
 @media (max-width: 767.99px) {
-  .m-mobile-np {
+  .m-np {
     padding: 0 !important;
   }
 
-  .m-mobile-nb-r {
+  .m-nb-r {
     border-radius: 0 !important;
   }
 
-  .m-mobile-nb-y {
+  .m-nb-y {
     border-left: none !important;
     border-right: none !important;
   }
 
-  .m-mobile-p15-x {
+  .m-p15-x {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }

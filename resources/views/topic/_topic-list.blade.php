@@ -1,7 +1,7 @@
 @if ($topics->count())
     <div id="component-topic-list" class="list-group">
         @foreach ($topics as $topic)
-            <div class="list-group-item m-mobile-nb-y m-mobile-nb-r">
+            <div class="list-group-item m-nb-y m-nb-r">
                 <a class="avatar" href="{{ route('user.uhome', $topic->author->id) }}"><img class="avatar" src="{{ asset($topic->author->avatar) }}"></a>
                 <div class="pull-left body">
                     <div class="title">

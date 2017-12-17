@@ -61,8 +61,8 @@
                 </div>
 
                 <!-- body -->
-                <div class="col-md-7 m-mobile-np">
-                    <div id="topic-card" class="card m-mobile-nb-r m-mobile-nb-y">
+                <div class="col-md-7 m-np">
+                    <div id="topic-card" class="card m-nb-r m-nb-y">
                         <div class="card-body">
                             <h4 class="card-title"><a href="{{ route('topic.show', $topic->id) }}">{{ $topic->title }}</a></h4>
 
@@ -152,7 +152,7 @@
                     <div id="section-comment-list">
                         <h3><span class="badge badge-secondary">评论列表 <small>({{ $topic->comments()->count() }})</small></span></h3>
                         @foreach ($topic->comments as $comment)
-                            <div class="card m-mobile-nb-r m-mobile-nb-y">
+                            <div class="card m-nb-r m-nb-y">
                                 <div class="card-body">
                                     <a class="avatar" href="{{ route('user.uhome', $comment->author->id) }}"><img class="avatar" src="{{ asset($comment->author->avatar) }}"></a>
                                     <div class="pull-left body">
@@ -203,7 +203,7 @@
                         @endforeach
 
                         @if (!$topic->comments()->count())
-                            <div class="card m-mobile-nb-r m-mobile-nb-y">
+                            <div class="card m-nb-r m-nb-y">
                                 <div class="card-body">
                                     暂无评论
                                 </div>
@@ -213,7 +213,7 @@
 
                     <div id="section-comment-textarea">
                         <h3><span class="badge badge-secondary">我要评论</span></h3>
-                        <div class="card m-mobile-nb-r m-mobile-nb-y">
+                        <div class="card m-nb-r m-nb-y">
                             <div class="card-body">
                                 <form action="{{ route('topic.comment.store') }}" method="post">
                                     <input type="hidden" name="topic_id" value="{{ $topic->id }}">

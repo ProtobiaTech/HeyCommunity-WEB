@@ -37,8 +37,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-8 col-lg-8 m-mobile-np">
-                    <div class="card m-mobile-nb-y m-mobile-nb-r">
+                <div class="col-md-8 col-lg-8 m-np">
+                    <div class="card m-nb-y m-nb-r">
                         <div class="card-body">
                             <h5 class="card-title">更新话题</h5>
                             <hr>
@@ -95,8 +95,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-4 d-block d-md-none mt-3 m-mobile-np">
-                    <div class="card m-mobile-nb-y m-mobile-nb-r">
+                <div class="col-md-4 col-lg-4 d-block d-md-none mt-3 m-np">
+                    <div class="card m-nb-y m-nb-r">
                         <div class="card-body">
                             欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~ <br><br>
 

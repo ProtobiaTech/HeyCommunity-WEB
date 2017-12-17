@@ -41,8 +41,8 @@
                 </div>
             </div>
 
-            <div id="section-right" class="col-md-9 m-mobile-np">
-                <div class="right-tools m-mobile-p15-x">
+            <div id="section-right" class="col-md-9 m-np">
+                <div class="right-tools m-p15-x">
                     <a class="btn btn-primary btn-create d-inline-block d-md-none pull-left" href="{{ route('topic.create') }}">发布话题</a>
 
                     <a class="btn btn-secondary {{ setParamActive('filter', 'recent') }}" href="{{ route('topic.index', ['filter' => 'recent']) }}">最近</a>
@@ -60,12 +60,12 @@
                 @include('topic._topic-list', ['topics' => $topics])
             </div>
 
-            <div id="section-bottom" class="col-12 d-block d-md-none m-mobile-np">
-                <div class="div-create-btn m-mobile-p15-x">
+            <div id="section-bottom" class="col-12 d-block d-md-none m-np">
+                <div class="div-create-btn m-p15-x">
                     <a href="{{ route('topic.create') }}" class="btn btn-block btn-primary mt-3 mb-3">发起一个新话题</a>
                 </div>
 
-                <div class="card card-nodes mb-3 m-mobile-nb-r m-mobile-nb-y">
+                <div class="card card-nodes mb-3 m-nb-r m-nb-y">
                     <div class="card-body">
                         <h6 class="card-title text-center">节点列表</h6>
                         <div class="">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <div class="card card-tags mb-3 m-mobile-nb-r m-mobile-nb-y">
+                <div class="card card-tags mb-3 m-nb-r m-nb-y">
                     <div class="card-body">
                         <h6 class="card-title text-center">我们正在讨论</h6>
                         <div class="tags">

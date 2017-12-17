@@ -15,7 +15,7 @@
 
     <title>@yield('title', $system->site_title . ' - ' . $system->site_subheading)</title>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.lug.ustc.edu.cn/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('bower-assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/bootstrap-application-theme/css/toolkit.css') }}" rel="stylesheet">

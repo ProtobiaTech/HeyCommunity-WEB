@@ -258,7 +258,8 @@ img {
   border-left: 4px solid #3097D1;
 }
 
-#section-mainbody.page-topic-show #section-comment-list .card:hover .card-body .body .title .info.m-desktop a {
+#section-mainbody.page-topic-show #section-comment-list .card:hover > .card-body > .body > .title .info.m-desktop a,
+#section-mainbody.page-topic-show #section-comment-list .card:hover > .card-body > .body > .title .info.m-desktop .span-trash {
   display: inline-block;
 }
 
@@ -290,12 +291,28 @@ img {
   display: none;
 }
 
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .title .info.m-desktop .span-trash {
+  display: none;
+}
+
 #section-mainbody.page-topic-show #section-comment-list .card .card-body .body .content {
   min-height: 1.6rem;
 }
 
 #section-mainbody.page-topic-show #section-comment-list .card .card-body .body .content p:last-of-type {
   margin-bottom: 0;
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .child-comments .card {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+#section-mainbody.page-topic-show #section-comment-list .card .card-body .body .child-comments .card .card-body {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #section-mainbody.page-activity-index .carousel {

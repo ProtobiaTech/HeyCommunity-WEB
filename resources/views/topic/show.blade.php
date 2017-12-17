@@ -155,81 +155,8 @@
 
                     <div id="section-comment-list">
                         <h3><span class="badge badge-secondary">评论列表 <small>({{ $topic->comments()->count() }})</small></span></h3>
-                        @foreach ($topic->comments as $comment)
-                            <div class="card m-nb-r m-nb-y">
-                                <div class="card-body">
-                                    <a class="avatar" href="{{ route('user.uhome', $comment->author->id) }}"><img class="avatar" src="{{ asset($comment->author->avatar) }}"></a>
-                                    <div class="pull-left body">
-                                        <div class="title">
-                                            <a href="{{ route('user.uhome', $comment->author->id) }}">{{ $comment->author->nickname }}</a>
-
-                                            <span class="info m-desktop pull-right text-muted d-none d-md-inline-block">
-                                                <span class="">
-                                                    <a href="javascript:showTopicCommentReplyBox({{ $comment->id }})"><i class="fa fa-reply"></i></a>
-                                                    &nbsp;&nbsp;
-                                                    <a href="javascript:alert('此功能暂不可用');commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
-                                                    &nbsp;&nbsp;
-                                                </span>
-
-                                                &nbsp;
-                                                <span><b>#{{ $comment->floor_number }}</b></span>
-
-                                                &nbsp;&nbsp;
-                                                {{ $comment->created_at }}
-
-                                                @if (Gate::allows('basic-handle', $comment))
-                                                    &nbsp;&nbsp;
-                                                    <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i></a></span>
-                                                @endif
-                                            </span>
-
-                                            <span class="info m-mobile pull-right text-muted d-inline-block d-md-none">
-                                                <span><b>#{{ $comment->floor_number }}</b></span>
-                                                &nbsp;&nbsp;
-
-                                                <span class="">
-                                                    <a href="javascript:showTopicCommentReplyBox({{ $comment->id }}, 'mobile')"><i class="fa fa-reply"></i></a>
-                                                    &nbsp;
-                                                    <a href="javascript:alert('此功能暂不可用');commentThumbUp({{ $comment->id }})"><i class="fa fa-thumbs-up"></i></a>
-                                                    @if (Gate::allows('basic-handle', $comment))
-                                                        &nbsp;
-                                                        <span><a href="javascript:destroyComment({{ $comment->id }})"><i class="fa fa-trash"></i></a></span>
-                                                    @endif
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div class="content">
-                                            {!! ($comment->content) !!}
-                                        </div>
-
-                                        <form onsubmit="replyTopicComment(event)" method="post" class="d-none d-md-block form-topic-reply-box" id="form-topic-reply-{{ $comment->id }}">
-                                            <hr class="mt-4">
-                                            <input type="hidden" name="parent_id">
-                                            <div class="form-group">
-                                                <textarea name="content" class="form-control" placeholder="输入你的回复内容"></textarea>
-                                            </div>
-                                            <div class="form-group pull-right">
-                                                <button type="button" onclick="hiddenTopicCommentReplyBox({{ $comment->id }})" class="btn btn-secondary">取消</button>
-                                                <button type="submit" class="btn btn-primary">提交</button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                    <div class="clearfix"></div>
-
-                                    <form onsubmit="replyTopicComment(event)" method="post" class="d-block d-md-none form-topic-reply-box" id="m-form-topic-reply-{{ $comment->id }}">
-                                        <hr class="mt-4">
-                                        <input type="hidden" name="parent_id">
-                                        <div class="form-group">
-                                            <textarea name="content" class="form-control" placeholder="输入你的回复内容"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-block btn-secondary">提交</button>
-                                            <button type="button" onclick="hiddenTopicCommentReplyBox({{ $comment->id }}, 'mobile')" class="btn btn-block btn-light">取消</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                        @foreach ($topic->rootComments as $comment)
+                            @include('topic._topic_comment', ['comment' => $comment])
                         @endforeach
 
                         @if (!$topic->comments()->count())

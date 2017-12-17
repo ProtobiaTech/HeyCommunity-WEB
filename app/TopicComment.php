@@ -13,4 +13,12 @@ class TopicComment extends BaseModel
     {
         return $this->belongsTo('\App\Topic', 'topic_id')->withTrashed();
     }
+
+    /**
+     * Related TopicComment
+     */
+    public function childComments()
+    {
+        return $this->hasMany('App\TopicComment', 'root_id')->latest();
+    }
 }

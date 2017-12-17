@@ -26,9 +26,17 @@ class Topic extends BaseModel
     /**
      * Related TopicComment
      */
+    public function rootComments()
+    {
+        return $this->hasMany('App\TopicComment', 'topic_id')->whereNull('root_id')->latest();
+    }
+
+    /**
+     * Related TopicComment
+     */
     public function comments()
     {
-        return $this->hasMany('App\TopicComment', 'topic_id');
+        return $this->hasMany('App\TopicComment', 'topic_id')->latest();
     }
 
     /**

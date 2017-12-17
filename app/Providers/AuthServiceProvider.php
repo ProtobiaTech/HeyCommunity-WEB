@@ -39,19 +39,19 @@ class AuthServiceProvider extends ServiceProvider
         //
         // update within time
         Gate::define('update-within-time', function ($user, $entity, $time = 5) {
-            $this->updateWithInTimeGate($user, $entity, $time);
+            return $this->updateWithInTimeGate($user, $entity, $time);
         });
 
         //
         // destroy
         Gate::define('update', function ($user, $entity) {
-            $this->updateGate($user, $entity);
+            return $this->updateGate($user, $entity);
         });
 
         //
         // destroy
         Gate::define('destroy', function ($user, $entity) {
-            $this->updateGate($user, $entity);
+            return $this->updateGate($user, $entity);
         });
     }
 

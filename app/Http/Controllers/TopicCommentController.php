@@ -43,7 +43,7 @@ class TopicCommentController extends Controller
     }
 
     /**
-     *
+     * Destroy Topic Comment
      */
     public function destroy(Request $request)
     {

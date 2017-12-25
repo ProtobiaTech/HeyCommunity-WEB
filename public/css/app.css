@@ -231,10 +231,28 @@ img {
 
 #section-mainbody.page-topic-show #topic-card .card-text {
   min-height: 1.6rem;
+  font-size: 15px;
+}
+
+#section-mainbody.page-topic-show #topic-card .card-text img {
+  display: block;
+  margin: 0 auto;
+}
+
+#section-mainbody.page-topic-show #topic-card .card-text p br:last-of-type {
+  display: none;
+}
+
+#section-mainbody.page-topic-show #topic-card .card-text p:first-of-type img:first-of-type {
+  margin-top: 10px;
 }
 
 #section-mainbody.page-topic-show #topic-card .card-text p:last-of-type {
   margin-bottom: 0;
+}
+
+#section-mainbody.page-topic-show #topic-card .footer {
+  margin-top: 1rem;
 }
 
 #section-mainbody.page-topic-show #topic-card .footer .topic-info {

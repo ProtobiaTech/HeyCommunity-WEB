@@ -22,6 +22,21 @@
 
     .card-text {
       min-height: 1.6rem;
+      font-size: 15px;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      p br:last-of-type {
+        display: none;
+      }
+
+      p:first-of-type img:first-of-type {
+        margin-top: 10px;
+      }
+
 
       p:last-of-type {
         margin-bottom: 0;
@@ -29,6 +44,8 @@
     }
 
     .footer {
+      margin-top: 1rem;
+
       .topic-info {
         font-size: 12px;
       }

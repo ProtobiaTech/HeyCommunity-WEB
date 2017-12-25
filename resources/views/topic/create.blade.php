@@ -20,19 +20,6 @@
                     <div class="card">
                         <div class="card-body">
                             欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~ <br><br>
-
-                            但请注意以下几点
-                            <ol>
-                                <li>
-                                    请传播美好的事物，这里拒绝低俗、诋毁、谩骂等相关信息
-                                </li>
-                                <li>
-                                    谢绝发布社会, 政治等相关新闻
-                                </li>
-                                <li>
-                                    这里绝对不讨论任何有关盗版软件、音乐、电影如何获得的问题
-                                </li>
-                            </ol>
                         </div>
                     </div>
                 </div>
@@ -59,7 +46,6 @@
                                     <label for="input-node" class="col-sm-2 col-form-label">节点</label>
                                     <div class="col-sm-10">
                                         <select name="node_id" class="custom-select form-control">
-                                            <option selected>请选择一个节点</option>
                                             @foreach ($rootNodes as $rootNode)
                                                 <optgroup label="{{ $rootNode->name }}">
                                                     @foreach ($rootNode->childNodes as $node)
@@ -71,7 +57,7 @@
                                             @endforeach
                                         </select>
 
-                                        <div class="text-danger">{{ $errors->first('node_id') }}</div>
+                                        <div class="text-danger">{{ $errors->has('node_id') ? '请选择一个节点' : '' }}</div>
                                     </div>
                                 </div>
 

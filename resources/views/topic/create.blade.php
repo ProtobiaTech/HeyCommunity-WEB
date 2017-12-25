@@ -19,7 +19,7 @@
                 <div class="col-md-4 col-lg-4 d-none d-md-block">
                     <div class="card">
                         <div class="card-body">
-                            欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~ <br><br>
+                            欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~
                         </div>
                     </div>
                 </div>

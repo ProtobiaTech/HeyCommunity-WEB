@@ -113,10 +113,10 @@
                         </li>
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
-                                <img src="{{ asset('assets/webadmin/images/users/avatar-1.jpg') }}" alt="user-img" class="img-circle">
+                                <img src="{{ asset(Auth::user()->avatar) }}" alt="user-img" class="img-circle">
                                 <span class="profile-username">
-                                    Admin <br/>
-                                    <small>Administrator</small>
+                                    {{ Auth::user()->nickname }} <br/>
+                                    <small>{{ str_limit(Auth::user()->bio, 8) }}</small>
                                 </span>
                             </a>
                             <ul class="dropdown-menu">

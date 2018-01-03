@@ -24,8 +24,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        // fetch news
+        if (env('FETCH_NEWS_ENABLE')) {
+            $schedule->command('fetch:news')
+                ->dailyAt('7:00')
+                ->dailyAt('11:30')
+                ->dailyAt('15:30')
+                ->appendOutputTo(storage_path('logs/fetch-news.log'));
+        }
     }
 
     /**

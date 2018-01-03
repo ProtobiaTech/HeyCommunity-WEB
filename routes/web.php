@@ -38,10 +38,10 @@ try {
 // Home
 Route::group([], function () {
     Route::get('home', function () {
-        return redirect()->route('topic.index');
+        return redirect()->route('news.index');
     })->name('home');
     Route::get('/', function () {
-        return redirect()->route('topic.index');
+        return redirect()->route('news.index');
     })->name('index');
 
     // Route::get('/', 'HomeController@index')->name('home.index');
@@ -99,6 +99,14 @@ Route::group(['prefix' => 'user'], function () {
 // Notice
 Route::group(['prefix' => 'notice'], function () {
     Route::get('/', 'NoticeController@index')->name('notice.index');
+});
+
+
+//
+// News
+Route::group(['prefix' => 'news'], function () {
+    Route::get('/', 'NewsController@index')->name('news.index');
+    Route::get('/{id}', 'NewsController@show')->name('news.show')->where('id', '[0-9]+');
 });
 
 

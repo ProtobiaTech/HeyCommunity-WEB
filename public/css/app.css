@@ -36,6 +36,33 @@ button {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+
+  .m-hide {
+    display: none;
+  }
+
+  .m-show {
+    display: block !important;
+  }
+
+  .m-block {
+    display: inline !important;
+  }
+
+  .m-inline {
+    display: inline !important;
+  }
+
+  .m-inline-block {
+    display: inline-block !important;
+  }
+}
+
+.m-show,
+.m-block,
+.m-inline,
+.m-inline-block {
+  display: none;
 }
 
 #section-pagination {
@@ -62,6 +89,10 @@ button {
   #section-pagination .pagination .page-item:nth-of-type(9),
   #section-pagination .pagination .page-item:nth-last-of-type(2) {
     display: none;
+  }
+
+  #section-pagination .pagination .page-item:nth-of-type(3) {
+    display: inline-block;
   }
 }
 

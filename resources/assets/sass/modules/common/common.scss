@@ -22,6 +22,10 @@
         .page-item:nth-last-of-type(2) {
           display: none;
         }
+
+        .page-item:nth-of-type(3) {
+          display: inline-block;
+        }
       }
     }
   }

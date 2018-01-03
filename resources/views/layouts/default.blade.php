@@ -61,6 +61,9 @@
                 <a class="nav-link {{ setNavActive('/') }}" href="{{ url('/') }}">首页</a>
             </li>
             -->
+            <li class="nav-item {{ setNavActive('news*') }}">
+                <a class="nav-link" href="{{ route('news.index') }}">新闻</a>
+            </li>
             <li class="nav-item {{ setNavActive('topic*') }}">
                 <a class="nav-link" href="{{ route('topic.index') }}">话题</a>
             </li>

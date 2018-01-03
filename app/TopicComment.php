@@ -20,7 +20,7 @@ class TopicComment extends BaseModel
      */
     public function parent()
     {
-        return $this->belongsTo('App\TopicComment', 'parent_id');
+        return $this->belongsTo('App\TopicComment', 'parent_id')->withTrashed();
     }
 
     /**

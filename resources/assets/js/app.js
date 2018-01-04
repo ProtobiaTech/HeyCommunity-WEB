@@ -6,6 +6,7 @@
  */
 
 // require('./bootstrap');
+require('./laravel-echo');
 
 require('./utilities/request');
 require('./utilities/other');

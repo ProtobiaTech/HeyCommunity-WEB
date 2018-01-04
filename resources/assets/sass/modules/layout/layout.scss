@@ -2,6 +2,14 @@
   #js-popoverContent {
   }
 
+  .navbar-brand {
+    .icon-back-btn {
+      position: absolute;
+      top: 10px;
+      margin-left: -4px;
+    }
+  }
+
   #nav-btns {
     position: absolute;
     top: 7.88px;

@@ -38,7 +38,14 @@
 
 <!-- Nav -->
 <nav id="section-mainNav" class="navbar navbar-expand-md fixed-top navbar-dark bg-primary app-navbar">
-    <a class="navbar-brand" href="{{ url('/') }}">{{ $system->site_title }}</a>
+    @if (Route::is(getBackToIndexRoute()))
+        <a class="navbar-brand" href="{{ url('/') }}">{{ $system->site_title }}</a>
+    @else
+        <a class="navbar-brand" href="{{ route(getBackToIndexRoute()) }}">
+            {{ $system->site_title }}
+            <sup class="icon-back-btn"><small class="text-warning"><i class="fa fa-reply"></i></small></sup>
+        </a>
+    @endif
 
     <div class="d-md-none" id="nav-btns">
         @php

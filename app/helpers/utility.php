@@ -52,3 +52,24 @@ function strToOneLine($string)
     $string = preg_replace('/\s+/', ' ',$string);
     return $string;
 }
+
+/**
+ * Get Back To Index Route
+ */
+function getBackToIndexRoute()
+{
+    $routeName = Request::route()->getName();
+    $routeRootName = strstr($routeName, '.', true);
+
+    $controllerNames = [
+        'news',
+        'topic',
+        'activity',
+    ];
+
+    if (in_array($routeRootName, $controllerNames)) {
+        return $routeRootName . '.index';
+    } else {
+        return $routeName;
+    }
+}

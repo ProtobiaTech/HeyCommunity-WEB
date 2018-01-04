@@ -1,3 +1,9 @@
+#section-mainNav .navbar-brand .icon-back-btn {
+  position: absolute;
+  top: 10px;
+  margin-left: -4px;
+}
+
 #section-mainNav #nav-btns {
   position: absolute;
   top: 7.88px;
@@ -62,7 +68,7 @@ button {
 .m-block,
 .m-inline,
 .m-inline-block {
-  display: none;
+  display: none !important;
 }
 
 #section-pagination {

@@ -37,7 +37,7 @@
     display: block !important;
   }
   .m-block {
-    display: inline !important;
+    display: block !important;
   }
   .m-inline {
     display: inline !important;
@@ -51,5 +51,5 @@
 .m-block,
 .m-inline,
 .m-inline-block {
-  display: none !important;
+  display: none;
 }

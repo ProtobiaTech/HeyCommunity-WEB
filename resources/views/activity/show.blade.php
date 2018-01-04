@@ -13,14 +13,18 @@
 
             <div class="row">
                 <div class="col-md-5 m-np m-nb-y">
-                    <img src="{{ asset($activity->avatar) }}" class="img-fluid img-thumbnail m-np m-nb-r">
+                    <img src="{{ asset($activity->avatar) }}" class="img-fluid img-thumbnail m-np m-nb-r" style="width:100%;">
                 </div>
                 <div class="col-md-7 m-np m-nb">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ $activity->title }}</h4>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $activity->created_at }}</h6>
-                            <p class="card-text">{{ $activity->content }}</p>
+                            <!--
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                {{ $activity->created_at }}
+                            </h6>
+                            -->
+                            <p class="card-text">{!! $activity->content !!}</p>
                         </div>
                     </div>
                 </div>

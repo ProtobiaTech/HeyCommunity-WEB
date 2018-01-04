@@ -3,7 +3,7 @@
         @foreach ($activities as $item)
             <div class="col-md-3 m-np">
                 <div id="component-activity-card" class="card card-activity">
-                    <a href="{{ route('activity.show', $item->id) }}">
+                    <a class="box-pic" href="{{ route('activity.show', $item->id) }}">
                         <img class="card-img-top m-nb-r" src="{{ asset($item->avatar) }}" alt="{{ $item->title }}">
                     </a>
                     <div class="card-body">

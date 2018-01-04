@@ -52,7 +52,7 @@ button {
   }
 
   .m-block {
-    display: inline !important;
+    display: block !important;
   }
 
   .m-inline {
@@ -68,7 +68,7 @@ button {
 .m-block,
 .m-inline,
 .m-inline-block {
-  display: none !important;
+  display: none;
 }
 
 #section-pagination {
@@ -407,9 +407,14 @@ img {
   margin-bottom: 20px;
 }
 
-#component-activity-card .card-img-top {
+#component-activity-card .box-pic {
+  max-height: 165px;
+  overflow: hidden;
+}
+
+#component-activity-card .box-pic .card-img-top {
   background-color: #ddd;
-  min-height: 160px;
+  min-height: 140px;
 }
 
 #component-activity-card .card-body .card-title {

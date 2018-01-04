@@ -48,9 +48,14 @@
 #component-activity-card {
   margin-bottom: 20px;
 
-  .card-img-top {
-    background-color: #ddd;
-    min-height: 160px;
+  .box-pic {
+    max-height: 165px;
+    overflow: hidden;
+
+    .card-img-top {
+      background-color: #ddd;
+      min-height: 140px;
+    }
   }
 
   .card-body {

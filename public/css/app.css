@@ -407,6 +407,11 @@ img {
   margin-bottom: 20px;
 }
 
+#component-activity-card .card-img-top {
+  background-color: #ddd;
+  min-height: 160px;
+}
+
 #component-activity-card .card-body .card-title {
   white-space: nowrap;
   overflow: hidden;

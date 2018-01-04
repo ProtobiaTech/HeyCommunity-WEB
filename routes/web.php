@@ -139,7 +139,7 @@ Route::group(['prefix' => 'topic'], function () {
 //
 // Activity
 Route::group(['prefix' => 'activity'], function () {
-    Route::get('/', 'ActivityController@index');
+    Route::get('/', 'ActivityController@index')->name('activity.index');
     Route::get('/{id}', 'ActivityController@show')->name('activity.show');
 });
 

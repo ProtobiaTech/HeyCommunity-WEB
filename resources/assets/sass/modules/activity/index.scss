@@ -48,6 +48,11 @@
 #component-activity-card {
   margin-bottom: 20px;
 
+  .card-img-top {
+    background-color: #ddd;
+    min-height: 160px;
+  }
+
   .card-body {
 
     .card-title {

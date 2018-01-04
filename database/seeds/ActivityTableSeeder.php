@@ -12,7 +12,7 @@ class ActivityTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        foreach (range(1, 20) as $index) {
+        foreach (range(1, 8) as $index) {
             // avatar
             if (env('FAKER_IMAGE_STORAGE', false)) {
                 $avatarUrl = $faker->image(storage_path('app/uploads/activity/avatar'), 800, 480);

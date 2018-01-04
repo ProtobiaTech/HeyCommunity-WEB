@@ -3,7 +3,7 @@
 @section('mainBody')
     <div id="section-mainbody" class="page-activity-show">
         <div class="container pt-4 pb-5">
-            <nav id="section-breadcrumb" aria-label="breadcrumb" role="navigation">
+            <nav id="section-breadcrumb" class="d-none d-md-block" aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
                     <li class="breadcrumb-item"><a href="{{ url('activity') }}">活动</a></li>
@@ -20,14 +20,13 @@
                         <div class="card-body">
                             <h4 class="card-title">{{ $activity->title }}</h4>
                             <h6 class="card-subtitle mb-2 text-muted">{{ $activity->created_at }}</h6>
-                            <p class="card-text">{{ $activity->intro }}</p>
-                            <a class="card-link">立即报名</a>
-                            <a class="card-link">参与讨论</a>
+                            <p class="card-text">{{ $activity->content }}</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!--
             <br>
             <div class="row" id="section-row2">
                 <div class="col-sm-8" id="section-body">
@@ -62,6 +61,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
 @stop

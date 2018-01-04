@@ -74,11 +74,9 @@
             <li class="nav-item {{ setNavActive('topic*') }}">
                 <a class="nav-link" href="{{ route('topic.index') }}">话题</a>
             </li>
-            <!--
             <li class="nav-item {{ setNavActive('activity*') }}">
                 <a class="nav-link" href="{{ url('activity') }}">活动</a>
             </li>
-            -->
 
             @if (Auth::check())
                 <li class="nav-item d-block d-md-none {{ setNavActive('*ucenter*') }}">

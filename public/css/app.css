@@ -387,6 +387,8 @@ img {
 
 #section-mainbody.page-activity-index .carousel .carousel-item img {
   min-width: 100%;
+  min-height: 300px;
+  background-color: #aaa;
 }
 
 #section-mainbody.page-activity-index .carousel .carousel-item .carousel-caption h3 a {

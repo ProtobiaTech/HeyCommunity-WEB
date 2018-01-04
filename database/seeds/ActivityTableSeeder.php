@@ -12,6 +12,8 @@ class ActivityTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $users = \App\User::pluck('id')->toArray();
+
         foreach (range(1, 8) as $index) {
             // avatar
             if (env('FAKER_IMAGE_STORAGE', false)) {
@@ -22,6 +24,7 @@ class ActivityTableSeeder extends Seeder
             }
 
             $data[] = [
+                'user_id'       =>      $faker->randomElement($users),
                 'title'         =>      $faker->sentence(),
                 'avatar'        =>      $avatarUrl,
                 'intro'         =>      $faker->text(100),

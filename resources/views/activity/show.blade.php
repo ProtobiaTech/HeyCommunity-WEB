@@ -19,11 +19,13 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ $activity->title }}</h4>
-                            <!--
                             <h6 class="card-subtitle mb-2 text-muted">
-                                {{ $activity->created_at }}
+                                {{ $activity->author->nickname }}
+
+                                <span class="pull-right">
+                                    <small>{{ $activity->created_at }}</small>
+                                </span>
                             </h6>
-                            -->
                             <p class="card-text">{!! $activity->content !!}</p>
                         </div>
                     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Activity;
+use Auth;
 
 class ActivityController extends Controller
 {
@@ -52,6 +53,7 @@ class ActivityController extends Controller
 
         if ($avatarUrl) {
             $activity = new Activity();
+            $activity->user_id = Auth::id();
             $activity->title = $request->title;
             $activity->intro = $request->intro;
             $activity->content = $request->content;

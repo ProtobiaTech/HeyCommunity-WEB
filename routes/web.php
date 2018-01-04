@@ -141,9 +141,12 @@ Route::group(['prefix' => 'topic'], function () {
 Route::group(['prefix' => 'activity'], function () {
     Route::get('/', 'ActivityController@index')->name('activity.index');
     Route::get('/{id}', 'ActivityController@show')->name('activity.show')->where('id', '[0-9]+');
-    Route::get('create', 'ActivityController@create')->name('activity.create');
-    Route::post('store', 'ActivityController@store')->name('activity.store');
-    Route::get('edit/{id}', 'ActivityController@edit')->name('activity.edit')->where('id', '[0-9]+');
-    Route::post('update/{id}', 'ActivityController@update')->name('activity.update')->where('id', '[0-9]+');
+
+    Route::middleware(['auth'])->group(function() {
+        Route::get('create', 'ActivityController@create')->name('activity.create');
+        Route::post('store', 'ActivityController@store')->name('activity.store');
+        Route::get('edit/{id}', 'ActivityController@edit')->name('activity.edit')->where('id', '[0-9]+');
+        Route::post('update/{id}', 'ActivityController@update')->name('activity.update')->where('id', '[0-9]+');
+    });
 });
 

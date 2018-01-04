@@ -67,4 +67,45 @@ class ActivityController extends Controller
         flash('发布活动失败')->error();
         return back()->withInput();
     }
+
+    /**
+     * Edit Activity Page
+     */
+    public function edit($id)
+    {
+        $activity = Activity::findOrFail($id);
+
+        return view('activity.edit', compact('activity'));
+    }
+
+    /**
+     * Update Activity
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title'         =>  'required|string',
+            'intro'         =>  'required|string',
+            'content'       =>  'required|string',
+            'avatar'        =>  'image',
+        ]);
+
+        $activity = Activity::findOrFail($id);
+        $activity->user_id = Auth::id();
+        $activity->title = $request->title;
+        $activity->intro = $request->intro;
+        $activity->content = $request->content;
+
+        if ($request->avatar) {
+            $avatarUrl  = $request->file('avatar')->store('uploads/activity/avatar');
+            $activity->avatar = $avatarUrl;
+        }
+
+        if ($activity->save()) {
+            return redirect()->route('activity.show', $activity->id);
+        } else {
+            flash('发布活动失败')->error();
+            return back()->withInput();
+        }
+    }
 }

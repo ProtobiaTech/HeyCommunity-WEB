@@ -12,10 +12,10 @@
             </nav>
 
             <div class="row">
-                <div class="col-sm-5">
-                    <img src="{{ asset($activity->avatar) }}" class="img-fluid img-thumbnail">
+                <div class="col-md-5 m-np m-nb-y">
+                    <img src="{{ asset($activity->avatar) }}" class="img-fluid img-thumbnail m-np m-nb-r">
                 </div>
-                <div class="col-sm-7">
+                <div class="col-md-7 m-np m-nb">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ $activity->title }}</h4>

@@ -1,8 +1,10 @@
 @extends('layouts.default')
 
 @section('title')
-    用户资料 - {{ $system->site_title }}
+用户资料 - {{ $system->site_title }}
 @endsection
+
+
 
 @section('mainBody')
     <div id="section-mainbody" class="page-user-profile">

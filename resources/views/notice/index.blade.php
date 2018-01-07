@@ -1,5 +1,13 @@
 @extends('layouts.default')
 
+@section('title')
+通知 - {{ $system->site_title }}
+@endsection
+
+@php
+$wxShareDisable = true;
+@endphp
+
 @section('mainBody')
     <div id="section-mainbody" class="page-module-page">
         <div class="container pt-4 pb-5">

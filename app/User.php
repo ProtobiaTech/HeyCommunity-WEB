@@ -30,8 +30,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Guest Avatar
+     */
     public static function guestAvatar()
     {
         return '/images/user/avatars/guest.jpg';
+    }
+
+    /**
+     * Get Avatar Attribute
+     */
+    public function getAvatarAttribute($value)
+    {
+        return asset($value);
     }
 }

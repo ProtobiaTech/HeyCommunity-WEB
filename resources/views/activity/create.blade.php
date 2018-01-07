@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    发布一个活动 - {{ $system->site_title }}
+发布一个活动 - {{ $system->site_title }}
 @endsection
 
 @section('mainBody')

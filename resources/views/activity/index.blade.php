@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+活动 - {{ $system->site_title }}
+@endsection
+
 @section('mainBody')
 <div id="section-mainbody" class="page-activity-index">
     <!--

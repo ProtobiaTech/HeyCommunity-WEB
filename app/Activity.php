@@ -13,4 +13,12 @@ class Activity extends BaseModel
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    /**
+     * Get Avatar Attribute
+     */
+    public function getAvatarAttribute($value)
+    {
+        return asset($value);
+    }
 }

@@ -1,8 +1,12 @@
 @extends('layouts.default')
 
 @section('title')
-    微信登录成功 - {{ $system->site_title }}
+微信登录成功 - {{ $system->site_title }}
 @endsection
+
+@php
+$wxShareDisable = true;
+@endphp
 
 @section('mainBody')
 <div id="section-mainbody" class="page-user-login-wechat-transfer">

@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    微信登录 - {{ $system->site_title }}
+微信登录 - {{ $system->site_title }}
 @endsection
 
 @section('mainBody')

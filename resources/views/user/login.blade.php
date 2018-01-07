@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    登录 - {{ $system->site_title }}
+登录 - {{ $system->site_title }}
 @endsection
 
 @section('mainBody')

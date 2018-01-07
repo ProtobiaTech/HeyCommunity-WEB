@@ -1,5 +1,13 @@
 @extends('layouts.default')
 
+@section('title')
+新闻资讯 - {{ $system->site_title }}
+@endsection
+
+@section('description')
+实时的新闻与资讯
+@endsection
+
 @section('mainBody')
     <div id="section-mainbody" class="page-news-index">
         <div class="container pt-2 pb-5">

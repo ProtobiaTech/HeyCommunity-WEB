@@ -1,7 +1,11 @@
 @extends('layouts.default')
 
 @section('title')
-所有话题 - {{ $system->site_title }}
+话题 - {{ $system->site_title }}
+@endsection
+
+@section('description')
+欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~
 @endsection
 
 @section('mainBody')

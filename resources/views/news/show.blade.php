@@ -1,5 +1,17 @@
 @extends('layouts.default')
 
+@section('title')
+{{ $news->title }} - {{ $system->site_title }}
+@endsection
+
+@section('description')
+{{ str_limit(strip_tags($news->content), 100) }}
+@endsection
+
+@section('avatar')
+{{ $news->avatar }}
+@endsection
+
 @section('mainBody')
     <div id="section-mainbody" class="page-news-index">
         <div class="container pt-4 pb-5">

@@ -5,7 +5,11 @@
 @endsection
 
 @section('description')
-    {{ str_limit(strip_tags($topic->content), 150) }}
+{{ str_limit(strip_tags($topic->content), 150) }}
+@endsection
+
+@section('avatar')
+{{ $topic->author->avatar }}
 @endsection
 
 @section('mainBody')
@@ -210,10 +214,6 @@
 
 
 @section('script')
-<script>
-shareImgUrl = "{{ asset($topic->author->avatar) }}";
-
-</script>
 <script>
     // set topic detail page back url
     if ('{{ URL::previous() }}'.search(/topic\/[0-9]*/) < 0) {

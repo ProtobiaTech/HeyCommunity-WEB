@@ -1,7 +1,15 @@
 @extends('layouts.default')
 
 @section('title')
-    {{ $user->nickname }} 的主页 - {{ $system->site_title }}
+{{ $user->nickname }} 的主页 - {{ $system->site_title }}
+@endsection
+
+@section('description')
+{{ $user->bio }}
+@endsection
+
+@section('avatar')
+{{ $user->avatar }}
 @endsection
 
 @section('mainBody')

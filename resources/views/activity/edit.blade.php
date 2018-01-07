@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-    编辑一个活动 - {{ $system->site_title }}
+更新活动 - {{ $system->site_title }}
 @endsection
 
 @section('mainBody')
@@ -11,7 +11,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('activity.index') }}">活动</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">编辑活动</li>
+                    <li class="breadcrumb-item active" aria-current="page">更新活动</li>
                 </ol>
             </nav>
 
@@ -27,12 +27,11 @@
                 <div class="col-md-8 col-lg-8 m-np">
                     <div class="card m-nb-y m-nb-r">
                         <div class="card-body">
-                            <h5 class="card-title">编辑一个活动</h5>
+                            <h5 class="card-title">更新活动</h5>
                             <hr>
 
                             <form action="{{ route('activity.update', $activity->id) }}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                {{ $activity->title }}
 
                                 <div class="form-group row">
                                     <label for="input-title" class="col-sm-2 col-form-label">标题</label>

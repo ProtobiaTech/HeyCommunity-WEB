@@ -1,7 +1,11 @@
 @extends('layouts.default')
 
 @section('title')
-    更新话题 - {{ $topic->title }}
+更新话题 - {{ $topic->title }}
+@endsection
+
+@section('description')
+欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~
 @endsection
 
 @section('mainBody')

@@ -1,5 +1,17 @@
 @extends('layouts.default')
 
+@section('title')
+    {{ $activity->title }} - {{ $system->site_title }}
+@endsection
+
+@section('description')
+    {{ str_limit(strip_tags($activity->content), 100) }}
+@endsection
+
+@section('avatar')
+    {{ $activity->avatar }}
+@endsection
+
 @section('mainBody')
     <div id="section-mainbody" class="page-activity-show">
         <div class="container pt-4 pb-5">

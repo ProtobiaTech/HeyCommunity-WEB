@@ -1,0 +1,12 @@
+#section-mainbody.page-notice-index {
+  #section-notice-list {
+    .list-group-item {
+      &.read {
+        .icon,
+        .media-body {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

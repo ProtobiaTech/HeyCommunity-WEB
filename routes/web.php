@@ -99,6 +99,7 @@ Route::group(['prefix' => 'user'], function () {
 // Notice
 Route::group(['prefix' => 'notice'], function () {
     Route::get('/', 'NoticeController@index')->name('notice.index');
+    Route::post('check', 'NoticeController@check')->name('notice.check');
 });
 
 

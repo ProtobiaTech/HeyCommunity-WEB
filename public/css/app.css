@@ -163,6 +163,11 @@ img {
   margin-top: 16px;
 }
 
+#section-mainbody.page-notice-index #section-notice-list .list-group-item.read .icon,
+#section-mainbody.page-notice-index #section-notice-list .list-group-item.read .media-body {
+  opacity: 0.6;
+}
+
 #section-mainbody.page-topic-index {
   margin-top: 10px;
 }

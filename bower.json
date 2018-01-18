@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "masonry-layout": "masonry#^4.2.1"
   }
 }

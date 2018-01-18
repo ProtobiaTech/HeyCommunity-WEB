@@ -48,4 +48,7 @@
             </nav>
         </div>
     </div>
+
+    <script src="{{ asset('bower-assets/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
+    <script>$('.row').masonry({itemSelector: '.col-md-3'})</script>
 @stop

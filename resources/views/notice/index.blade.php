@@ -34,7 +34,7 @@ $wxShareDisable = true;
                         @foreach($notices as $notice)
                             @switch($notice->entity_name)
                                 @case('TopicCommentReplay')
-                                    <li class="list-group-item media p-4">
+                                    <li class="list-group-item media p-4 {{ $notice->is_read ? 'read' : 'unread' }}">
                                         <span class="icon icon-flag text-muted mr-2"></span>
 
                                         <div class="media-body">
@@ -45,7 +45,7 @@ $wxShareDisable = true;
                                                 <br>
 
                                                 <div style="padding-left:2em; border-left:2px solid #ddd; margin:6px 0 4px; color:#777; font-size:12px;">
-                                                    {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }} &nbsp;
+                                                    {{ mb_substr(strip_tags($notice->entity->parent->content), 0, 150) }} &nbsp;
                                                 </div>
                                                 {{ mb_substr(strip_tags($notice->entity->content), 0, 150) }} &nbsp;
 

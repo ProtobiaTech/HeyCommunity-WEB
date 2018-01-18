@@ -85,6 +85,9 @@ class TopicCommentController extends Controller
             $topicComment = TopicComment::create($data);
             $topicComment->topic->increment('comment_num');
 
+            // trigger notice
+            event(new \App\Events\TopicNotice('TopicCommentReplay', $topicComment, $parentTopicComment->user_id, $topicComment->user_id));
+
             flash('回复成功')->success();
             return back();
         } else {

@@ -63,9 +63,15 @@ $wxShareDisable = true;
                             </div>
                         @endif
 
-                        @if (request()->is('*my-topic*'))
+                        @if (request()->is('*my-topics'))
                             <div class="tab-pane fade show active">
                                 @include('topic._topic-list', ['topics' => $myTopics])
+                            </div>
+                        @endif
+
+                        @if (request()->is('*my-topic-comments'))
+                            <div class="tab-pane fade show active">
+                                @include('topic._topic-list-with-comment', ['topicComments' => $myTopicComments])
                             </div>
                         @endif
 

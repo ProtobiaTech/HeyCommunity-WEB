@@ -7,6 +7,7 @@ use Auth;
 use App\User;
 use App\Topic;
 use App\Activity;
+use App\TopicComment;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 
@@ -164,10 +165,12 @@ class UserController extends Controller
         }
 
         $user = Auth::user();
-        $myTopics = Topic::mine()->paginate();
+
+        $myTopics = Topic::mine()->latest()->paginate();
+        $myTopicComments = TopicComment::mine()->latest()->paginate();
         $myActivities = Activity::paginate();
 
-        return view('user.ucenter', compact('user', 'myTopics', 'myActivities'));
+        return view('user.ucenter', compact('user', 'myTopics', 'myTopicComments', 'myActivities'));
     }
 
     /**

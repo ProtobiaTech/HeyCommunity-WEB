@@ -90,13 +90,15 @@ class ActivityController extends Controller
             'intro'         =>  'required|string',
             'content'       =>  'required|string',
             'avatar'        =>  'image',
+            'start_time'    =>  'required|string',
+            'end_time'      =>  'required|string',
+            'local'         =>  'required|string',
+            'redirect_url'  =>  'required|string',
         ]);
 
         $activity = Activity::findOrFail($id);
-        $activity->user_id = Auth::id();
-        $activity->title = $request->title;
-        $activity->intro = $request->intro;
-        $activity->content = $request->content;
+
+        $activity->fill($request->only(['title', 'intro', 'content', 'start_time', 'end_time', 'local', 'redirect_url']));
 
         if ($request->avatar) {
             $avatarUrl  = $request->file('avatar')->store('uploads/activity/avatar');

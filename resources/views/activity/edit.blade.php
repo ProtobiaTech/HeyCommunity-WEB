@@ -33,41 +33,7 @@
                             <form action="{{ route('activity.update', $activity->id) }}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
-                                <div class="form-group row">
-                                    <label for="input-title" class="col-sm-2 col-form-label">标题</label>
-                                    <div class="col-sm-10">
-                                        <input name="title" type="text" class="form-control" id="input-title" value="{{ old('title', $activity->title) }}">
-
-                                        <div class="text-danger">{{ $errors->first('title') }}</div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="input-avatar" class="col-sm-2 col-form-label">封面</label>
-                                    <div class="col-sm-10">
-                                        <input name="avatar" type="file" class="form-control" id="input-avatar" value="{{ old('avatar', $activity->avatar) }}">
-
-                                        <div class="text-danger">{{ $errors->first('avatar') }}</div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="input-intro" class="col-sm-2 col-form-label">介绍</label>
-                                    <div class="col-sm-10">
-                                        <textarea name="intro" class="form-control" id="input-intro" rows="3">{{ old('intro', $activity->intro) }}</textarea>
-
-                                        <div class="text-danger">{{ $errors->first('intro') }}</div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="input-content" class="col-sm-2 col-form-label">内容</label>
-                                    <div class="col-sm-10">
-                                        <textarea name="content" class="form-control simditor-editor" id="input-content" rows="8">{{ old('content', $activity->content) }}</textarea>
-
-                                        <div class="text-danger">{{ $errors->first('content') }}</div>
-                                    </div>
-                                </div>
+                                @include('activity._form')
 
                                 <div class="form-group row">
                                     <div class="col-sm-2"></div>

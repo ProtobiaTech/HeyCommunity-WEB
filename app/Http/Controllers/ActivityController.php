@@ -47,6 +47,10 @@ class ActivityController extends Controller
             'intro'         =>  'required|string',
             'content'       =>  'required|string',
             'avatar'        =>  'required|image',
+            'start_time'    =>  'required|string',
+            'end_time'      =>  'required|string',
+            'local'         =>  'required|string',
+            'redirect_url'  =>  'required|string',
         ]);
 
         $avatarUrl  = $request->file('avatar')->store('uploads/activity/avatar');
@@ -54,10 +58,8 @@ class ActivityController extends Controller
         if ($avatarUrl) {
             $activity = new Activity();
             $activity->user_id = Auth::id();
-            $activity->title = $request->title;
-            $activity->intro = $request->intro;
-            $activity->content = $request->content;
             $activity->avatar = $avatarUrl;
+            $activity->fill($request->only(['title', 'intro', 'content', 'start_time', 'end_time', 'local', 'redirect_url']));
 
             if ($activity->save()) {
                 return redirect()->route('activity.show', $activity->id);

@@ -24,10 +24,14 @@ class ActivityTableSeeder extends Seeder
             }
 
             $data[] = [
+                'start_time'    =>      $faker->dateTimeBetween('-10 days', 'now'),
+                'end_time'      =>      $faker->dateTimeBetween('now', '5 days'),
                 'user_id'       =>      $faker->randomElement($users),
                 'title'         =>      $faker->sentence(),
                 'avatar'        =>      $avatarUrl,
                 'intro'         =>      $faker->text(100),
+                'local'         =>      $faker->address(),
+                'redirect_url'  =>      $faker->url(),
                 'content'       =>      $faker->text(400),
 
                 'created_at'    =>      $faker->dateTimeThisMonth(),

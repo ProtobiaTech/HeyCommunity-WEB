@@ -73,3 +73,15 @@ function getBackToIndexRoute()
         return $routeName;
     }
 }
+
+/**
+ * Get Form Value For Model Create And Edit
+ */
+function formValue($object, $key)
+{
+    if (is_object($object)) {
+        return $object->$key;
+    } else {
+        return null;
+    }
+}

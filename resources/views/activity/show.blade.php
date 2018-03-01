@@ -23,63 +23,94 @@
                 </ol>
             </nav>
 
-            <div class="row">
-                <div class="col-md-5 m-np m-nb-y">
+            <div class="row" id="section-row-1">
+                <div class="col-md-5 m-np m-nb-y box-avatar">
                     <img src="{{ asset($activity->avatar) }}" class="img-fluid img-thumbnail m-np m-nb-r" style="width:100%;">
                 </div>
-                <div class="col-md-7 m-np m-nb">
+                <div class="col-md-7 m-np m-nb card-intro">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{ $activity->title }}</h4>
+
+                            <div class="d-block d-sm-none mb-3">
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    <i class="fa fa-calendar"></i>&nbsp;
+                                    {{ $activity->start_time }} - {{ $activity->end_time }}
+                                </h6>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    <i class="fa fa-map-signs"></i>&nbsp;
+                                    {{ $activity->local }}
+                                </h6>
+                            </div>
+
                             <h6 class="card-subtitle mb-2 text-muted">
+                                <i class="fa fa-user"></i>&nbsp;
                                 {{ $activity->author->nickname }}
 
                                 <span class="pull-right">
-                                    <small>{{ $activity->created_at }}</small>
+                                    <small>发布于 {{ $activity->created_at }}</small>
                                 </span>
                             </h6>
-                            <p class="card-text">{!! $activity->content !!}</p>
+
+                            <p class="card-text">{!! $activity->intro !!}</p>
+
+                            <div class="box-redirect">
+                                <a class="btn btn-primary" href="{{ $activity->redirect_url }}" target="_blank">
+                                    <i class="fa fa-send"></i> &nbsp;
+                                    报名或了解活动详情
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!--
             <br>
-            <div class="row" id="section-row2">
-                <div class="col-sm-8" id="section-body">
+            <div class="row" id="section-row-2">
+                <div class="col-sm-8 m-np" id="section-body">
                     <nav class="nav nav-tabs" id="mainTab">
-                        <a class="nav-item nav-link active" id="nav-content-tab" data-toggle="tab" href="#nav-content">详情</a>
-                        <a class="nav-item nav-link" id="nav-participant-tab" data-toggle="tab" href="#nav-participant">报名</a>
-                        <a class="nav-item nav-link" id="nav-topic-tab" data-toggle="tab" href="#nav-topic">讨论</a>
+                        <a class="nav-item nav-link active" id="nav-content-tab" data-toggle="tab" href="#nav-content">活动详情</a>
+                        <a class="nav-item nav-link" id="nav-topic-tab" data-toggle="tab" href="#nav-topic">相关讨论</a>
                     </nav>
-                    <div class="tab-content" id="nav-mainTabContent">
+                    <div class="tab-content pt-0" id="nav-mainTabContent">
                         <div class="tab-pane fade show active" id="nav-content" role="tabpanel" aria-labelledby="nav-content-tab">
-                            {{ $activity->content }}
+                            <div class="card border-top-0">
+                                <div class="card-body">
+                                    {!! $activity->content !!}
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-participant" role="tabpanel" aria-labelledby="nav-participant-tab">报名</div>
-                        <div class="tab-pane fade" id="nav-topic" role="tabpanel" aria-labelledby="nav-topic-tab">话题讨论</div>
+                        <div class="tab-pane fade" id="nav-topic" role="tabpanel" aria-labelledby="nav-topic-tab">
+                            <div class="card border-top-0">
+                                <div class="card-body">
+                                    话题讨论暂不可用
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+
+                <div class="col-sm-4 m-np d-none d-sm-block">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">
                                 <i class="fa fa-calendar"></i>
                                 &nbsp;
-                                <b>{{ $activity->created_at }}</b>
+                                <b>{{ $activity->start_time }}</b> <br>
                             </h4>
                             <h6 class="card-subtitle mb-2 text-muted">
                                 <i class="fa fa-map-signs"></i>
                                 &nbsp;
-                                XXX 路
+                                {{ $activity->local }}
                             </h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">
+                                活动于 {{ $activity->end_time }} 结束，欢迎你参加 ~ <br>
+                                <a href="{{ $activity->redidrect_url }}" target="_blank">点击这里</a>，报名或了解更多活动详情
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            -->
         </div>
     </div>
 @stop

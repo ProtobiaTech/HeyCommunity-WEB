@@ -54,6 +54,15 @@
     max-height: 165px;
     overflow: hidden;
 
+    .start-time {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 5px 10px;
+      color: #fff;
+      background-color: rgba(60, 60, 60, 0.3);
+    }
+
     .card-img-top {
       background-color: #ddd;
       min-height: 140px;

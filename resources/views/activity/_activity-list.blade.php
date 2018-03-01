@@ -4,6 +4,9 @@
             <div class="col-md-3 m-np">
                 <div id="component-activity-card" class="card card-activity">
                     <a class="box-pic" href="{{ route('activity.show', $item->id) }}">
+                        <div class="start-time">
+                            <i class="fa fa-calendar"></i>&nbsp; {{ $item->start_time }}
+                        </div>
                         <img class="card-img-top m-nb-r" src="{{ asset($item->avatar) }}" alt="{{ $item->title }}">
                     </a>
                     <div class="card-body">

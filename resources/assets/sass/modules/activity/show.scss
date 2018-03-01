@@ -1,11 +1,38 @@
 #section-mainbody.page-activity-show {
-  #section-row2 {
+  #section-row-1 {
+    .box-avatar {
+      max-height: 293px;
+      overflow: hidden;
+
+      img {
+        min-height: 180px;
+        background-color: #ddd;
+      }
+    }
+
+    .card-intro {
+      .card-body {
+        min-height: 180px;
+        padding-bottom: 56px;
+      }
+    }
+
+    .box-redirect {
+      position: absolute;
+      bottom: 15px;
+    }
+  }
+  #section-row-2 {
     #section-body {
       #tab {
       }
 
       #nav-mainTabContent {
         padding-top: 8px;
+
+        .card {
+          border-top-left-radius: 0;
+        }
       }
     }
   }

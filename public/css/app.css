@@ -61,6 +61,10 @@ button {
   .m-inline-block {
     display: inline-block !important;
   }
+
+  .m-mt-3 {
+    margin-top: 1rem !important;
+  }
 }
 
 .m-show,
@@ -418,6 +422,15 @@ img {
   overflow: hidden;
 }
 
+#component-activity-card .box-pic .start-time {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: rgba(60, 60, 60, 0.3);
+}
+
 #component-activity-card .box-pic .card-img-top {
   background-color: #ddd;
   min-height: 140px;
@@ -435,7 +448,31 @@ img {
   overflow: hidden;
 }
 
-#section-mainbody.page-activity-show #section-row2 #section-body #nav-mainTabContent {
+#section-mainbody.page-activity-show #section-row-1 .box-avatar {
+  max-height: 293px;
+  overflow: hidden;
+}
+
+#section-mainbody.page-activity-show #section-row-1 .box-avatar img {
+  min-height: 180px;
+  background-color: #ddd;
+}
+
+#section-mainbody.page-activity-show #section-row-1 .card-intro .card-body {
+  min-height: 180px;
+  padding-bottom: 56px;
+}
+
+#section-mainbody.page-activity-show #section-row-1 .box-redirect {
+  position: absolute;
+  bottom: 15px;
+}
+
+#section-mainbody.page-activity-show #section-row-2 #section-body #nav-mainTabContent {
   padding-top: 8px;
+}
+
+#section-mainbody.page-activity-show #section-row-2 #section-body #nav-mainTabContent .card {
+  border-top-left-radius: 0;
 }
 

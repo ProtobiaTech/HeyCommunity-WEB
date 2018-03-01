@@ -48,6 +48,7 @@ class FetchNews extends Command
                 'headers'   =>  $headers,
             ]);
         } catch (\GuzzleHttp\Exception\RequestException $exception) {
+            echo $exception;
             report($exception);
             return false;
         }

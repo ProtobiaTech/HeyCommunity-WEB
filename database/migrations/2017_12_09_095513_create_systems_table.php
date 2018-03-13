@@ -25,6 +25,11 @@ class CreateSystemsTable extends Migration
 
   gtag("config", "UA-100926968-2");
 </script>
+
+<!-- CNZZ Tongji -->
+<div style="display:none">
+  <script src="https://s13.cnzz.com/z_stat.php?id=1273106649&web_id=1273106649" language="JavaScript"></script>
+</div>
 EOT;
 
         Schema::create('systems', function (Blueprint $table) use ($code) {

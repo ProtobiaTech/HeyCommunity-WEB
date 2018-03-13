@@ -26,7 +26,7 @@ class AlterNewsTable extends Migration
     public function down()
     {
         Schema::table('news', function (Blueprint $table) {
-            $table->string('url')->change();
+            // $table->string('url')->change();
         });
     }
 }

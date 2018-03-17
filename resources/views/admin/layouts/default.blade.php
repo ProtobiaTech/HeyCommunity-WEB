@@ -55,12 +55,7 @@
                         </button>
                         <span class="clearfix"></span>
                     </div>
-                    <form class="navbar-form pull-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control search-bar" placeholder="搜索暂不可用" disabled>
-                        </div>
-                        <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-                    </form>
+                    @yield('search')
 
                     <ul class="nav navbar-nav navbar-right pull-right">
                         <li class="dropdown hidden-xs">
@@ -144,6 +139,19 @@
                             <i class="mdi mdi-home"></i>
                             <span>首页<span class="badge badge-primary pull-right">1</span></span>
                         </a>
+                    </li>
+
+
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect">
+                            <i class="mdi mdi-comment-text"></i>
+                            <span>新闻管理</span>
+                            <span class="pull-right"><i class="mdi mdi-plus"></i></span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ route('admin.news.index') }}">新闻列表</a></li>
+                        </ul>
                     </li>
 
                     <li class="has_sub">

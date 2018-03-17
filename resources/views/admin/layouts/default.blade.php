@@ -165,7 +165,16 @@
                             <li><a href="{{ route('admin.topic.node.index') }}">节点管理</a></li>
                         </ul>
                     </li>
-
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect">
+                            <i class="mdi mdi-comment-text"></i>
+                            <span>活动管理</span>
+                            <span class="pull-right"><i class="mdi mdi-plus"></i></span>
+                        </a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ route('admin.activity.index') }}">活动列表</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="{{ route('admin.system.edit') }}" class="waves-effect">
                             <i class="mdi mdi-wrench"></i>

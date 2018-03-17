@@ -13,7 +13,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     // News
     Route::group(['prefix' => 'news'], function () {
         Route::get('/', 'NewsController@index')->name('admin.news.index');
-        Route::get('search', 'NewsController@search')->name('admin.news.search');
         Route::post('destroy', 'NewsController@destroy')->name('admin.news.destroy');
 
     });
@@ -33,6 +32,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         });
     });
 
+    //
+    // activities
+    Route::group(['prefix' => 'activity'], function () {
+        Route::get('/', 'ActivityController@index')->name('admin.activity.index');
+        Route::post('destroy', 'ActivityController@destroy')->name('admin.activity.destroy');
+    });
 
     //
     // System

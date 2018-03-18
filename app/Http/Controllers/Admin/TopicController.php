@@ -14,10 +14,10 @@ class TopicController extends Controller
      */
     public function index()
     {
-        if (Input::get('q')!==null){
+        if (Input::get('q')!==null) {
             $TopicModel = new Topic();
-            $topics = $TopicModel->where('title','like','%'.Input::get('q').'%')->paginate();
-        }else{
+            $topics = $TopicModel->where('title', 'like', '%'.Input::get('q').'%')->paginate();
+        } else {
             $topics = Topic::latest()->paginate();
         }
 

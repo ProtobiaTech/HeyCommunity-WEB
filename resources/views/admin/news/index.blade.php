@@ -36,12 +36,12 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @if($news->isEmpty())
+                                            @if ($news->isEmpty())
                                                 <tr>
                                                     <td colspan="5">无数据</td>
                                                 </tr>
                                             @else
-                                                @foreach($news as $new)
+                                                @foreach ($news as $new)
                                                     <tr>
                                                         <td>{{ $new->id }}</td>
                                                         <td><a target="_blank" href="{{ route('news.show', $new->id) }}">{{ $new->title }}</a></td>

@@ -21,12 +21,13 @@ class NewsController extends Controller
      */
     public function index()
     {
-        if (Input::get('q')!==null){
+        if (Input::get('q')!==null) {
             $newsModel = new News();
-            $news = $newsModel->where('title','like','%'.Input::get('q').'%')->paginate();
-        }else{
+            $news = $newsModel->where('title', 'like', '%'.Input::get('q').'%')->paginate();
+        } else {
             $news = News::latest()->paginate();
         }
+
         return view('admin.news.index', compact('news'));
     }
 
@@ -38,8 +39,10 @@ class NewsController extends Controller
         $this->validate($request, [
             'id'        =>      'required|integer',
         ]);
+
         News::destroy($request->id);
         flash('操作成功');
+
         return back();
     }
 }

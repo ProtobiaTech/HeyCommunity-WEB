@@ -21,12 +21,13 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        if (Input::get('q')!==null){
+        if (Input::get('q')!==null) {
             $activityModel = new Activity();
-            $activities = $activityModel->where('title','like','%'.Input::get('q').'%')->paginate();
-        }else{
+            $activities = $activityModel->where('title', 'like', '%'.Input::get('q').'%')->paginate();
+        } else {
             $activities = Activity::latest()->paginate();
         }
+
         return view('admin.activities.index', compact('activities'));
     }
 
@@ -38,8 +39,10 @@ class ActivityController extends Controller
         $this->validate($request, [
             'id'        =>      'required|integer',
         ]);
+
         Activity::destroy($request->id);
         flash('操作成功');
+
         return back();
     }
 }

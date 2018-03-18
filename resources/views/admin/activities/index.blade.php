@@ -38,12 +38,12 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @if($activities->isEmpty())
+                                            @if ($activities->isEmpty())
                                                 <tr>
                                                     <td colspan="5">无数据</td>
                                                 </tr>
                                             @else
-                                            @foreach($activities as $activity)
+                                            @foreach ($activities as $activity)
                                                 <tr>
                                                     <td>{{ $activity->id }}</td>
                                                     <td><img src="{{ $activity->avatar }}" alt="活动缩略图" style="width: 4rem;height: 4rem;border-radius: 50%;"></td>

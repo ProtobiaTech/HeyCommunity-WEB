@@ -10,11 +10,12 @@ use App\Topic;
 use App\TopicNode;
 use App\TopicThumb;
 use App\TopicFavorite;
+use Illuminate\Support\Facades\Input;
 
 class TopicController extends Controller
 {
     /**
-     * Topic List Page
+     * Topic List Page And Search
      */
     public function index(Request $request)
     {
@@ -53,7 +54,13 @@ class TopicController extends Controller
             }
         }
 
-        $topics = $query->latest()->paginate(10);
+        if (Input::get('q') !== null) {
+            $topics = $query->where('title', 'like', '%'.Input::get('q').'%')->
+            latest()->paginate(10);
+
+        } else {
+            $topics = $query->latest()->paginate(10);
+        }
         $rootNodes = TopicNode::roots()->with('childNodes')->get();
 
         return view('topic.index', compact('topics', 'rootNodes'));

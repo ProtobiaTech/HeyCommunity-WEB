@@ -4,6 +4,12 @@
 活动 - {{ $system->site_title }}
 @endsection
 
+@section('search')
+    <form class="form-inline float-right d-none d-md-flex" action="{{ route('activity.index') }}">
+        <input class="form-control" type="text" data-action="grow" placeholder="搜索" name="q" value="{{ Input::get('q') }}">
+    </form>
+@endsection
+
 @section('mainBody')
 <div id="section-mainbody" class="page-activity-index">
     <!--

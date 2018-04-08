@@ -52,6 +52,8 @@ Route::group([], function () {
 // Other
 Route::group([], function () {
     Route::post('simditor-upload-images', 'UploadController@simditorUploadImages')->name('upload.simditor-upload-images');
+
+    Route::get('youth-space', 'HomeController@youthSpaceHome')->name('youth-space-home');
 });
 
 

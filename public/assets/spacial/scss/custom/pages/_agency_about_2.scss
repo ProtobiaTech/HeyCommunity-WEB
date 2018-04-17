@@ -1,0 +1,87 @@
+.about-2-hero {
+  position: relative;
+  padding-top: 130px;
+
+  @media(max-width: 991px) {
+    padding-top: 90px;
+  }
+
+  .container {
+    @media (min-width: 1200px) {
+      width: 940px;
+    }
+  }
+
+  h1 {
+    color: #677284;
+    font-weight: 300;
+    width: 70%;
+    line-height: 51px;
+    font-size: 2.4rem;
+
+    @media(max-width: 991px) {
+      width: 100%;
+      font-size: 2.3rem;
+    }
+  }
+
+  .pic1 {
+    margin-top: 120px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  }
+
+  .pic2 {
+    position: absolute;
+    top: 330px;
+    right: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  }
+}
+
+.about-2-intro {
+  margin-top: 200px;
+
+  p {
+    font-size: 27px;
+    line-height: 39px;
+    color: #606771;
+    font-weight: 300;
+  }
+}
+
+.about-2-stats {
+  margin-top: 90px;
+
+  span {
+    font-weight: 200;
+    font-size: 50px;
+  }
+
+  p {
+    font-weight: 500;
+    margin-top: 10px;
+  }
+}
+
+.about-2-team {
+  margin-top: 90px;
+
+  .member {
+    margin-bottom: 40px;
+
+    img {
+      border-radius: 3px;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    span {
+      color: #777;
+      font-size: 13px;
+    }
+  }
+}

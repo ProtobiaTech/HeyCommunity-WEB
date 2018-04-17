@@ -1,0 +1,31 @@
+.wishlist-table {
+  td {
+    vertical-align: middle !important;
+  }
+
+  .btn-remove {
+    color: #666;
+  }
+
+  .product-img {
+    margin-left: 25px;
+
+    img {
+      max-width: 100px;
+      border-radius: 5px;
+    }
+  }
+
+  .ion-plus {
+    margin-right: 3px;
+  }
+
+  .rating {
+    margin-top: 6px;
+
+    i {
+      margin-right: 2px;
+      color: #64B1CD;
+    }
+  }
+}

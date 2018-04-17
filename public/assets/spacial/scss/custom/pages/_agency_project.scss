@@ -1,0 +1,228 @@
+#project-hero {
+  height: 650px;
+  position: relative;
+  overflow: hidden;
+  background: #909396 url('../images/loading-dark.gif') no-repeat center center;
+  background-position: center center;
+
+  @media(max-width: 767px) {
+    height: 500px;
+  }
+
+  &.show {
+    .inner-bg {
+      opacity: 1;
+    }
+  }
+
+  .inner-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('../images/unsplash/photo-1474843148229-3163319fcc4c.jpg');
+
+    @include transition(opacity 0.5s);
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: rgba(32, 43, 55, 0.4) url('../images/graphics/noise.png');
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+    }
+
+    img {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  > section {
+    position: relative;
+    z-index: 999;
+
+    @include transition(.8s);
+    @include transform(scale(1.13));
+
+    &.ready {
+      @include transform(scale(1));
+    }
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    padding-top: 280px;
+    margin: 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.14);
+    letter-spacing: .3px;
+
+    @media(max-width: 767px) {
+      font-size: 30px;
+      line-height: 40px;
+      padding-top: 200px;
+    }
+  }
+}
+
+#project-intro {
+  margin-top: 90px;
+  position: relative;
+  z-index: 10;
+
+  p {
+    font-size: 16px;
+    width: 60%;
+    margin: auto;
+    line-height: 30px;
+    text-align: justify;
+    color: #555;
+    margin-bottom: 19px;
+    font-weight: 300;
+    font-family: $georgia;
+
+    @media(max-width: 991px) {
+      width: 80%;
+    }
+  }
+
+  .devices {
+    margin-top: 90px;
+  }
+}
+
+#project-showcase {
+  background: #F5F8FA;
+  padding: 95px 0 80px;
+  position: relative;
+  top: -40px;
+  border-top: 1px solid #E2E6E8;
+  border-bottom: 1px solid #E2E6E8;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 26px;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 16px;
+    width: 60%;
+    text-align: justify;
+    margin: auto;
+    line-height: 30px;
+    color: #555;
+    margin-bottom: 25px;
+    font-weight: 300;
+    font-family: $georgia;
+
+    @media(max-width: 991px) {
+      width: 80%;
+    }
+  }
+
+  .browser {
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
+
+  .browser2 {
+    margin-top: 80px;
+  }
+}
+
+#project-bottom {
+  margin-top: 30px;
+  
+  .link-to-site {
+    text-align: center;
+
+    a {
+      color: #5b8ec1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
+
+      @include transition(all .2s linear);
+
+      &:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        background: #5b8ec1;
+        width: 0%;
+        bottom: -7px;
+        left: 0;
+
+        @include transition(all .15s linear);
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .paging {
+    padding: 30px 100px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: -100px;
+
+    @media(max-width: 767px) {
+      width: auto;
+      margin-bottom: -50px;
+    }
+
+    .previous,
+    .next {
+      @media(max-width: 767px) {
+        float: none !important;
+        text-align: center;
+      }
+    }
+
+    a {
+      font-family: $merriweather;
+      font-style: italic;
+      font-size: 15px;
+      color: #555;
+      text-decoration: none;
+
+      @include transition(all .2s linear);
+
+      @media(max-width: 767px) {
+        margin-top: 10px;
+        display: block;
+      }
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}

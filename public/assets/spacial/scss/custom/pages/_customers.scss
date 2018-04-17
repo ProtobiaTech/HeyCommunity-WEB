@@ -1,0 +1,143 @@
+.customers-header {
+  height: 260px;
+  background-image: linear-gradient(-45deg, #5F6190 0%, #525480 20%, #131b2e 100%);
+
+  section {
+    padding-top: 170px;
+
+    @media(max-width: 767px) {
+      padding-top: 110px;
+    }
+
+    h1 {
+      color: #fff;
+      line-height: 44px;
+      font-size: 30px;
+      font-weight: 400;
+      text-align: center;
+
+      @media(max-width: 991px) {
+        font-size: 26px;
+      }
+
+      @media(max-width: 767px) {
+        font-size: 24px;
+        line-height: 34px;
+      }
+    }
+  }
+}
+
+.customers-grid {
+  margin-top: 80px;
+
+  @media(max-width: 767px) {
+    margin-top: 60px;
+  }
+
+  &--bottom {
+    margin-bottom: 150px;
+
+    @media(max-width: 767px) {
+      margin-bottom: 100px;
+    }
+  }
+
+  .logo {
+    margin-top: 20px;
+  }
+
+  p {
+    margin-top: 20px;
+    color: #64738e;
+    line-height: 21px;
+  }
+
+  a.read-story {
+    display: inline-block;
+    color: #1f8ceb;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 12px;
+
+    @media(max-width: 767px) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.customer-testimonial {
+  margin-top: 80px;
+
+  @media(max-width: 767px) {
+    margin-top: 60px;
+  }
+
+  .row {
+    padding: 20px;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    border-top: 1px solid #f9f9f9;
+    border-bottom: 1px solid #f9f9f9;
+
+    @media(max-width: 767px) {
+      padding-top: 50px;
+    }
+  }
+
+  .customer-pic {
+    width: 100px;
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: block;
+    width: 105px;
+    margin: 15px auto;
+
+    @media(max-width: 991px) {
+      width: 90px;
+    }
+  }
+
+  .author {
+    font-weight: 500;
+    text-align: right;
+    margin-right: 20px;
+    position: relative;
+    top: -5px;
+
+    @media(max-width: 767px) {
+      top: 0;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    position: relative;
+    color: #777;
+    line-height: 33px;
+
+    @media(max-width: 991px) {
+      font-size: 17px;
+      line-height: 28px;
+      margin-left: 20px;
+    }
+
+    @media(max-width: 767px) {
+      margin-top: 30px;
+      margin-left: 10px;
+    }
+
+    span {
+      font-family: Georgia;
+      font-size: 49px;
+      position: absolute;
+      left: -25px;
+      top: 0px;
+    }
+  }
+}

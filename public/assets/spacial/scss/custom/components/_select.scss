@@ -1,0 +1,18 @@
+.spacial-select {
+  background: #f9f9f9 url('../images/ecommerce/select.png') no-repeat right center;
+  border: 1px solid #ccc;
+  padding: 7px 9px;
+  outline: none;
+  border-radius: 2px;
+  font-size: 13px;
+  font-family: $helvetica;
+  color: #555;
+  margin: 0;
+  width: 180px;
+  max-width: 100%;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}

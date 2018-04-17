@@ -1,0 +1,49 @@
+/* roboto font */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic,900,900italic);
+/* source sans pro */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+/* lato */
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+/* merriweather */
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300italic,300,400italic,700,700italic);
+/* open sans */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700,800);
+/* raleway */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300);
+/* libre franklin */
+@import url(https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,700);
+/* karla */
+@import url(https://fonts.googleapis.com/css?family=Karla:400,700);
+
+$roboto: "Roboto";
+$lato: 'Lato', 'Helvetica Neue', Arial;
+$helvetica: "Helvetica Neue", Helvetica, Arial;
+$myriad: Myriad Pro, Lato, Helvetica Neue, Arial;
+$sourceSans: Source Sans Pro, Helvetica Neue, Arial;
+$merriweather: "Merriweather", Georgia;
+$openSans: "Open Sans", Helvetica Neue, Arial;
+$raleway: "Raleway", Helvetica Neue, Arial;
+$georgia: Georgia, "Merriweather", Arial;
+$franklin: 'Libre Franklin', 'Lato', 'Helvetica Neue', Arial;
+$karla: 'Karla', 'Lato', 'Helvetica Neue', Arial;
+
+$ease-in-quad: cubic-bezier(.55, .085, .68, .53);
+$ease-in-cubic: cubic-bezier(.550, .055, .675, .19);
+$ease-in-quart: cubic-bezier(.895, .03, .685, .22);
+$ease-in-quint: cubic-bezier(.755, .05, .855, .06);
+$ease-in-expo: cubic-bezier(.95, .05, .795, .035);
+$ease-in-circ: cubic-bezier(.6, .04, .98, .335);
+
+$ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+$ease-out-cubic: cubic-bezier(.215, .61, .355, 1);
+$ease-out-quart: cubic-bezier(.165, .84, .44, 1);
+$ease-out-quint: cubic-bezier(.23, 1, .32, 1);
+$ease-out-expo: cubic-bezier(.19, 1, .22, 1);
+$ease-out-circ: cubic-bezier(.075, .82, .165, 1);
+
+$ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);
+$ease-in-out-cubic: cubic-bezier(.645, .045, .355, 1);
+$ease-in-out-quart: cubic-bezier(.77, 0, .175, 1);
+$ease-in-out-quint: cubic-bezier(.86, 0, .07, 1);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+$ease-in-out-circ: cubic-bezier(.785, .135, .15, .86);

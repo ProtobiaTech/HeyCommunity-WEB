@@ -1,0 +1,83 @@
+.signin-page {
+  background-color: #f3f5f7;
+
+  .wrapper {
+    text-align: center;
+  }
+
+  .header {
+    margin-top: 80px;
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+
+      img {
+        max-width: 80px;
+      }
+    }
+  }
+
+  form {
+    width: 360px;
+    margin: 45px auto 60px;
+
+    @media(max-width: 575px) {
+      width: auto;
+      padding: 0 20px;
+    }
+
+    .form-field {
+      margin-bottom: 16px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      height: 52px;
+      padding: 0 15px;
+      outline: none;
+      border-radius: 3px;
+      border: 1px solid #C6C9CE;
+      box-shadow: inset 0 1px 0 #D5D7DE;
+      font-size: 18px;
+      background: rgb(220, 222, 228);
+
+      @include transition(all .25s);
+
+      @include placeholder {
+        color: #7e7e9a;
+      }
+
+      &:focus {
+        background: #fff;
+        border-color: #7B97F5;
+
+        @include placeholder {
+          color: #B5B5B5;
+        }
+      }
+    }
+
+    .form-action {
+      margin-top: 30px;
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 14px 23px; 
+        box-shadow: rgba(23, 43, 99, 0.35) 0 7px 28px;
+      }
+    }
+
+    .form-bottom {
+      margin-top: 40px;
+      color: #768298;
+
+      a {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+

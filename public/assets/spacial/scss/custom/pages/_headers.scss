@@ -1,0 +1,43 @@
+.header-hero {
+  background: url('../images/unsplash/michael-benz-189971.jpg');
+  background-size: cover;
+  background-position: center 0px;
+  padding-top: 270px;
+  overflow: hidden;
+  position: relative;
+  min-height: 70vh;
+
+  &--larger {
+    min-height: 100vh;
+    padding-top: 290px;
+  }
+
+  &--light {
+    background-image: url('../images/unsplash/jorg-angeli-220264.jpg');
+    border-bottom: 1px solid #DEE4EA;
+
+    &:after {
+      background: rgba(249, 251, 255, 0.25) !important;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-45deg, rgba(63, 89, 118, 0.3) 0, rgba(14, 20, 34, 0.5) 80%);
+  }
+
+  h2 {
+    color: #fff;
+    padding-bottom: 60px;
+  }
+}

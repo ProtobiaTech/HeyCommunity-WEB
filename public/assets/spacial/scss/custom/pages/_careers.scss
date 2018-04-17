@@ -1,0 +1,219 @@
+.careers-header {
+  min-height: 500px;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-image: url('../images/bgs/google-office-irvine-5.jpg');
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .35);
+  }
+
+  section {
+    padding-top: 230px;
+    position: relative;
+    z-index: 9;
+
+    @media(max-width: 767px) {
+      padding-top: 190px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 33px;
+      font-weight: 500 !important;
+      text-align: center;
+      width: 55%;
+      letter-spacing: 1px;
+      margin: 0 auto;
+      line-height: 42px;
+
+      @media(max-width: 991px) {
+        width: auto;
+        font-size: 29px;
+        line-height: 36px;
+      }
+
+      @media(max-width: 767px) {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+.careers-intro {
+  margin-top: 70px;
+
+  @media(max-width: 767px) {
+    margin-top: 50px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 500;
+
+    @media(max-width: 767px) {
+      font-size: 25px;
+    }
+  }
+
+  p {
+    width: 74%;
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    line-height: 24px;
+    margin: 20px auto 0;
+
+    @media(max-width: 767px) {
+      width: auto;
+    }
+  }
+
+  .careers-intro-gallery {
+    margin-top: 65px;
+
+    img {
+      margin-bottom: 20px !important;
+    }
+  }
+}
+
+.careers-perks {
+  margin-top: 80px;
+
+  @media(max-width: 767px) {
+    margin-top: 50px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    width: 70%;
+    margin: 20px auto 55px;
+    text-align: center;
+    color: #444;
+    line-height: 22px;
+  }
+}
+
+.careers-benefits {
+  margin-top: 90px;
+  height: 480px;
+
+  @media(max-width: 991px) {
+    height: auto;
+  }
+
+  @media(max-width: 767px) {
+    margin-top: 60px;
+  }
+
+  .pic {
+    float: left;
+    width: 50%;
+    background-image: url('../images/unsplash/photo-1470753937643-efeb931202a9.jpg');
+    height: 100%;
+    display: block;
+    background-size: cover;
+    background-position: 0px 0;
+    position: relative;
+  }
+
+  .list {
+    float: right;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: #f9fafc;
+    padding: 60px 100px 0 120px;
+
+    @media(max-width: 991px) {
+      float: none;
+      width: auto;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h3 {
+      font-weight: 400;
+      color: #4c4c4c;
+      font-size: 24px;
+    }
+
+    ul {
+      margin-top: 30px;
+      padding-left: 20px;
+
+      @media(max-width: 991px) {
+        padding-left: 0;
+      }
+
+      li {
+        margin-bottom: 12px;
+        list-style-type: circle;
+        font-size: 15px;
+        color: #626a7b;
+
+        @media(max-width: 991px) {
+          list-style-type: none;
+        }
+      }
+    }
+  }
+}
+
+.careers-listing {
+  margin-top: 110px;
+
+  @media(max-width: 767px) {
+    margin-top: 60px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 65px;
+    font-size: 25px;
+
+    @media(max-width: 767px) {
+      font-size: 23px;
+    }
+  }
+
+  .department {
+    margin-bottom: 40px;
+
+    @media(max-width: 767px) {
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 21px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .role {
+      margin-bottom: 20px;
+
+      a {
+        font-size: 16px;
+      }
+
+      .city {
+        color: #555;
+      }
+    }
+  }
+}

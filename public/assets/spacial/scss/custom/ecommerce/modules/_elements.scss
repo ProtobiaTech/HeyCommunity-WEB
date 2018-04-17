@@ -1,0 +1,235 @@
+/* single product view as grid */
+.store-product {
+  margin-bottom: 50px;
+  min-height: 400px;
+
+  @media(max-width: 991px) {
+    min-height: 340px;
+    margin-bottom: 40px;
+  }
+
+  @media(max-width: 767px) {
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+
+    .flag {
+      position: absolute;
+      display: inline-block;
+      color: #fff;
+      background: #92B270;
+      left: -8px;
+      top: 19px;
+      text-transform: uppercase;
+      font-family: $lato;
+      font-weight: 600;
+      padding: 2px 11px;
+      letter-spacing: 1px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 9px;
+        background: #57930D;
+        bottom: -5px;
+        left: 2px;
+        z-index: -1;
+
+        @include transform(rotate(45deg));
+      }
+    }
+
+    .img-fluid {
+      margin: 0 auto;
+      display: block;
+
+      @media(max-width: 767px) {
+        max-height: 210px;
+      }
+    }
+  }
+
+  .info {
+    margin-top: 20px;
+    display: block;
+
+    @media(max-width: 767px) {
+      text-align: center;
+    }
+
+    .name {
+      display: block;
+      font-family: $georgia;
+      font-size: 16px;
+      color: #222;
+      text-decoration: none;
+
+      .vendor {
+        color: #666;
+        font-size: 15px;
+      }
+    }
+
+    .price {
+      display: block;
+      font-size: 22px;
+      color: #70a90f;
+      margin-top: 5px;
+      font-family: $georgia;
+
+      @media(max-width: 991px) {
+        font-size: 19px;
+      }
+
+      @media(max-width: 767px) {
+        font-size: 22px;
+      }
+
+      .from {
+        font-size: 15px;
+      }
+
+      .before {
+        color: #a3a3a3;
+        display: inline-block;
+        font-size: 18px;
+        margin-right: 8px;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .rating {
+    margin-top: 6px;
+
+    @media(max-width: 767px) {
+      text-align: center;
+    }
+
+    i {
+      margin-right: 2px;
+      color: #64B1CD;
+    }
+  }
+}
+
+
+/* single product view as list */
+.list-product {
+  margin-bottom: 40px;
+
+  .image {
+    display: block;
+    float: left;
+    width: 25%;
+    position: relative;
+
+    @media(max-width: 767px) {
+      float: none;
+      width: 100%;
+    }
+
+    img {
+      margin: 0 auto;
+      max-width: 200px;
+      width: 100%;
+      display: block;
+    }
+
+    .flag {
+      position: absolute;
+      display: inline-block;
+      color: #fff;
+      background: #92B270;
+      left: -8px;
+      top: 19px;
+      text-transform: uppercase;
+      font-family: $lato;
+      font-weight: 600;
+      padding: 2px 11px;
+      letter-spacing: 1px;
+      font-size: 12px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 9px;
+        background: #57930D;
+        bottom: -5px;
+        left: 2px;
+        z-index: -1;
+
+        @include transform(rotate(45deg));
+      }
+    }
+  }
+
+  .info {
+    float: left;
+    width: 75%;
+    padding-left: 40px;
+    margin-top: 20px;
+
+    @media(max-width: 767px) {
+      float: none;
+      width: 100%;
+      padding-left: 0;
+    }
+
+    .name {
+      display: block;
+      font-family: $georgia;
+      font-size: 17px;
+      text-decoration: none;
+
+      .vendor {
+        color: #666;
+        font-size: 14px;
+      }
+    }
+
+    .price {
+      font-size: 22px;
+      color: #70a90f;
+      margin-top: 5px;
+      font-family: $georgia;
+
+      .from {
+        font-size:  15px;
+      }
+
+      .before {
+        color: #a3a3a3;
+        display: inline-block;
+        font-size: 18px;
+        margin-right: 8px;
+        text-decoration: line-through;
+      }
+    }
+
+    .rating {
+      margin-top: 6px;
+
+      i {
+        margin-right: 2px;
+        color: #64B1CD;
+      }
+    }
+
+    .description {
+      margin-top: 20px;
+      width: 90%;
+
+      @media(max-width: 991px) {
+        width: auto;
+      }
+    }
+  }
+}

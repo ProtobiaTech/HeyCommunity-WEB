@@ -1,0 +1,92 @@
+.index-mobile-alt-header {
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(ellipse farthest-side at 100% 0%, #A7CCDF -10%, #7cafbe 20%, #203466 110%);
+
+  .container {
+    position: relative;
+    min-height: 630px;
+    padding-top: 200px;
+
+    @media(max-width: 767px) {
+      padding-top: 120px;
+    }
+
+    .iphone {
+      position: absolute;
+      bottom: -50px;
+      left: 50px;
+
+      @include transition(all .2s linear);
+
+      @media(max-width: 991px) {
+        display: none;
+      }
+
+      &:hover {
+        bottom: -20px;
+      }
+    }
+
+    .info {
+      float: right;
+      width: 560px;
+
+      @media(max-width: 991px) {
+        width: auto;
+        float: none;
+      }
+
+      h1 {
+        font-size: 34px;
+        line-height: 42px;
+        color: #fff;
+        font-weight: 400;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+
+        @media(max-width: 767px) {
+          font-size: 28px;
+        }
+      }
+
+      p {
+        margin-top: 25px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #D7E9F5;
+
+        @include animationDelay(.3s);
+      }
+
+      .buttons {
+        margin-top: 60px;
+
+        @include animationDelay(.3s);
+
+        @media(max-width: 767px) {
+          text-align: center;
+        }
+
+        a {
+          margin-right: 20px;
+
+          @media(max-width: 767px) {
+            display: block;
+            margin: 0;
+            margin-bottom: 20px;
+          }
+        }
+
+        img {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+.index-devices.mobile-alt {
+  @media(min-width: 992px) {
+    padding-top: 170px;
+  }
+}

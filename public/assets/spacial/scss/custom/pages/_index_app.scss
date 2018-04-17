@@ -1,0 +1,256 @@
+.index-app-hero {
+  background: url('../images/unsplash/jared-erondu-10472.jpg');
+  background-position: center 0;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 590px;
+  padding-top: 150px;
+  overflow: hidden;
+  position: relative;
+
+  @media(max-width: 1024px) {
+    background-attachment: inherit;
+  }
+
+  @media(max-width: 767px) {
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 35, 62, 0.58);
+  }
+
+  .container {
+    z-index: 10;
+  }
+
+  h2 {
+    color: #fff;
+    margin-top: 40px;
+    font-size: 44px;
+    font-weight: 200;
+    line-height: 54px;
+    width: 590px;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.11);
+
+    @include animationDelay(.1s);
+
+    @media(max-width: 991px) {
+      font-size: 38px;
+      line-height: 52px;
+    }
+
+    @media(max-width: 767px) {
+      width: auto;
+    }
+  }
+
+  p {
+    color: #DFEDFF;
+    font-weight: 400;
+    margin-top: 30px;
+    font-size: 17px;
+    line-height: 27px;
+
+    @include animationDelay(.5s);
+  }
+  
+  .btn-pill {
+    margin-top: 30px;
+    font-weight: 600;
+    padding: 13px 44px 16px;
+
+    &:active {
+      border-color: #3b6b23;
+    }
+
+    @include animationDelay(.5s);
+
+    @media(max-width: 767px) {
+      margin-top: 30px;
+    }   
+  }
+}
+
+.index-app-news {
+  text-align: center;
+  padding: 25px 0;
+  background: #F9F9F9;
+  border-bottom: 1px solid #DADADA;
+  color: #6E6E6E;
+  font-size: 15px;
+
+  span {
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #8e82de;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 11px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #333;
+    margin-right: 10px;
+  }
+
+  a {
+    color: #0C80E4;
+    margin-left: 5px;
+
+    @media(max-width: 991px) {
+      display: block;
+      margin-top: 7px;
+    }
+  }
+}
+
+.index-app-features {
+  padding-top: 160px;
+  overflow-x: hidden;
+
+  @media(max-width: 767px) {
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  section {
+    width: 870px;
+    margin: 0 auto;
+    min-height: 473px;
+    position: relative;
+
+    @media(max-width: 991px) {
+      padding: 0 30px;
+      width: auto;
+    }
+
+    @media(max-width: 767px) {
+      min-height: auto;
+    }
+  }
+  
+  img.browser {
+    position: absolute;
+    left: 450px;
+    top: -15px;
+
+    @media(max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .info {
+    width: 330px;
+
+    @media(max-width: 767px) {
+      width: auto;
+    }
+  }
+
+  h3 {
+    font-size: 13px;
+    color: #70A9CD;
+    text-transform: uppercase;
+    line-height: 17px;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 29px;
+    color: #4B4B4B;
+    line-height: 38px;
+    font-weight: 300;
+    margin-top: 15px;
+  }
+
+  p {
+    font-size: 15px;
+    color: #7B8398;
+    width: 90%;
+    line-height: 26px;
+    margin-top: 30px;
+
+    @media(max-width: 767px) {
+      width: auto;
+    }
+  }
+}
+
+.index-features-files.index-app {
+  margin-top: 50px;
+  border-bottom: 1px solid #e2e9f0;
+}
+
+.business-single-client.index-app {
+  margin-top: 100px;
+}
+
+.index-app-devices {
+  margin-top: 220px;
+  margin-bottom: 180px;
+
+  @media(max-width: 767px) {
+    margin-top: 150px;
+    margin-bottom: 0;
+  }
+
+  .cta {
+    margin-top: 90px;
+    text-align: center;
+
+    @media(max-width: 767px) {
+      margin-top: 70px;
+    }
+
+    h3 {
+      font-size: 29px;
+
+      @media(max-width: 767px) {
+        line-height: 35px;
+        font-size: 26px;
+      }
+    }
+
+    p {
+      font-size: 17px;
+      margin-top: 20px;
+      color: #777;
+    }
+
+    a {
+      margin-top: 25px;
+      display: inline-block;
+      background: #459CE7;
+      color: #fff;
+      padding: 13px 30px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+
+      @include transition(all .2s);
+
+      &:hover {
+        background: #66B1F2;
+      }
+    }
+  }
+}

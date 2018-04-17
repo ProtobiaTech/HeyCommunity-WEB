@@ -1,0 +1,368 @@
+.event-bg {
+  background: #F4F6F2;
+}
+
+.event-title {
+  color: #1D1D1F;
+  line-height: 38px;
+  font-size: 27px;
+  font-weight: 400;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 90%;
+    margin: auto;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    background: #CFD1CD;
+  }
+}
+
+.event-hero {
+  background: linear-gradient(150deg,#442c57 0,#1a2342 100%);
+  min-height: 540px;
+  position: relative;
+
+  @media(max-width: 991px) {
+    min-height: 480px;
+  }
+
+  @media(max-width: 767px) {
+    min-height: 370px;
+  }
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url('../images/graphics/noise.png');
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    padding-top: 240px;
+    font-size: 2.9rem;
+
+    @media(max-width: 767px) {
+      padding-top: 100px;
+      font-size: 2.2rem;
+    }
+  }
+
+  .tickets {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    background: #fff;
+    padding: 23px 65px;
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,0.2);
+
+    p {
+      color: #1D1D1F;
+      font-size: 16px;
+    }
+  }
+}
+
+.btn-get-tickets {
+  border: 2px solid #7a37a2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 16px 30px;
+  border-radius: 60px;
+  color: #7a37a2;
+  display: inline-block;
+
+  @include transition(all .2s);
+
+  &:hover {
+    background: #7a37a2;
+    color: #fff;
+  }
+
+  @media(max-width: 767px) {
+    margin-bottom: 20px;
+  }
+}
+
+.event-intro {
+  margin-top: 200px;
+
+  @media(max-width: 991px) {
+    margin-top: 130px;
+  }
+
+  .event-title {
+    @media(min-width: 992px) {
+      width: 80%;
+    }
+
+    &:after {
+      width: 50%;
+      margin-left: 0;
+    }
+  }
+
+  p {
+    color: #363841;
+    line-height: 21px;
+
+    @media(min-width: 992px) {
+      width: 80%;
+    }
+  }
+}
+
+.event-speakers {
+  margin-top: 180px;
+
+  @media(max-width: 991px) {
+    margin-top: 80px;
+  }
+
+  .event-title {
+    margin-bottom: 90px;
+  }
+
+  .speaker {
+    background: #fff;
+    max-width: 309px;
+    margin: auto;
+
+    @media(min-width: 768px) {
+      &.mt-half {
+        margin-top: 60px;
+      }
+
+      &.mt-full {
+        margin-top: 120px;
+      }
+    }
+
+    @media(max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .speaker-name {
+    font-size: 19px;
+    color: #3746A3;
+    padding: 12px 15px 7px;
+  }
+
+  .speaker-role {
+    color: #1D1D1F;
+    font-size: 13px;
+    padding: 0 15px;
+  }
+
+  .speaker-company {
+    font-size: 16px;
+    color: #B0B1B4;
+    padding: 10px 15px;
+  }
+}
+
+.event-schedule {
+  margin-top: 120px;
+
+  @media(max-width: 991px) {
+    margin-top: 80px;
+  }
+
+  .event-title {
+    margin-bottom: 30px;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .date-tab {
+    line-height: 38px;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 110%;
+      margin: auto;
+      bottom: -20px;
+      left: -5px;
+      right: 0;
+      background: #CFD1CD;
+
+      @media(max-width: 576px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .activity {
+    padding: 32px 30px 0;
+    width: 330px;
+    margin: auto;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      left: 143px;
+      top: 0;
+      background: #cfd1cd;
+    }
+
+    &:after {
+      content: '';
+      width: 11px;
+      height: 11px;
+      border: 1px solid #854bde;
+      background: #F4F6F2;
+      border-radius: 100%;
+      display: block;
+      position: absolute;
+      bottom: 3px;
+      left: 138px;
+    }
+
+    .time {
+      display: inline-block;
+      width: 40%;
+      float: left;
+    }
+
+    .title {
+      width: 60%;
+      display: inline-block;
+      text-align: left;
+      padding-left: 30px;
+    }
+  }
+}
+
+.event-tickets {
+  margin-top: 120px;
+
+  @media(max-width: 991px) {
+    margin-top: 80px;
+  }
+
+  .event-title {
+    margin-bottom: 80px;
+  }
+
+  .ticket {
+    background: #fff;
+    padding: 40px;
+
+    @media(max-width: 767px) {
+      margin-bottom: 30px;
+    }
+
+    @include transition(all .2s);
+
+    &:hover {
+      box-shadow: 0 9px 30px 0 rgba(0,0,0,.09);
+    }
+  }
+
+  .ticket-title {
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 30px;
+  }
+
+  h5 {
+    margin-top: 45px;
+  }
+}
+
+.event-location {
+  margin-top: 120px;
+
+  @media(max-width: 991px) {
+    margin-top: 80px;
+  }
+
+  .event-title {
+    margin-bottom: 80px;
+  }
+
+  .address-container {
+    box-shadow: 0 9px 30px 0 rgba(0,0,0,.09);
+  }
+
+  .address {
+    background: #fff;
+    padding: 50px 30px;
+  }
+
+  #map {
+    height: 470px;
+    width: 100%;
+  }
+
+  i {
+    font-size: 27px;
+    margin-right: 10px;
+    position: relative;
+    top: 6px;
+  }
+
+  .social-link {
+    display: inline-block;
+    position: relative;
+    margin-right: 6px;
+    margin-top: 15px;
+
+    i {
+      font-size: 25px;
+
+      &.ion-social-twitter {
+        color: #1da1f2;
+      }
+
+      &.ion-social-facebook {
+        color: #3b5998;
+      }
+    }
+  }
+}
+
+.event-sponsors {
+  margin-top: 130px;
+  margin-bottom: 160px;
+
+  @media(max-width: 991px) {
+    margin-top: 80px;
+  }
+
+  .event-title {
+    margin-bottom: 80px;
+  }
+
+  img {
+    margin-bottom: 50px;
+  }
+}

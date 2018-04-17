@@ -1,0 +1,348 @@
+.navbar.navbar-restaurant {
+  @media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+  }
+
+  .navbar-brand {
+    @media(max-width: 991px) {
+      top: 0;
+    }
+
+    img {
+      max-width: inherit;
+
+      @media(max-width: 991px) {
+        display: block;
+        width: 126px;
+      }
+
+      @media(max-width: 767px) {
+        width: 105px;
+      }
+    }
+  }
+
+  .link-rest-call-us {
+    text-transform: uppercase;
+    letter-spacing: 4.5px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.restaurant-header {
+  min-height: 680px;
+  background-image: url('../images/unsplash/sunset.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+
+  @media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+  }
+
+  .intro {
+    padding-top: 250px;
+    text-align: center;
+
+    @media(max-width: 767px) {
+      padding: 200px 20px 0;
+    }
+
+    h1 {
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 37px;
+      color: #FFFFFF;
+      letter-spacing: 3.8px;
+      line-height: 38px;
+      text-shadow: 0 2px 7px rgba(0,0,0,0.73);
+      margin-top: 20px;
+
+      @media(max-width: 767px) {
+        font-size: 35px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      letter-spacing: 1.5px;
+      line-height: 38px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.40);
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: 2.5px;
+    line-height: 38px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.40);
+
+    .pull-left,
+    .pull-right {
+      @media(max-width: 767px) {
+        float: none !important;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.restaurant-intro {
+  margin-top: 125px;
+  text-align: center;
+
+  @media(max-width: 767px) {
+    padding: 0 20px;
+    margin-top: 80px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    color: #48494B;
+    letter-spacing: 2px;
+    font-size: 22px;
+    font-weight: 500;
+
+    @media(max-width: 767px) {
+      line-height: 32px;
+    }
+  }
+
+  p {
+    width: 720px;
+    margin: 35px auto 0;
+    font-size: 16px;
+    color: #546579;
+    line-height: 28px;
+
+    @media(max-width: 767px) {
+      width: auto;
+      font-size: 16px;
+    }
+  }
+}
+
+.restaurant-grid {
+  margin-top: 125px;
+
+  .banner {
+    height: 310px;
+    width: 25%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+
+    @media(max-width: 991px) {
+      width: 50%;
+      height: 260px;
+    }
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+
+    &:hover {
+      .bg {
+        @include transform(scale3d(1.07, 1.07, 1.07));
+      }
+    }
+
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+
+      @include transition(all .2s linear);
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(39, 41, 64, 0.32);
+      }
+    }
+
+    section {
+      color: #fff;
+      text-align: center;
+      margin-top: 115px;
+      position: relative;
+      z-index: 9;
+
+      @media(max-width: 991px) {
+        margin-top: 90px;
+      }
+
+      .title {
+        font-size: 26px;
+        text-shadow: 1px 1px rgba(0, 0, 0, .3);
+
+        @media(max-width: 991px) {
+          font-size: 22px;
+        }
+      }
+
+      p {
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        font-size: 12px;
+        margin-top: 7px;
+      }
+    }
+  }
+}
+
+.restaurant-menu {
+  background: #f7f7f7;
+  padding: 90px 0;
+
+  @media(max-width: 767px) {
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .menu-section {
+    margin-top: 30px;
+
+    h3 {
+      margin-bottom: 20px;
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.restaurant-gallery {
+  margin-top: 100px;
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 24px;
+
+    @media(max-width: 767px) {
+      font-size: 25px;
+    }
+  }
+
+  .gallery {
+    margin-top: 50px;
+
+    .bg-img {
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+
+      @media(max-width: 767px) {
+        height: 210px !important;
+        margin-bottom: 25px !important;
+      }
+    }
+
+    .col-md-3 {
+      .bg-img {
+        height: 210px;
+        margin-bottom: 25px;
+
+        & + .bg-img {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .col-md-6 {
+      .bg-img {
+        height: 445px; 
+      }
+    }
+  }
+}
+
+.restaurant-reservation {
+  margin-top: 140px;
+  margin-bottom: 150px;
+
+  @media(max-width: 767px) {
+    margin-top: 90px;
+    margin-bottom: 100px;
+  }
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 24px;
+
+    @media(max-width: 767px) {
+      font-size: 25px;
+    }
+  }
+
+  form {
+    margin-top: 50px;
+
+    .form-group {
+      margin-bottom: 32px;
+
+      label {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 13px;
+        color: #9198b5;
+        font-weight: 600;
+      }
+
+      .form-control {
+        height: 45px;
+        border-radius: 1px;
+        border: 2px solid #e2e2e8;
+        box-shadow: none;
+
+        @include transition(all .2s);
+
+        &:focus {
+          border-color: #acb2c3;
+        }
+      }
+    }
+
+    input[type="submit"] {
+      padding: 14px 23px;
+      width: 100%;
+    }
+  }
+}

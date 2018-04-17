@@ -1,0 +1,158 @@
+.customer-story-header {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #fcfdfd;
+  text-align: center;
+  border-bottom: 1px solid #f7f7f7;
+
+  p {
+    margin: 28px auto 0;
+    font-size: 18px;
+    font-weight: 400;
+    width: 63%;
+    color: #75779a;
+    line-height: 28px;
+
+    @media(max-width: 767px) {
+      width: auto;
+    }
+  }
+}
+
+.customer-story-content {
+  margin-top: 30px;
+  margin-bottom: 150px;
+
+  @media(max-width: 767px) {
+    margin-bottom: 120px;
+  }
+
+  .customer-story-body {
+    h1, h2, h3, h4, h5 {
+      font-size: 18px;
+      margin-top: 25px;
+      color: #444;
+      line-height: 25px;
+    }
+
+    p {
+      margin-top: 20px;
+      line-height: 25px;
+      color: #454545;
+    }
+
+    .img-fluid {
+      margin: 40px 0;
+    }
+
+    .quote-wrapper {
+      margin: 45px 0;
+
+      .quote {
+        position: relative;
+        font-size: 20px;
+        line-height: 30px;
+        padding-left: 45px;
+        width: 95%;
+
+        @media(max-width: 767px) {
+          font-size: 18px;
+        }
+
+        span {
+          font-family: Georgia;
+          font-size: 75px;
+          position: absolute;
+          left: 0;
+          color: #94a7d4;
+          top: 10px;
+        }
+      }
+
+      .author {
+        padding-left: 40px;
+        margin-top: 15px;
+        font-size: 15px;
+        color: #656565;
+      }
+    }
+  }
+
+  .read-more-stories {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid #f7f7f7;
+
+    .col-md-6 {
+      @media(max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .customers-grid {
+      margin-top: 50px;
+    }
+  }
+
+  .sidebar {
+    float: right;
+    width: 80%;
+    padding-top: 20px;
+
+    @media(max-width: 767px) {
+      float: none;
+      width: auto;
+    }
+
+    .block {
+      margin-top: 25px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .ion-social-twitter {
+      color: #1da1f2;
+      font-size: 21px;
+    }
+
+    .ion-social-facebook {
+      color: #3b5998;
+      font-size: 24px;
+      margin-left: 10px;
+    }
+
+    .ion-social-linkedin {
+      color: #007bb6;
+      font-size: 24px;
+      margin-left: 10px;
+    }
+
+    .title {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      color: #4A90E2;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin-top: 10px;
+      line-height: 22px;
+      font-size: 13px;
+    }
+
+    a.website {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.ecommerce-sign-up-form {
+  width: 440px;
+  margin: 40px auto;
+
+  @media(max-width: 767px) {
+    width: auto;
+  }
+
+  h1 {
+    font-size: 31px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .form-action {
+    text-align: center;
+    margin-top: 35px;
+
+    button {
+      width: 100%;
+      padding: 13px 23px;
+    }
+  }
+
+  .checkbox {
+    margin-top: 20px;
+  }
+
+  .form-bottom {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+
+    a {
+      margin-left: 5px;
+    }
+
+    .btn-forgot-password {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.account-page {
+  margin-top: 40px;
+
+  .breadcrumb {
+    background: none;
+    padding: 0;
+  }
+
+  .account-wrapper {
+    margin-top: 40px;
+  }
+
+  .nav-tabs {
+    li:not(.active) {
+      a:hover {
+        background: #fdfdfd;
+      }
+    }
+
+    a {
+      @media(max-width: 767px) {
+        padding: 10px 12px;
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 35px 10px;
+  }
+
+  .tab-header {
+    h4 {
+      @media(max-width: 767px) {
+        font-size: 15px;
+      }  
+    }
+  }
+
+  .custom-select {
+    @media(max-width: 767px) {
+      width: 150px;
+    }
+  }
+
+  table {
+    margin-top: 30px;
+
+    td {
+      padding: 12px 8px !important;
+    }
+  }
+}

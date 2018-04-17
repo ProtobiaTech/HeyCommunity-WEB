@@ -1,0 +1,355 @@
+.index-mobile-header {
+  min-height: 520px;
+  background-image: -o-linear-gradient(310deg, #6D92B9 0%, #272B53 90%);
+  background-image: -moz-linear-gradient(310deg, #6D92B9 0%, #272B53 90%);
+  background-image: -ms-linear-gradient(310deg, #6D92B9 0%, #272B53 90%);
+  background-image: linear-gradient(310deg, #6D92B9 0%, #272B53 90%);
+
+  section {
+    padding-top: 160px;
+
+    @media(max-width: 767px) {
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      color: #fff;
+      line-height: 49px;
+      font-size: 37px;
+      margin-top: 20px;
+
+      @media(max-width: 767px) {
+        font-size: 33px;
+      }
+
+      span > span {
+        left: -5px;
+        top: 1px;
+        font-size: 40px;
+      }
+    }
+
+    p {
+      color: #d4dbf1;
+      margin-top: 20px;
+      font-size: 16px;
+      width: 80%;
+      line-height: 25px;
+
+      @media(max-width: 767px) {
+        width: auto;
+      }
+    }
+
+    .cta {
+      margin-top: 65px;
+
+      a {
+        display: inline-block;
+        border-radius: 6px;
+
+        @include transition(all .2s linear);
+
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px, inset rgba(255, 255, 255, 0.88) 0px 1px 3px -1px, rgba(0, 0, 0, 0.3) 0 1px 2px, #CCDEEE 0 1px 30px;
+        }
+      }
+    }
+
+    .mobile-pic {
+      position: absolute;
+      right: 0;
+      top: 10px;
+
+      @include animationDelay(.1s);
+    }
+  }
+}
+
+.index-mobile-features {
+  margin-top: 130px;
+  padding: 60px 0 65px;
+  background-image: -o-linear-gradient(0deg, #495A7E 0%, #333F5C 100%);
+  background-image: -moz-linear-gradient(0deg, #495A7E 0%, #333F5C 100%);
+  background-image: -ms-linear-gradient(0deg, #495A7E 0%, #333F5C 100%);
+  background-image: linear-gradient(90deg, #495A7E 0%, #333F5C 100%);
+
+  @media(max-width: 767px) {
+    margin-top: 90px;
+  }
+
+  header {
+    text-align: center;
+
+    h3 {
+      margin: 0;
+      color: #fff;
+      font-size: 29px;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+
+      @media(max-width: 767px) {
+        font-size: 26px;
+        line-height: 35px;
+      }
+    }
+
+    p {
+      margin-top: 17px;
+      font-size: 15px;
+      color: #D9DEF5;
+    }
+  }
+
+  .features {
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: 55px;
+
+    .feature {
+      float: left;
+      width: 50%;
+      text-align: center;
+      padding: 40px 35px;
+
+      @media(max-width: 767px) {
+        width: 100%;
+        border-bottom: 1px solid #364261;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-bottom: 1px solid #364261;
+      }
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        border-right: 1px solid #364261;
+      }
+
+      .pic {
+        min-height: 75px;
+
+        img {
+          &.icon-camera {
+            position: relative;
+            top: 5px;
+          }
+        }
+      }
+
+      p {
+        font-size: 15px;
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.index-mobile-devices {
+  margin-top: 180px;
+
+  @media(max-width: 991px) {
+    margin-top: 100px;
+  }
+
+  section {
+    width: 870px;
+    margin: 0 auto;
+    position: relative;
+
+    @media(max-width: 991px) {
+      padding: 0 30px;
+      width: auto;
+    }
+
+    @media(max-width: 767px) {
+      text-align: center;
+    }
+  }
+  
+  .devices {
+    position: relative;
+    top: -90px;
+
+    @media(max-width: 991px) {
+      width: 300px;
+      top: 0;
+    }
+
+    @media(max-width: 767px) {
+      display: none;
+    }
+  }
+
+  h4 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #36AFDA;
+    margin-bottom: 25px;
+  }
+
+  p {
+    width: 300px;
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 24px;
+
+    @media(max-width: 767px) {
+      width: auto;
+    }
+  }
+
+  .icons {
+    i {
+      color: #C2C0E7;
+      margin-right: 20px;
+    }
+
+    .ion-monitor {
+      font-size: 44px;
+    }
+
+    .ion-ipad {
+      font-size: 38px;
+    }
+
+    .ion-iphone {
+      font-size: 32px;
+    }
+  }
+}
+
+.index-mobile-call-to-action {
+  margin-top: 90px;
+  background: url('../images/graphics/mobile-4-1.jpg');
+
+  .container {
+    @media (min-width: 1200px) {
+      width: 920px;
+    }
+  }
+
+  .device {
+    @media(max-width: 991px) {
+      width: 330px;
+    }
+  }
+
+  .info {
+    padding-top: 70px;
+    text-align: right;
+    float: right;
+    width: 50%;
+
+    @media(max-width: 991px) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @media(max-width: 767px) {
+      float: none;
+      width: auto;
+      text-align: center;
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 28px;
+      margin-top: 20px;
+      line-height: 34px;
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+
+      @media(max-width: 991px) {
+        font-size: 22px;
+      }
+    }
+
+    p {
+      color: #fff;
+      line-height: 25px;
+      font-size: 16px;
+      margin-top: 40px;
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);
+    }
+
+    .cta {
+      margin-top: 45px;
+
+      a {
+        display: inline-block;
+        border-radius: 6px;
+
+        @include transition(all .2s linear);
+
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px, inset rgba(255, 255, 255, 0.88) 0px 1px 3px -1px, rgba(0, 0, 0, 0.3) 0 1px 2px, #CCDEEE 0 1px 30px;
+        }
+      }
+    }
+  }
+}
+
+.index-mobile-footer {
+  position: relative;
+  padding: 50px 0 60px;
+
+  @media(max-width: 767px) {
+    padding: 30px 0 50px;
+  }
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    top: 0;
+
+    background-image: -o-linear-gradient(90deg, #7FC0F4 0%, #5A5BC1 100%);
+    background-image: -moz-linear-gradient(90deg, #7FC0F4 0%, #5A5BC1 100%);
+    background-image: -ms-linear-gradient(90deg, #7FC0F4 0%, #5A5BC1 100%);
+    background-image: linear-gradient(90deg, #7FC0F4 0%, #5A5BC1 100%);
+  }
+
+  .links {
+    text-align: center;
+
+    a {
+      display: inline-block;
+      font-size: 15px;
+      color: #8C99AB;
+      margin: 0 33px;
+
+      @media(max-width: 767px) {
+        display: block;
+        margin: 20px 0;
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 45px;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      margin: 0 25px;
+      color: #8C99AB;
+
+      @media(max-width: 767px) {
+        display: block;
+        margin: 20px 0;
+      }
+
+      a {
+        color: #689CE0;
+      }
+    }
+  }
+}

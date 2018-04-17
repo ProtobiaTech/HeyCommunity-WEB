@@ -1,0 +1,260 @@
+.business-hero {
+  background: url('../images/unsplash/michael-benz-189971.jpg');
+  background-size: cover;
+  background-position: center 0px;
+  min-height: 100vh;
+  padding-top: 220px;
+  overflow: hidden;
+  position: relative;
+
+  @media(max-width: 1024px) {
+    background-attachment: inherit;
+  }
+
+  @media(max-width: 991px) {
+    padding-top: 100px;
+    height: auto;
+    padding-bottom: 100px;
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-45deg, rgba(63, 89, 118, 0.3) 0, rgba(14, 20, 34, 0.5) 80%);
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 48px;
+    letter-spacing: .5px;
+    font-family: $sourceSans;
+    font-weight: 300;
+    line-height: 54px;
+    width: 800px;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.11);
+
+    @include animationDelay(.1s);
+
+    @media(max-width: 991px) {
+      font-size: 43px;
+      line-height: 50px;
+      width: auto;
+    }
+
+    @media(max-width: 767px) {
+      text-align: center;
+      font-size: 38px;
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 40px;
+    width: 480px;
+    font-size: 16px;
+    line-height: 25px;
+
+    @include animationDelay(.4s);
+
+    @media(max-width: 991px) {
+      width: auto;
+    }
+
+    @media(max-width: 767px) {
+      text-align: center;
+      font-size: 15px;
+      line-height: 24px;
+    }
+  }
+
+  .actions {
+    margin-top: 50px;
+
+    @include animationDelay(.4s);
+
+    @media(max-width: 767px) {
+      text-align: center;
+    }
+
+    .btn-pill {
+      font-weight: 600;
+      padding: 13px 44px 16px;
+
+      &:active {
+        border-color: #3b6b23;
+      }
+    }
+  }
+}
+
+.business-intro {
+  margin-top: 90px;
+}
+
+.business-blog-grid {
+  margin-top: 150px;
+
+  header {
+    font-size: 18px;
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #E9E9E9;
+      top: 11px;
+    }
+
+    h4 {
+      position: relative;
+      top: -8px;
+      padding: 0 40px;
+      background: #fff;
+      color: #97A8B8;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      word-spacing: 1.6px;
+      font-weight: 600;
+    }
+  }
+
+  section {
+    margin-top: 50px;
+
+    .row {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .post {
+      position: relative;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 270px;
+      overflow: hidden;
+
+      &:hover {
+        .bg {
+          @include transform(scale3d(1.12, 1.12, 1.12));
+        }
+      }
+      
+      .bg {
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        @include transform(scale3d(1, 1, 1));
+        @include transition(all .4s);
+
+        &:after {
+          position: absolute;
+          top: 50%;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          content: '';
+          background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(9, 24, 42, 0.8)));
+          background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(9, 24, 42, 0.8) 100%);
+          background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(9, 24, 42, 0.8));
+          background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(9, 24, 42, 0.8));
+        }
+      }
+
+      p {
+        color: #fff;
+        z-index: 99;
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        width: 60%;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.business-single-client {
+  margin-top: 160px;
+  height: 500px;
+  background-image: url('../images/unsplash/photo-1479243396208-be1751535cdb.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+
+  @media(max-width: 767px) {
+    height: auto;
+    margin-top: 100px;
+  }
+
+  .quote-wrapper {
+    width: 510px;
+    height: 390px;
+    background: #54657b;
+    position: absolute;
+    right: 13%;
+    bottom: -60px;
+    box-shadow: 0 5px 16px rgba(76, 84, 109, 0.4);
+    padding: 60px 70px;
+
+    @media(max-width: 767px) {
+      width: auto;
+      position: relative;
+      left: 0;
+      right: 0;
+      height: auto;
+      top: 0;
+      padding: 50px 40px;
+    }
+  }
+
+  .logo {
+    max-width: 160px;
+  }
+
+  p {
+    margin-top: 25px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 27px;
+    font-style: italic;
+
+    @media(max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+
+  .author {
+    color: #cfdcec;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}

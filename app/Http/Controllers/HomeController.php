@@ -19,6 +19,6 @@ class HomeController extends Controller
      */
     public function youthSpaceHome()
     {
-        return view('home.youth-space-home');
+        return view('youth-space.home');
     }
 }

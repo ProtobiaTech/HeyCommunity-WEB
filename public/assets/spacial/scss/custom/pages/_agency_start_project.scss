@@ -1,0 +1,122 @@
+.agency-start-project-intro {
+  margin-top: 80px;
+
+  h3 {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: #57616B;
+
+    @media(max-width: 767px) {
+      font-size: 25px;
+    }
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 29px;
+    font-weight: 300;
+    text-align: center;
+    width: 70%;
+    margin: 20px auto 0;
+    color: #61686E;
+
+    @media(max-width: 767px) {
+      width: auto;
+      font-size: 15px;
+    }
+  }
+}
+
+.agency-start-project-form {
+  form {
+    width: 550px;
+    margin: 40px auto 0;
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+
+    h3 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-top: 40px;
+    }
+
+    p {
+      margin-bottom: -5px;
+      color: #5f748c;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-size: 17px;
+      margin-top: 20px;
+      outline: none;
+      color: #666;
+      background: white;
+      padding: 18px 20px;
+      border: 1px solid #cbcdd2;
+      width: 100%;
+      border-radius: 4px;
+
+      @include transition(all .2s);
+
+      @include placeholder {
+        color: #B8BBC7;
+      }
+
+      @media(max-width: 767px) {
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+
+      &:focus {
+        border-color: #656565;
+
+        @include placeholder {
+          color: #666;
+        }
+      }
+    }
+
+    textarea {
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(to bottom, #6fb1f5 0%, #3b97f7 100%);
+      box-shadow: rgba(23, 43, 99, 0.24) 0 7px 28px;
+      width: 100%;
+      padding: 18px 20px;
+      text-align: center;
+      outline: none;
+      border: none;
+      margin-top: 23px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 18px;
+      color: #fff;
+      text-shadow: 1px 1px 0px rgba(106, 132, 158, 0.6);
+
+      @include transition(all .2s);
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.agency-start-city-bg {
+  background: url('../images/graphics/city-bw.jpg');
+  height: 370px;
+  margin-bottom: -200px;
+  margin-top: -60px;
+  background-size: cover;
+  background-position: center center;
+}

@@ -1,0 +1,107 @@
+.career-post-header {
+  min-height: 380px;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-image: url('../images/unsplash/photo-1474843148229-3163319fcc4c.jpg');
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+  }
+
+  section {
+    padding-top: 190px;
+    position: relative;
+    z-index: 9;
+
+    @media(max-width: 767px) {
+      padding-top: 150px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 33px;
+      font-weight: 500 !important;
+      text-align: center;
+      letter-spacing: 1px;
+      margin: 0 auto;
+      line-height: 41px;
+
+      @media(max-width: 767px) {
+        font-size: 27px;
+      }
+    }
+
+    p {
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 10px;
+
+      @media(max-width: 767px) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.career-post-content {
+  margin-top: 70px;
+
+  @media(max-width: 767px) {
+    margin-top: 40px;
+  }
+
+  > .container {
+    max-width: 750px;
+  }
+
+  section {
+    margin-bottom: 40px;
+  }
+
+  h4 {
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+
+  p {
+    color: #444;
+  }
+
+  ul {
+    padding-left: 20px;
+    color: #444;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  .apply-now {
+    padding: 21px;
+    border: 1px solid #e5e7ea;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 55px;
+    font-size: 16px;
+    color: #454545;
+
+    a {
+      margin-left: 25px;
+
+      @media(max-width: 767px) {
+        display: block;
+        margin: 25px 0 0;
+      }
+    }
+  }
+}

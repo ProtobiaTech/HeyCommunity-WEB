@@ -1,0 +1,70 @@
+body {
+  font-size: .9rem;
+}
+
+a {
+  outline: none;
+
+  &:focus, &.active {
+    outline: none;
+  }
+}
+
+.container {
+  &:not(.no-override) {
+    @media (min-width: 1200px) {
+      width: 1070px;
+    }
+  }
+
+  @media(max-width: 575px) {
+    width: 100%;
+  }
+}
+
+
+// anchor links
+
+a {
+  color: #3e70ff;
+
+  @include transition(all .2s);
+
+  &:hover {
+    color: #459CE7;
+    text-decoration: none;
+  }
+}
+
+
+// pagination
+
+.page-item {
+  &.active {
+    .page-link {
+      background-color: #4e7396;
+    }
+  }
+}
+
+.page-link {
+  color: #5F8AB0;
+  padding: 0.5rem 0.9rem;
+
+  @include transition(all .1s linear);
+}
+
+
+// table responsive 
+.table-responsive {
+  display: table;
+
+  @media(max-width: 991px) {
+    display: block;
+
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+}

@@ -15,8 +15,8 @@
   <link rel="stylesheet" type="text/css" href="assets/spacial/dist/theme.min.css" />
 
   <!-- javascript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="assets/spacial/other/jquery.min.js"></script>
+  <script src="assets/spacial/other//tether.min.js"></script>
   <script src="assets/spacial/dist/theme.min.js"></script>
 </head>
 <body>

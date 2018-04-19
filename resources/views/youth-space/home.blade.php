@@ -21,6 +21,13 @@
   <script src="assets/spacial/dist/theme.min.js"></script>
 </head>
 <body>
+  @section('title')
+    HEY赣州青年空间
+  @endsection
+  @section('description')
+    坐落在赣州老城区，一个由生活空间、创作空间、露天花园组成的服务赣州青年交流协作和学习成长，倡导自在生活的空间和社区。为每一个积极向上的赣州青年开放，你可以在这里生活
+  @endsection
+
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->

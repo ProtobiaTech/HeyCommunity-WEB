@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>HEY赣州青年空间</title>
-  <meta name="description" content="">
+  <meta name="keywords" content="HEY赣州青年空间,青年空间,HEY赣州">
+  <meta name="description" content="坐落在赣州老城区，一个由生活空间、创作空间、露天花园组成的服务赣州青年交流协作和学习成长，倡导自在生活的空间和社区。为每一个积极向上的赣州青年开放，你可以在这里生活、工作、休闲娱乐或者是来参加一场活动。">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
@@ -79,15 +80,8 @@
   </div>
 
   <div class="restaurant-intro" id="introduction" style="margin-top:0; padding-top:125px;">
-    <h2>
-      开放、非营利、公民共治的青年社区
-    </h2>
-    <p>
-      坐落在赣州老城区，一个由生活空间、创作空间、露天花园组成的服务赣州青年交流协作和学习成长，倡导自在生活的空间和社区。
-      为每一个积极向上的赣州青年开放，你可以在这里生活、工作、休闲娱乐或者是来参加一场活动。
-      作为一个非营利社区，我们将为每一个公民公开社区的收入与支出帐目，收支盈余将投入社区的升级建设。
-      如果你对此有兴趣，写一份申请加入我们，获得公民身份后行使公民义务和权利，共同来治理这个社区
-    </p>
+    <h2>开放、非营利、公民共治的青年社区</h2>
+    <p>坐落在赣州老城区，一个由生活空间、创作空间、露天花园组成的服务赣州青年交流协作和学习成长，倡导自在生活的空间和社区。为每一个积极向上的赣州青年开放，你可以在这里生活、工作、休闲娱乐或者是来参加一场活动。作为一个非营利社区，我们将为每一个公民公开社区的收入与支出帐目，收支盈余将投入社区的升级建设。如果你对此有兴趣，写一份申请加入我们，获得公民身份后行使公民义务和权利，共同来治理这个社区</p>
     <p>
       现在我们正处于初期建设和试运营阶段，如果你对这个空间和社区感兴趣 <br>
       欢迎你来参观交流
@@ -292,5 +286,8 @@
   <div style="display:none">
     <script src="https://s19.cnzz.com/z_stat.php?id=1273106497&amp;web_id=1273106497" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1273106497&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1273106497" target="_blank" title="站长统计">站长统计</a>
   </div>
+
+  <!-- wechat -->
+  @yield('_wechat')
 </body>
 </html>

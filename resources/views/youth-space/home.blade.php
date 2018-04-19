@@ -288,6 +288,6 @@
   </div>
 
   <!-- wechat -->
-  @yield('_wechat')
+  @include('layouts._wechat')
 </body>
 </html>

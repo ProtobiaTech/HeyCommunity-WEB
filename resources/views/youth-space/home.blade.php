@@ -213,15 +213,15 @@
       <div class="gallery">
         <div class="row">
           <div class="col-md-3">
-            <div class="bg-img" style="background-image:url('images/youth-space/wq1.jpg'); width:100%;" data-trigger="zoomerang"></div>
-            <div class="bg-img" style="background-image:url('images/youth-space/kt1.jpg'); width:100%;" data-trigger="zoomerang"></div>
+            <div class="bg-img" style="background-image:url('images/youth-space/moments/l1.jpg'); width:100%;" data-trigger="zoomerang"></div>
+            <div class="bg-img" style="background-image:url('images/youth-space/moments/l2.jpg'); width:100%;" data-trigger="zoomerang"></div>
           </div>
           <div class="col-md-6">
-            <div class="bg-img" style="background-image:url('images/youth-space/kt2.jpg'); width:100%;" data-trigger="zoomerang"></div>
+            <div class="bg-img" style="background-image:url('images/youth-space/moments/c1.jpg'); width:100%;" data-trigger="zoomerang"></div>
           </div>
           <div class="col-md-3">
-            <div class="bg-img" style="background-image:url('images/youth-space/lt1.jpg'); width:100%;" data-trigger="zoomerang"></div>
-            <div class="bg-img" style="background-image:url('images/youth-space/tt1.jpg'); width:100%;" data-trigger="zoomerang"></div>
+            <div class="bg-img" style="background-image:url('images/youth-space/moments/r1.jpg'); width:100%;" data-trigger="zoomerang"></div>
+            <div class="bg-img" style="background-image:url('images/youth-space/moments/r2.jpg'); width:100%;" data-trigger="zoomerang"></div>
           </div>
         </div>
       </div>

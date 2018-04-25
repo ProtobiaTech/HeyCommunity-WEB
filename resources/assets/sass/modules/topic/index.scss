@@ -1,0 +1,102 @@
+#section-mainbody.page-topic-index {
+  margin-top: 10px;
+
+
+  //
+  // section left
+  #section-left {
+    .left-tools {
+      margin-bottom: 15px;
+    }
+  }
+
+  .card-nodes {
+    margin-bottom: 15px;
+
+    .card-body {
+      .nodes-item {
+        .rootNode {
+          color: #333;
+          font-weight: 500;
+          padding-right: 4px;
+        }
+
+        .childNode {
+          padding: 0 4px;
+        }
+
+        .active {
+          text-decoration: underline;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .card-tags {
+    margin-bottom: 15px;
+  }
+
+
+  //
+  // section right
+  #section-right {
+    .right-tools {
+      margin-bottom: 15px;
+
+      @include media-breakpoint-down(sm) {
+        text-align: right;
+      }
+
+      @media (max-width: 319px) {
+        text-align: center;
+
+        .btn-create {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+
+#component-topic-list {
+  .list-group-item {
+    .avatar {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .body {
+      padding-left: 50px;
+      width: 100%;
+
+      .title {
+        overflow: hidden;
+
+        a {
+          font-weight: 400;
+          white-space: nowrap;
+          width: 100%;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .info {
+          position: absolute;
+          right: 1.25rem;
+        }
+      }
+
+      .content {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: 1.6rem;
+      }
+    }
+  }
+}

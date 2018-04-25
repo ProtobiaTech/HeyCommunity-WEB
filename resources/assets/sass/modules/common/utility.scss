@@ -1,0 +1,59 @@
+@include media-breakpoint-down(sm) {
+  //
+  // mobile not padding
+  .m-np {
+    padding: 0 !important;
+  }
+
+  //
+  // mobile not border radius
+  .m-nb-r {
+    border-radius: 0 !important;
+  }
+
+  //
+  // mobile not border y
+  .m-nb-y {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  //
+  // mobile padding 15px x
+  .m-p15-x {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  //
+  // mobile hidden
+  .m-hide {
+    display: none;
+  }
+
+  //
+  // mobile show
+  .m-show {
+    display: block !important;
+  }
+  .m-block {
+    display: block !important;
+  }
+  .m-inline {
+    display: inline !important;
+  }
+  .m-inline-block {
+    display: inline-block !important;
+  }
+
+  .m-mt-3 {
+    margin-top: 1rem !important;
+  }
+}
+
+.m-show,
+.m-block,
+.m-inline,
+.m-inline-block {
+  display: none;
+}

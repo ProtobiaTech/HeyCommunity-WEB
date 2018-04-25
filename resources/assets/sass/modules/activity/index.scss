@@ -1,0 +1,86 @@
+#section-mainbody.page-activity-index {
+  .carousel {
+    background-color: #555;
+
+    .carousel-item {
+      @media (max-width: 767px) {
+        max-height: 200px !important;
+      }
+
+      text-align: center;
+      max-height: 300px;
+
+      img {
+        min-width: 100%;
+        min-height: 300px;
+        background-color: #aaa;
+      }
+
+      .carousel-caption {
+        h3 {
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+  }
+
+
+  //
+  // activity card
+  #section-carousel {
+    margin-bottom: 21px;
+  }
+
+
+  //
+  // Pagination
+  #section-pagination {
+    .pagination {
+      justify-content: center;
+    }
+  }
+}
+
+
+//
+// activity card
+#component-activity-card {
+  margin-bottom: 20px;
+
+  .box-pic {
+    max-height: 165px;
+    overflow: hidden;
+
+    .start-time {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 5px 10px;
+      color: #fff;
+      background-color: rgba(60, 60, 60, 0.3);
+    }
+
+    .card-img-top {
+      background-color: #ddd;
+      min-height: 140px;
+    }
+  }
+
+  .card-body {
+
+    .card-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 16px;
+    }
+
+    .card-text {
+      height: 44px;
+      overflow: hidden;
+    }
+  }
+}

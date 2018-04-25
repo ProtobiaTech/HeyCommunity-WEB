@@ -4,18 +4,21 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
+    //
+    protected $guarded = [];
+
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * Genders
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    public static $genders = [
+        1   =>      '男',
+        2   =>      '女',
     ];
 
     /**
@@ -26,4 +29,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Guest Avatar
+     */
+    public static function guestAvatar()
+    {
+        return '/images/user/avatars/guest.jpg';
+    }
+
+    /**
+     * Get Avatar Attribute
+     */
+    public function getAvatarAttribute($value)
+    {
+        return asset($value);
+    }
 }

@@ -1,0 +1,60 @@
+//
+//
+#section-pagination {
+  margin-top: 20px;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    .pagination {
+      display: block;
+      font-size: 0;
+      text-align: center;
+
+      .page-item {
+        display: inline-block;
+        font-size: 14px;
+      }
+
+      @media (max-width: 450px) {
+        .page-item:nth-of-type(7),
+        .page-item:nth-of-type(8),
+        .page-item:nth-of-type(9),
+        .page-item:nth-last-of-type(2) {
+          display: none;
+        }
+
+        .page-item:nth-of-type(3) {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//
+#section-breadcrumb {
+  .breadcrumb {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+}
+
+
+//
+//
+.simditor-box {
+  position: relative;
+}
+
+#section-textarea-login-tip {
+  z-index: 9;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding-top: 180px;
+}

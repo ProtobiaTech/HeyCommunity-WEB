@@ -1,5 +1,11 @@
 <?php
 
+//
+// pagination config
+Illuminate\Pagination\AbstractPaginator::defaultView("pagination::bootstrap-4");
+Illuminate\Pagination\AbstractPaginator::defaultSimpleView("pagination::simple-bootstrap-4");
+
+
 return [
 
     /*
@@ -65,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +84,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh-CN',
 
     /*
     |--------------------------------------------------------------------------
@@ -121,9 +127,11 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
+
+    'log_max_files' => 30,
 
     /*
     |--------------------------------------------------------------------------
@@ -173,7 +181,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -226,6 +234,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+
+        //
+        'Image' => Intervention\Image\Facades\Image::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Purifier' => Mews\Purifier\Facades\Purifier::class,
     ],
 
 ];

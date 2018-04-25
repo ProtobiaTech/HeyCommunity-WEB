@@ -1,0 +1,12 @@
+#section-mainbody.page-topic-node #section-node-item .list-group-item .section-editbox {
+  display: none;
+}
+
+#section-mainbody.page-topic-node #section-node-item .list-group-item:hover .section-editbox {
+  display: block;
+}
+
+#sidebar-menu ul ul li.active a {
+  color: #3292e0;
+}
+

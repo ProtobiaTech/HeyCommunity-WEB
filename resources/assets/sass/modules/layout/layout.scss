@@ -1,0 +1,32 @@
+#section-mainNav {
+  #js-popoverContent {
+  }
+
+  .navbar-brand {
+    .icon-back-btn {
+      position: relative;
+      top: -12px;
+    }
+  }
+
+  #nav-btns {
+    position: absolute;
+    top: 7.88px;
+    right: 70px;
+
+    .btn {
+      border-color: rgba(255, 255, 255, 0.1);
+      height: 35px;
+
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+#user-popover {
+  min-width: 6em;
+}
+
+button {
+  cursor: pointer;
+}

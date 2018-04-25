@@ -15,10 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('wx_open_id')->nullable()->comment('Wechat Open ID');
+            $table->string('wx_union_id')->nullable()->comment('Wechat Union ID');
+            $table->string('nickname')->comment('Nickname');
+            $table->string('gender')->nullable()->comment('Gender');
+            $table->string('bio')->nullable()->comment('Bio');
+            $table->string('avatar')->default('/images/user/avatars/default.png')->comment('Avatar');
+            $table->string('profile_bg_img')->default('/images/user/profile_bg_img.jpg')->comment('Avatar');
+            $table->string('phone')->unique()->nullable()->comment('Phone');
+            $table->string('email')->unique()->nullable()->comment('Email');
+            $table->string('password')->nullable()->comment('Password');
+
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

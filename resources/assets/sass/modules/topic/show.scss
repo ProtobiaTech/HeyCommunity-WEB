@@ -1,0 +1,150 @@
+#section-mainbody.page-topic-show {
+  #section-operation {
+    .btn {
+      background-color: #fff;
+      color: #666;
+    }
+  }
+
+  //
+  //
+  #topic-card {
+    .card-title {
+      a {
+        color: #212529;
+
+        &:hover {
+          color: #555;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .card-text {
+      min-height: 1.6rem;
+      font-size: 15px;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      p br:last-of-type {
+        display: none;
+      }
+
+      p:first-of-type img:first-of-type {
+        margin-top: 10px;
+      }
+
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    .footer {
+      margin-top: 1rem;
+
+      .topic-info {
+        font-size: 12px;
+      }
+    }
+  }
+
+
+  //
+  //
+  #section-comment-list,
+  #section-comment-textarea {
+    margin-top: 20px;
+
+    h3 {
+      .badge {
+        color: #555;
+        background-color: #eee;
+        padding: 0.6em 0.8em;
+        width: 8em;
+        font-size: 14px;
+        font-weight: 400;
+        border-radius: 0 4px 4px 0;
+        border-left: 4px solid #3097D1;
+      }
+    }
+  }
+
+  //
+  //
+  #section-comment-list {
+    .card {
+      &:hover {
+        >.card-body >.body >.title .info.m-desktop a,
+        >.card-body >.body >.title .info.m-desktop .span-trash {
+          display: inline-block;
+        }
+      }
+
+      .card-body {
+        form.form-topic-reply-box {
+          display: none !important;
+        }
+
+        .avatar {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+
+        .body {
+          padding-left: 50px;
+          width: 100%;
+
+          .title {
+            .info {
+              a {
+                color: #888;
+
+                :hover {
+                  color: #555;
+                }
+              }
+
+              &.m-desktop {
+                a {
+                  display: none;
+                }
+
+                .span-trash {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          .content {
+            min-height: 1.6rem;
+
+            p:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+
+          .child-comments {
+            .card {
+              border-radius: 0;
+              border-left: none;
+              border-right: none;
+              border-bottom: none;
+
+              .card-body {
+                padding-left: 0;
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+#section-mainbody.page-topic-node {
+  #section-node-item {
+    .list-group-item {
+      .section-editbox {
+        display: none;
+      }
+
+      &:hover .section-editbox {
+        display: block;
+      }
+    }
+  }
+}

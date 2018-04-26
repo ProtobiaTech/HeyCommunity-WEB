@@ -73,8 +73,8 @@ class UserController extends Controller
      */
     public function loginWechat()
     {
-        // login by wechat app
-        if(preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        // login by wechat browser
+        if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false) {
             return redirect()->route('user.login-by-wechat');
         }
 
@@ -91,7 +91,7 @@ class UserController extends Controller
         if (
             !$request->has('token') &&
             session('after-login-redirect-route') &&
-            preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))
+            (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false)
         ) {
             $route = session('after-login-redirect-route') ?: 'index';
             return redirect()->route($route);

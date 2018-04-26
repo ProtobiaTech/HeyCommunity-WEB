@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Auth;
+use Agent;
 use App\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -36,20 +37,22 @@ class AuthenticateWithWechat
      */
     public function handle($request, Closure $next)
     {
-        $user = session('wechat.oauth_user');
-        if ($this->auth->guest() || Auth::user()->wx_open_id !== $user->id) {
-            $user = User::where(['wx_open_id' => $user->id])->first();
-            if (!$user) {
-                $user = session('wechat.oauth_user');
-                $userInfo['wx_open_id'] =  $user->id;
-                $userInfo['nickname']   =  $user->nickname;
-                // $userInfo['avatar']     =  $this->saveAvatar($user);
-                $userInfo['avatar']     =  $user->avatar;
+        if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false) {
+            $user = session('wechat.oauth_user');
+            if ($this->auth->guest() || Auth::user()->wx_open_id !== $user->id) {
+                $user = User::where(['wx_open_id' => $user->id])->first();
+                if (!$user) {
+                    $user = session('wechat.oauth_user');
+                    $userInfo['wx_open_id'] =  $user->id;
+                    $userInfo['nickname']   =  $user->nickname;
+                    // $userInfo['avatar']     =  $this->saveAvatar($user);
+                    $userInfo['avatar']     =  $user->avatar;
 
-                $user = User::firstOrCreate($userInfo);
+                    $user = User::firstOrCreate($userInfo);
+                }
+
+                Auth::login($user);
             }
-
-            Auth::login($user);
         }
 
         return $next($request);

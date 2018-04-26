@@ -30,7 +30,7 @@ Route::group([], function () {
 
 //
 // User
-Route::group(['prefix' => 'user'], function () {
+Route::group(['prefix' => 'user', 'middleware' => ['wechat.oauth', 'auth.wechat']], function () {
     Route::group(['middleware' => 'auth'], function() {
         Route::get('logout', 'UserController@logout')->name('user.logout');
         Route::get('login-by-wechat-success', 'UserController@loginByWechatSuccess')->name('user.login-by-wechat-success');
@@ -70,7 +70,7 @@ Route::group(['prefix' => 'user'], function () {
 
 //
 // Notice
-Route::group(['prefix' => 'notice'], function () {
+Route::group(['prefix' => 'notice', 'middleware' => ['wechat.oauth', 'auth.wechat']], function () {
     Route::get('/', 'NoticeController@index')->name('notice.index');
     Route::post('check', 'NoticeController@check')->name('notice.check');
 });
@@ -78,7 +78,7 @@ Route::group(['prefix' => 'notice'], function () {
 
 //
 // News
-Route::group(['prefix' => 'news'], function () {
+Route::group(['prefix' => 'news', 'middleware' => ['wechat.oauth', 'auth.wechat']], function () {
     Route::get('/', 'NewsController@index')->name('news.index');
     Route::get('/{id}', 'NewsController@show')->name('news.show')->where('id', '[0-9]+');
 });
@@ -86,7 +86,7 @@ Route::group(['prefix' => 'news'], function () {
 
 //
 // Topic
-Route::group(['prefix' => 'topic'], function () {
+Route::group(['prefix' => 'topic', 'middleware' => ['wechat.oauth', 'auth.wechat']], function () {
     Route::get('/', 'TopicController@index')->name('topic.index');
     Route::get('/{id}', 'TopicController@show')->name('topic.show')->where('id', '[0-9]+');
 
@@ -112,7 +112,7 @@ Route::group(['prefix' => 'topic'], function () {
 
 //
 // Activity
-Route::group(['prefix' => 'activity'], function () {
+Route::group(['prefix' => 'activity', 'middleware' => ['wechat.oauth', 'auth.wechat']], function () {
     Route::get('/', 'ActivityController@index')->name('activity.index');
     Route::get('/{id}', 'ActivityController@show')->name('activity.show')->where('id', '[0-9]+');
 
@@ -123,7 +123,6 @@ Route::group(['prefix' => 'activity'], function () {
         Route::post('update/{id}', 'ActivityController@update')->name('activity.update')->where('id', '[0-9]+');
     });
 });
-
 
 
 //

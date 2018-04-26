@@ -13,27 +13,26 @@
 @endsection
 
 @section('mainBody')
-    <div id="section-mainbody" class="page-news-index">
-        <div class="container pt-4 pb-5">
+    <div id="section-mainbody" class="page-news-show">
+        <div class="container pt-4">
             <div class="row">
-                <div class="col-md-2"></div>
-
-                <div class="col-md-8 m-np">
-                    <div class="card">
+                <div class="col-md-9 m-np mb-3">
+                    <div class="card card-news">
                         <div class="card-body">
                             <h5 class="card-title">{{ $news->title }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                {{ $news->origin }}
-                                <span class="pull-right">
-                                    <small>
-                                        {{ $news->time }}
-                                    </small>
+                                <span class="news-origin">
+                                    {{ $news->origin }}
+                                </span>
+
+                                <span class="pull-right news-date">
+                                    {{ $news->time }}
                                 </span>
                             </h6>
 
-                            <p class="card-text">
+                            <div class="card-text">
                                 {!! $news->content !!}
-                            </p>
+                            </div>
 
                             <br class="m-inline">
                             <a target="_blank" href="{{ $news->url ?: $news->weburl }}" class="card-link m-inline">访问原文</a>
@@ -41,6 +40,10 @@
                             <a target="_blank" href="{{ $news->weburl ?: $news->url }}" class="card-link m-hide">访问原文</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-md-3 m-np">
+                    @include('layouts._tail')
                 </div>
             </div>
         </div>

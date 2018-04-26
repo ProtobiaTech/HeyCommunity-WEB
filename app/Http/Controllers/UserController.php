@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Agent;
 use App\User;
 use App\Topic;
 use App\Activity;
@@ -23,6 +24,40 @@ class UserController extends Controller
     }
 
     /**
+     *  Login
+     */
+    public function login()
+    {
+        // if in wechat browser
+        if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false) {
+            return redirect()->route('user.login-by-wechat');
+        } else {
+            if (Agent::isDesktop()) {
+                return redirect()->route('user.login-wechat');
+            } else {
+                return redirect()->route('user.default-login');
+            }
+        }
+    }
+
+    /**
+     *  Signup
+     */
+    public function signup()
+    {
+        // if in wechat browser
+        if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false) {
+            return redirect()->route('user.login-by-wechat');
+        } else {
+            if (Agent::isDesktop()) {
+                return redirect()->route('user.login-wechat');
+            } else {
+                return redirect()->route('user.default-signup');
+            }
+        }
+    }
+
+    /**
      * Logout
      */
     public function logout()
@@ -34,20 +69,12 @@ class UserController extends Controller
     }
 
     /**
-     * Login page
-     */
-    public function login()
-    {
-        return view('user.login');
-    }
-
-    /**
      * Login page with wechat
      */
     public function loginWechat()
     {
-        // login by wechat app
-        if(preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        // login by wechat browser
+        if (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false) {
             return redirect()->route('user.login-by-wechat');
         }
 
@@ -64,7 +91,7 @@ class UserController extends Controller
         if (
             !$request->has('token') &&
             session('after-login-redirect-route') &&
-            preg_match('/micromessenger/i', strtolower($_SERVER['HTTP_USER_AGENT']))
+            (strpos(Agent::getUserAgent(), 'MicroMessenger') !== false)
         ) {
             $route = session('after-login-redirect-route') ?: 'index';
             return redirect()->route($route);
@@ -105,9 +132,17 @@ class UserController extends Controller
     }
 
     /**
-     * Login handler
+     * Default login page
      */
-    public function loginHandler(Request $request)
+    public function defaultLogin()
+    {
+        return view('user.default-login');
+    }
+
+    /**
+     * Default login handler
+     */
+    public function defaultLoginHandler(Request $request)
     {
         $this->validate($request, [
             'phone'     =>      'required|integer',
@@ -122,17 +157,17 @@ class UserController extends Controller
     }
 
     /**
-     * Sign up page
+     * Default sign up page
      */
-    public function signup()
+    public function defaultSignup()
     {
-        return view('user.signup');
+        return view('user.default-signup');
     }
 
     /**
      * Sign up handler
      */
-    public function signupHandler(Request $request)
+    public function defaultSignupHandler(Request $request)
     {
         $this->validate($request, [
             'nickname'  =>  'required|string',
@@ -149,7 +184,7 @@ class UserController extends Controller
         if ($user->save()) {
             Auth::login($user);
 
-            return redirect('/');
+            return redirect()->back();
         } else {
             return back();
         }

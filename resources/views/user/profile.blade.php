@@ -8,7 +8,7 @@
 
 @section('mainBody')
     <div id="section-mainbody" class="page-user-profile">
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <nav id="section-breadcrumb" class="d-none d-md-block" aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
@@ -20,6 +20,10 @@
             <div class="row">
                 <div class="col-md-3 m-np">
                     @include('user._user-profile-card', ['user' => $user])
+
+                    <div class="d-none d-md-block">
+                        @include('layouts._tail')
+                    </div>
                 </div>
 
                 <div class="col-md-9 m-np">
@@ -88,6 +92,12 @@
                                 </div>
                             </form>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-12 d-block d-md-none m-np">
+                    <div class="mt-3">
+                        @include('layouts._tail')
                     </div>
                 </div>
             </div>

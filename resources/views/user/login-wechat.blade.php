@@ -31,6 +31,12 @@
                             &nbsp;&nbsp;
                             <small><a href="">帮助</a></small>
                         </p>
+
+                        <hr>
+
+                        <p class="card-text text-center">
+                            <a href="{{ route('user.default-login') }}">使用帐号密码登录</a>，或<a href="{{ route('user.default-signup') }}">注册一个新帐号</a>
+                        </p>
                     </div>
                 </div>
             </div>

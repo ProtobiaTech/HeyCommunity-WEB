@@ -14,7 +14,7 @@
 
 @section('mainBody')
     <div id="section-mainbody" class="page-user-uhome">
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <div class="row">
                 <div class="col-md-3 m-np">
                     @include('user._user-profile-card', ['user' => $user])
@@ -33,6 +33,10 @@
                                 <li><span class="text-muted icon icon-calendar mr-3"></span>注册于 {{ $user->created_at->format('Y年m月d日') }}, 第 {{ $user->id }} 名会员 </li>
                             </ul>
                         </div>
+                    </div>
+
+                    <div class="mt-3 d-none d-md-block">
+                        @include('layouts._tail')
                     </div>
                 </div>
 
@@ -64,6 +68,10 @@
                             @include('activity._activity-list', ['activities' => $myActivities])
                         </div>
                     </div>
+                </div>
+
+                <div class="col-md-12 mt-3 d-block d-md-none m-np">
+                    @include('layouts._tail')
                 </div>
             </div>
         </div>

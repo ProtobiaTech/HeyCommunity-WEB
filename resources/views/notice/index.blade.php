@@ -10,7 +10,7 @@ $wxShareDisable = true;
 
 @section('mainBody')
     <div id="section-mainbody" class="page-notice-index">
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <div class="row">
                 <div class="col-md-9 m-np">
                     <ul id="section-notice-list" class="list-group media-list media-list-stream mb-2">

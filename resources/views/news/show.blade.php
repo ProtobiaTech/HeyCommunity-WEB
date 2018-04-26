@@ -14,7 +14,7 @@
 
 @section('mainBody')
     <div id="section-mainbody" class="page-news-show">
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <div class="row">
                 <div class="col-md-9 m-np mb-3">
                     <div class="card card-news">

@@ -14,7 +14,7 @@
 
 @section('mainBody')
     <div id="section-mainbody" class="page-topic-show">
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <nav id="section-breadcrumb" class="d-none d-md-block" aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
@@ -206,6 +206,12 @@
                 <!-- Info -->
                 <div id="section-right" class="col-md-3 d-none d-md-block">
                     @include('user._user-profile-card', ['user' => $topic->author])
+
+                    @include('layouts._tail')
+                </div>
+
+                <div class="col-md-12 d-block d-md-none mt-5 m-np">
+                    @include('layouts._tail')
                 </div>
             </div>
         </div>

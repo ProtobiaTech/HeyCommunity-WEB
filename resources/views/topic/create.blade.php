@@ -10,7 +10,7 @@
 
 @section('mainBody')
     <div id="section-mainbody" class="page-topic-create">
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <nav id="section-breadcrumb" class="d-none d-md-block" aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
@@ -20,11 +20,23 @@
             </nav>
 
             <div class="row">
+                <div class="col-4 d-block d-md-none m-np">
+                    <div class="card m-nb-y m-nb-r mb-3">
+                        <div class="card-body">
+                            欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-md-4 col-lg-4 d-none d-md-block">
                     <div class="card">
                         <div class="card-body">
                             欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~
                         </div>
+                    </div>
+
+                    <div class="mt-3">
+                        @include('layouts._tail')
                     </div>
                 </div>
 
@@ -85,11 +97,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-4 d-block d-md-none mt-3 m-np">
-                    <div class="card m-nb-y m-nb-r">
-                        <div class="card-body">
-                            欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~
-                        </div>
+                <div class="col-4 d-block d-md-none m-np">
+                    <div class="mt-3">
+                        @include('layouts._tail')
                     </div>
                 </div>
             </div>

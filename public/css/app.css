@@ -172,6 +172,21 @@ img {
   opacity: 0.6;
 }
 
+#section-mainbody.page-news-show .card.card-news .card-body .news-date {
+  font-weight: normal;
+}
+
+#section-mainbody.page-news-show .card.card-news .card-body .card-text {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+#section-mainbody.page-news-show .card.card-news .card-body .card-text img {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
 #section-mainbody.page-topic-index {
   margin-top: 10px;
 }

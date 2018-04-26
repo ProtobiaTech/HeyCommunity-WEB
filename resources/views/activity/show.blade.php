@@ -14,7 +14,7 @@
 
 @section('mainBody')
     <div id="section-mainbody" class="page-activity-show">
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <nav id="section-breadcrumb" class="d-none d-md-block" aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">首页</a></li>
@@ -67,7 +67,7 @@
 
             <br>
             <div class="row" id="section-row-2">
-                <div class="col-sm-8 m-np" id="section-body">
+                <div class="col-md-8 m-np" id="section-body">
                     <nav class="nav nav-tabs" id="mainTab">
                         <a class="nav-item nav-link active" id="nav-content-tab" data-toggle="tab" href="#nav-content">活动详情</a>
                         <a class="nav-item nav-link" id="nav-topic-tab" data-toggle="tab" href="#nav-topic">相关讨论</a>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4 m-np d-none d-sm-block">
+                <div class="col-md-4 m-np d-none d-md-block">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">
@@ -109,6 +109,14 @@
                             </p>
                         </div>
                     </div>
+
+                    <div class="mt-3">
+                        @include('layouts._tail')
+                    </div>
+                </div>
+
+                <div class="col-12 d-block d-md-none m-np mt-3">
+                    @include('layouts._tail')
                 </div>
             </div>
         </div>

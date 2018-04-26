@@ -45,13 +45,17 @@ $wxShareDisable = true;
             </div>
         </div>
 
-        <div class="container pt-4 pb-5">
+        <div class="container pt-4">
             <div class="row">
-                <div class="col-lg-2 col-md-3 m-np">
+                <div class="col-lg-3 col-md-3 m-np">
                     @include('user._ucenter-nav')
+
+                    <div class="d-none d-md-block">
+                        @include('layouts._tail')
+                    </div>
                 </div>
 
-                <div class="col-lg-10 col-md-9 m-np">
+                <div class="col-lg-9 col-md-9 m-np">
                     <div class="tab-content">
                         @if (request()->is('*my-timelines') || request()->is('*ucenter'))
                             <div class="tab-pane fade show active">
@@ -81,6 +85,10 @@ $wxShareDisable = true;
                             </div>
                         @endif
                     </div>
+                </div>
+
+                <div class="col-md-12 mt-3 d-block d-md-none m-np">
+                    @include('layouts._tail')
                 </div>
             </div>
         </div>

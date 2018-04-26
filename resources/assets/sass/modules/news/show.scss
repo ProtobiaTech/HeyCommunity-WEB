@@ -1,0 +1,20 @@
+#section-mainbody.page-news-show {
+  .card.card-news {
+    .card-body {
+      .news-date {
+        font-weight: normal;
+      }
+
+      .card-text {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+
+        img {
+          display: block;
+          margin: 0 auto;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -184,6 +184,7 @@ img {
 #section-mainbody.page-news-show .card.card-news .card-body .card-text img {
   display: block;
   margin: 0 auto;
+  padding-bottom: 1rem;
 }
 
 #section-mainbody.page-topic-index {

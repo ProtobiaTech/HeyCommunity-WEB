@@ -30,9 +30,9 @@
                                 </span>
                             </h6>
 
-                            <p class="card-text">
+                            <div class="card-text">
                                 {!! $news->content !!}
-                            </p>
+                            </div>
 
                             <br class="m-inline">
                             <a target="_blank" href="{{ $news->url ?: $news->weburl }}" class="card-link m-inline">访问原文</a>

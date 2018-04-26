@@ -10,7 +10,7 @@
     @include('activity._carousel', ['elementId' => 'section-carousel-top'])
     -->
 
-    <div class="container pt-4 pb-5">
+    <div class="container pt-4">
         @include('activity._carousel', ['elementId' => 'section-carousel'])
 
         <div class="row">
@@ -31,6 +31,12 @@
 
         <!-- Activity List -->
         @include('activity._activity-list', ['activities' => $activities])
+
+        <div class="row">
+            <div class="col-md-12 m-np">
+                @include('layouts._tail')
+            </div>
+        </div>
     </div>
 </div>
 @stop

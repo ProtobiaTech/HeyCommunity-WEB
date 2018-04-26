@@ -16,9 +16,7 @@
     <div id="section-mainbody" class="page-news-show">
         <div class="container pt-4 pb-5">
             <div class="row">
-                <div class="col-md-2"></div>
-
-                <div class="col-md-8 m-np">
+                <div class="col-md-9 m-np mb-3">
                     <div class="card card-news">
                         <div class="card-body">
                             <h5 class="card-title">{{ $news->title }}</h5>
@@ -42,6 +40,10 @@
                             <a target="_blank" href="{{ $news->weburl ?: $news->url }}" class="card-link m-hide">访问原文</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-md-3 m-np">
+                    @include('layouts._tail')
                 </div>
             </div>
         </div>

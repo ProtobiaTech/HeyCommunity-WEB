@@ -10,7 +10,7 @@
 
 @section('mainBody')
 <div id="section-mainbody" class="page-topic-index">
-    <div class="container pt-4 pb-5">
+    <div class="container pt-4">
         <div class="row">
             <div id="section-left" class="col-md-3">
                 <div class="left-tools d-none d-md-block">
@@ -42,6 +42,10 @@
                             <a class="l1">暂不可用</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="d-none d-md-block">
+                    @include('layouts._tail')
                 </div>
             </div>
 
@@ -95,6 +99,8 @@
                         </div>
                     </div>
                 </div>
+
+                @include('layouts._tail')
             </div>
         </div>
     </div>

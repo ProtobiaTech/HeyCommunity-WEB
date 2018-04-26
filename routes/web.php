@@ -123,7 +123,6 @@ Route::group(['prefix' => 'activity', 'middleware' => ['wechat.oauth', 'auth.wec
 });
 
 
-
 //
 // web admin routes
 include_once 'web-admin.php';

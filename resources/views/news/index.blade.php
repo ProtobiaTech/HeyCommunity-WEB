@@ -58,5 +58,9 @@
     </div>
 
     <script src="{{ asset('bower-assets/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
-    <script>$('.items-masonry').masonry({itemSelector: '.item-masonry'})</script>
+    <script>
+        $(document).ready(function() {
+          $('.items-masonry').masonry({itemSelector: '.item-masonry'})
+        });
+    </script>
 @stop

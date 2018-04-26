@@ -2,7 +2,7 @@
     <div id="component-topic-list" class="list-group">
         @foreach ($topicComments as $topicComment)
             <div class="list-group-item m-nb-y m-nb-r">
-                <a class="avatar" href="{{ route('user.uhome', $user->id) }}"><img class="avatar" src="{{ asset($user->avatar) }}"></a>
+                <a class="avatar" href="{{ route('user.uhome', $user->id) }}"><img class="avatar" src="{{ asset($topicComment->topic->author->avatar) }}"></a>
                 <div class="pull-left body">
                     <div class="title">
                         <span class="info d-none d-sm-inline-block text-muted">

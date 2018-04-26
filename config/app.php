@@ -236,9 +236,10 @@ return [
 
 
         //
-        'Image' => Intervention\Image\Facades\Image::class,
-        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-        'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'Image'     =>  Intervention\Image\Facades\Image::class,
+        'QrCode'    =>  SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Purifier'  =>  Mews\Purifier\Facades\Purifier::class,
+        'Agent'     =>  Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];

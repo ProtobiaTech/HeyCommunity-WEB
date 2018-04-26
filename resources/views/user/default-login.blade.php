@@ -36,8 +36,14 @@
 
                 <footer class="mt-3 text-center">
                     没有帐号? 现在<a class="" href="{{ route('user.default-signup') }}">注册</a>
-                    <br>
+                    &nbsp;&nbsp;
                     <a class="text-muted">忘记密码？</a>
+
+                    @if (Agent::isDesktop())
+                        <p class="mt-2">
+                            <a href="{{ route('user.login-wechat') }}"><i class="fa fa-wechat"></i> 使用微信快速登录</a>
+                        </p>
+                    @endif
                 </footer>
             </form>
         </div>

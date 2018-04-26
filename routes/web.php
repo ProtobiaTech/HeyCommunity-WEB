@@ -1,37 +1,8 @@
 <?php
 
 //
-// web admin routes
-include_once 'web-admin.php';
-
-
-//
-// system info
-try {
-    $system = \App\System::first();
-} catch (Exception $e) {
-    $system = new stdClass();
-    $system->site_title = 'HeyCommunity';
-    $system->site_subheading = 'A New HeyCommunity Site';
-    $system->site_description = 'This Is A New HeyCommunity Site';
-    $system->site_keywords = 'HeyCommunity, Social Site, Open Software';
-    $system->site_analytic_code = null;
-}
-view()->share('system', $system);
-
-
-//
-// wechat js
-try {
-    $wechat = new \EasyWeChat\Foundation\Application(config('wechat'));
-    $wechatJs = $wechat->js;
-    $wechatJsConfig = $wechatJs->config(array('onMenuShareTimeline', 'onMenuShareAppMessage'));
-    view()->share('wechatJsConfig', $wechatJsConfig);
-} catch (Exception $e) {
-    Log::alert($e->getMessage());
-    view()->share('wechatJsConfig', '{}');
-}
-
+// web view share info
+include_once 'web-view-share.php';
 
 
 //
@@ -58,26 +29,26 @@ Route::group([], function () {
 //
 // User
 Route::group(['prefix' => 'user'], function () {
-    Route::get('default-signup', 'UserController@signup')->name('user.default-signup');
-    Route::post('default-signup', 'UserController@signupHandler')->name('user.default-signup-handler');
-    Route::get('default-login', 'UserController@login')->name('user.default-login');
-    Route::post('default-login', 'UserController@loginHandler')->name('user.default-login-handler');
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('logout', 'UserController@logout')->name('user.logout');
+        Route::get('login-by-wechat-success', 'UserController@loginByWechatSuccess')->name('user.login-by-wechat-success');
+    });
 
-    Route::get('login', function () {
-        return redirect()->route('user.login-wechat');
-    })->name('user.login');
-    Route::get('log-in', function () {
-        return redirect()->route('user.login-wechat');
-    })->name('login');
-    Route::get('signup', function () {
-        return redirect()->route('user.login-wechat');
-    })->name('user.signup');
-    Route::get('logout', 'UserController@logout')->name('user.logout');
+    Route::group(['middleware' => 'guest'], function() {
+        Route::get('log-in', 'UserController@login')->name('login');
+        Route::get('login', 'UserController@login')->name('user.login');
+        Route::get('signup', 'UserController@signup')->name('user.signup');
 
-    Route::get('login-wechat', 'UserController@loginWechat')->name('user.login-wechat');
-    Route::get('login-by-wechat', 'UserController@loginByWechat')->middleware(['wechat.oauth', 'auth.wechat'])->name('user.login-by-wechat');
-    Route::post('login-by-wechat-handler', 'UserController@loginByWechatHandler')->name('user.login-by-wechat-handler');
-    Route::get('login-by-wechat-success', 'UserController@loginByWechatSuccess')->name('user.login-by-wechat-success');
+        Route::get('default-signup', 'UserController@defaultSignup')->name('user.default-signup');
+        Route::post('default-signup', 'UserController@defaultSignupHandler')->name('user.default-signup-handler');
+        Route::get('default-login', 'UserController@defaultLogin')->name('user.default-login');
+        Route::post('default-login', 'UserController@defaultLoginHandler')->name('user.default-login-handler');
+
+        Route::get('login-wechat', 'UserController@loginWechat')->name('user.login-wechat');
+
+        Route::get('login-by-wechat', 'UserController@loginByWechat')->middleware(['wechat.oauth', 'auth.wechat'])->name('user.login-by-wechat');
+        Route::post('login-by-wechat-handler', 'UserController@loginByWechatHandler')->name('user.login-by-wechat-handler');
+    });
 
     Route::middleware(['auth'])->group(function () {
         Route::get('ucenter', 'UserController@ucenter')->name('user.ucenter');
@@ -151,3 +122,8 @@ Route::group(['prefix' => 'activity'], function () {
     });
 });
 
+
+
+//
+// web admin routes
+include_once 'web-admin.php';

@@ -235,9 +235,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         //
-        'Input' => \Illuminate\Support\Facades\Input::class,
-
-        //
         'Image' => Intervention\Image\Facades\Image::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,

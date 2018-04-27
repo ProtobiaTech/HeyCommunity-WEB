@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" id="section-datatable">
                                         <thead>
                                             <tr>
                                                 <th>#</th>

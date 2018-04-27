@@ -26,45 +26,49 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table class="table" id="section-datatable">
                                             <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>活动缩略图</th>
-                                                <th>标题</th>
-                                                <th>TU TB F C R</th>
-                                                <th>发布时间</th>
-                                                <th>操作</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>活动缩略图</th>
+                                                    <th>标题</th>
+                                                    <th>TU TB F C R</th>
+                                                    <th>发布时间</th>
+                                                    <th>操作</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            @if ($activities->isEmpty())
-                                                <tr>
-                                                    <td colspan="5">无数据</td>
-                                                </tr>
-                                            @else
-                                            @foreach ($activities as $activity)
-                                                <tr>
-                                                    <td>{{ $activity->id }}</td>
-                                                    <td><img src="{{ $activity->avatar }}" alt="活动缩略图" style="width: 4rem;height: 4rem;border-radius: 50%;"></td>
-                                                    <td><a target="_blank" href="{{ route('news.show', $activity->id) }}">{{ $activity->title }}</a></td>
-                                                    <td>
-                                                        {{ $activity->thumb_up_num }}
-                                                        /
-                                                        {{ $activity->thumb_down_num }}
-                                                        /
-                                                        {{ $activity->favorite_num }}
-                                                        /
-                                                        {{ $activity->comment_num }}
-                                                        /
-                                                        {{ $activity->read_num }}
-                                                    </td>
-                                                    <td>{{ $activity->created_at }}</td>
-                                                    <td><a class="btn btn-xs btn-danger" onclick="activityDestroy('{{ $activity->title }}', {{ $activity->id }})" title="删除"><i class="fa fa-trash-o"></i></a></td>
-                                                </tr>
-                                            @endforeach
-                                            @endif
-                                            </tbody>
+                                                @if ($activities->isEmpty())
+                                                    <tr>
+                                                        <td colspan="5">无数据</td>
+                                                    </tr>
+                                                @else
+                                                @foreach ($activities as $activity)
+                                                    <tr>
+                                                        <td>{{ $activity->id }}</td>
+                                                        <td><img src="{{ $activity->avatar }}" alt="活动缩略图" class="rounded" style="height:2.8em;"></td>
+                                                        <td>
+                                                            <a target="_blank" href="{{ route('news.show', $activity->id) }}">{{ $activity->title }}</a>
+                                                            <br>
+                                                            {{ $activity->intro }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $activity->thumb_up_num }}
+                                                            /
+                                                            {{ $activity->thumb_down_num }}
+                                                            /
+                                                            {{ $activity->favorite_num }}
+                                                            /
+                                                            {{ $activity->comment_num }}
+                                                            /
+                                                            {{ $activity->read_num }}
+                                                        </td>
+                                                        <td>{{ $activity->created_at }}</td>
+                                                        <td><a class="btn btn-xs btn-danger" onclick="activityDestroy('{{ $activity->title }}', {{ $activity->id }})" title="删除"><i class="fa fa-trash-o"></i></a></td>
+                                                    </tr>
+                                                @endforeach
+                                                @endif
+                                                </tbody>
                                         </table>
 
                                         <!-- Pagination -->

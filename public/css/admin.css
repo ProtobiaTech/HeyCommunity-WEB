@@ -10,3 +10,8 @@
   color: #3292e0;
 }
 
+#section-datatable th,
+#section-datatable td {
+  white-space: nowrap;
+}
+

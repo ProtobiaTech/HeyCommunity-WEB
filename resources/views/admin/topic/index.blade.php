@@ -4,11 +4,12 @@
     <form class="navbar-form pull-left" role="search" action="{{ route('admin.topic.index') }}">
         <div class="form-group">
             <input type="hidden" name="type" value="topics">
-            <input type="text" name="q" class="form-control search-bar" placeholder="搜索" value="{{ Input::get('q') }}">
+            <input type="text" name="q" class="form-control search-bar" placeholder="搜索" value="{{ Request::get('q') }}">
         </div>
         <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
     </form>
 @endsection
+
 @section('mainBody')
 <div class="">
     <div class="page-header-title">

@@ -1,29 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kavience
- * Date: 18-3-17
- * Time: 下午2:49
- */
 
 namespace App\Http\Controllers\Admin;
-
 
 use App\Http\Controllers\Controller;
 use App\News;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
 class NewsController extends Controller
 {
     /**
      * News list and search
      */
-    public function index()
+    public function index(Request $request)
     {
-        if (Input::get('q')!==null) {
-            $newsModel = new News();
-            $news = $newsModel->where('title', 'like', '%'.Input::get('q').'%')->paginate();
+        if ($request->has('q')) {
+            $news = News::where('title', 'like', '%' . $request->q . '%')->paginate();
         } else {
             $news = News::latest()->paginate();
         }
@@ -32,7 +23,7 @@ class NewsController extends Controller
     }
 
     /**
-     * News delete
+     * News destory
      */
     public function destroy(Request $request)
     {

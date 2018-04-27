@@ -4,7 +4,7 @@
     <form class="navbar-form pull-left" role="search" action="{{ route('admin.activity.index') }}">
         <div class="form-group">
             <input type="hidden" name="type" value="activity">
-            <input type="text" name="q" class="form-control search-bar" placeholder="搜索" value="{{ Input::get('q') }}">
+            <input type="text" name="q" class="form-control search-bar" placeholder="搜索" value="{{ Request::get('q') }}">
         </div>
         <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
     </form>
@@ -82,7 +82,7 @@
 
         <script>
             function activityDestroy(title,id) {
-                var message = '是否要删除 ' + title + '这条活动';
+                var message = '是否要删除 "' + title + '"这个活动';
 
                 if (confirm(message)) {
                     var url = '{{ route('admin.activity.destroy') }}';

@@ -1,29 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kavience
- * Date: 18-3-17
- * Time: 下午4:18
- */
 
 namespace App\Http\Controllers\Admin;
-
 
 use App\Activity;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
 class ActivityController extends Controller
 {
     /**
      * Activities list and search
      */
-    public function index()
+    public function index(Request $request)
     {
-        if (Input::get('q')!==null) {
-            $activityModel = new Activity();
-            $activities = $activityModel->where('title', 'like', '%'.Input::get('q').'%')->paginate();
+        if ($request->has('q')) {
+            $activities = Activity::where('title', 'like', '%' . $request->q . '%')->paginate();
         } else {
             $activities = Activity::latest()->paginate();
         }

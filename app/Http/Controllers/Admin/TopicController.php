@@ -9,11 +9,15 @@ use App\Http\Controllers\Controller;
 class TopicController extends Controller
 {
     /**
-     * Topic list page
+     * Topic list and search
      */
-    public function index()
+    public function index(Request $request)
     {
-        $topics = Topic::latest()->paginate();
+        if ($request->has('q')) {
+            $topics = Topic::where('title', 'like', '%'. $request->q . '%')->paginate();
+        } else {
+            $topics = Topic::latest()->paginate();
+        }
 
         return view('admin.topic.index', compact('topics'));
     }

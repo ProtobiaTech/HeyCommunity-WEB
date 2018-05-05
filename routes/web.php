@@ -20,6 +20,16 @@ Route::group([], function () {
 
 
 //
+// Site
+Route::group([], function () {
+    Route::get('about', 'SiteController@about')->name('site.about');
+    Route::get('help', 'SiteController@help')->name('site.help');
+    Route::get('terms', 'SiteController@terms')->name('site.terms');
+    Route::get('privacy', 'SiteController@privacy')->name('site.privacy');
+});
+
+
+//
 // Other
 Route::group([], function () {
     Route::post('simditor-upload-images', 'UploadController@simditorUploadImages')->name('upload.simditor-upload-images');

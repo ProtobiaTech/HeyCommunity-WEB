@@ -39,7 +39,7 @@ class Authenticate
     public function handle($request, Closure $next, ...$guards)
     {
         // session after login redirect route
-        if ($rquest->route()->getName() != 'login') {
+        if ($request->route()->getName() != 'login') {
             $request->session()->put('after-login-redirect-route', $request->route()->getName());
         }
 

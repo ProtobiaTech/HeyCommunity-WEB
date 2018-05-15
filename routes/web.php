@@ -75,7 +75,7 @@ Route::group(['prefix' => 'user', 'middleware' => []], function () {
 
 //
 // Notice
-Route::group(['prefix' => 'notice', 'middleware' => ['wechat.oauth', 'auth.wechat']], function () {
+Route::group(['prefix' => 'notice', 'middleware' => ['wechat.oauth', 'auth.wechat', 'auth']], function () {
     Route::get('/', 'NoticeController@index')->name('notice.index');
     Route::post('check', 'NoticeController@check')->name('notice.check');
 });

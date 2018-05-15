@@ -15,15 +15,6 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
-     * Construct
-     */
-    public function __construct()
-    {
-        $this->middleware('auth', ['only' => ['logout']]);
-        $this->middleware('guest', ['only' => ['login', 'loginHandler', 'signup', 'signupHandler']]);
-    }
-
-    /**
      *  Login
      */
     public function login()

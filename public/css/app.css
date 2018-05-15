@@ -74,6 +74,11 @@ button {
   display: none;
 }
 
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #section-pagination {
   margin-top: 20px;
   overflow: hidden;

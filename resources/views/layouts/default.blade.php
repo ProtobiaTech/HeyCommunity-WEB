@@ -94,9 +94,7 @@
             @endif
         </ul>
 
-        <form class="form-inline float-right d-none d-md-flex">
-            <input class="form-control" type="text" data-action="grow" placeholder="搜索暂不可用" disabled>
-        </form>
+        @yield('search')
 
         <ul id="#js-popoverContent" class="nav navbar-nav float-right mr-0 d-none d-md-flex">
             <li class="nav-item">

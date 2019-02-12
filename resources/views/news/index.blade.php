@@ -8,6 +8,12 @@
 实时的新闻与资讯
 @endsection
 
+@section('search')
+    <form class="form-inline float-right d-none d-md-flex" action="{{ route('news.index') }}">
+        <input class="form-control" type="text" data-action="grow" placeholder="搜索" name="q" value="{{ Input::get('q') }}">
+    </form>
+@endsection
+
 @section('mainBody')
     <div id="section-mainbody" class="page-news-index">
         <div class="container pt-2">

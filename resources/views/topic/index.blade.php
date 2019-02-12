@@ -8,6 +8,12 @@
 欢迎你在这里分享你知识与见解，或者有什么问题也可以在此与社区的朋友们一起交流讨论 ~
 @endsection
 
+@section('search')
+    <form class="form-inline float-right d-none d-md-flex" action="{{ route('topic.index') }}">
+        <input class="form-control" type="text" data-action="grow" placeholder="搜索" name="q" value="{{ Input::get('q') }}">
+    </form>
+@endsection
+
 @section('mainBody')
 <div id="section-mainbody" class="page-topic-index">
     <div class="container pt-4">
